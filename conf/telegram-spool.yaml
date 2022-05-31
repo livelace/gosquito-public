@@ -52,7 +52,7 @@ flow:
         match_not: true
     
     - id: 1
-      alias: "match textA"
+      alias: "messages with text"
       plugin: "regexpmatch"
       params:
         require: [0]

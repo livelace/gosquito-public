@@ -18,7 +18,7 @@ k8s_app({
     }
 
     stage("reload") {
-        k8s_exec("k8s-1", "dmz", "gosquito-public", "gosquito", "kill 1")
+        k8s_exec("k8s-1", "dmz", "gosquito-public", "gosquito", "kill -9 1")
     }
 })
 

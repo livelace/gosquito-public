@@ -4,7 +4,18 @@ properties([
         artifactNumToKeepStr: '',
         daysToKeepStr: '30',
         numToKeepStr: '30')
-    )
+    ),
+    pipelineTriggers([
+        GenericTrigger(
+            causeString: 'Generic Cause', 
+            printContributedVariables: true, 
+            printPostContent: true, 
+            regexpFilterExpression: '', 
+            regexpFilterText: '', 
+            silentResponse: true, 
+            token: '', 
+            tokenCredentialId: 'github-gosquito-public-webhook')
+    ])
 ])
 
 

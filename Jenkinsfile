@@ -24,7 +24,7 @@ k8s_app({
 
     stage("update") {
         sh """
-            rsync -av --delete conf/ \${JOB_DIR}/data/gosquito/conf/conf/
+            rsync -av --delete conf/ \${JOB_DIR}/data/gosquito/conf/conf/ && \
             cp config.toml \${JOB_DIR}/data/gosquito/conf/config.toml
         """
     }
@@ -37,9 +37,10 @@ k8s_app({
             credentialsId: 'k8s-1-jenkins3-sa', 
             namespace: 'dmz', 
             serverUrl: 'https://k8s-1-master1.livelace.ru:6443') {
-        
+
             sh """
-                kubectl rollout restart deployment gosquito-public
+                kubectl rollout restart deployment/gosquito-public && \
+                kubectl rollout status deployment/gosquito-public --timeout=60s
             """
         }
     }

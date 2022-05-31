@@ -36,4 +36,4 @@ flow:
   output:
     plugin: "kafka"
     params:
-      template: "template.output.job.rss.spool"
+      template: "template.out.job.rss.spool"

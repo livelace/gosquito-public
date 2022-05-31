@@ -5,6 +5,7 @@ properties([
         daysToKeepStr: '30',
         numToKeepStr: '30')
     ),
+    disableConcurrentBuilds(),
     pipelineTriggers([
         GenericTrigger(
             causeString: 'Generic Cause', 

@@ -1,3 +1,9 @@
+def K8S_API = "https://k8s-1-master1.livelace.ru:6443"
+def K8S_DEPLOYMENT = "gosquito-public"
+def K8S_NS = "dmz"
+def K8S_SA = "k8s-1-jenkins3-sa"
+def K8S_TIMEOUT = "60s"
+
 properties([
     buildDiscarder(logRotator(
         artifactDaysToKeepStr: '',
@@ -34,13 +40,13 @@ k8s_app({
             caCertificate: '', 
             clusterName: '', 
             contextName: '', 
-            credentialsId: 'k8s-1-jenkins3-sa', 
-            namespace: 'dmz', 
-            serverUrl: 'https://k8s-1-master1.livelace.ru:6443') {
+            credentialsId: K8S_SA, 
+            namespace: K8S_NS, 
+            serverUrl: K8S_API) {
 
             sh """
-                kubectl rollout restart deployment/gosquito-public && \
-                kubectl rollout status deployment/gosquito-public --timeout=60s
+                kubectl rollout restart deployment/${K8S_DEPLOYMENT} && \
+                kubectl rollout status deployment/${K8S_DEPLOYMENT} --timeout=${K8S_TIMEOUT}
             """
         }
     }

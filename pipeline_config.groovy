@@ -12,6 +12,5 @@ libraries {
             task-gosquito-public-conf, data/gosquito/conf, rw
         """
     }
-    k8s_exec
 }
 

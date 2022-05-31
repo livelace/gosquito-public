@@ -13,9 +13,8 @@ k8s_app({
 
     stage("update") {
         sh """
-            ls -l \${JOB_DIR}
-            ls -l \${WORK_DIR}
-            ls -l data/gosquito/conf
+            rsync -av --delete . \${JOB_DIR}/data/gosquito/conf/ 
+            ls -l \${JOB_DIR}/data/gosquito/conf
         """
     }
 

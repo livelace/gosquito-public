@@ -15,12 +15,11 @@ k8s_app({
         sh """
             rsync -av --delete conf/ \${JOB_DIR}/data/gosquito/conf/conf/
             cp config.toml \${JOB_DIR}/data/gosquito/conf/config.toml
-            ls -l \${JOB_DIR}/data/gosquito/conf
         """
     }
 
     stage("reload") {
-        k8s_exec("k8s-1", "dmz", "gosquito-public", "gosquito", "kill -9 1")
+        k8s_exec("k8s-1", "dmz", "gosquito-public", "gosquito", "kill -HUP 1")
     }
 })
 

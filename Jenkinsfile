@@ -13,7 +13,8 @@ k8s_app({
 
     stage("update") {
         sh """
-            rsync -av --delete . \${JOB_DIR}/data/gosquito/conf/ 
+            rsync -av --delete conf/ \${JOB_DIR}/data/gosquito/conf/conf/
+            cp config.toml \${JOB_DIR}/data/gosquito/conf/config.toml
             ls -l \${JOB_DIR}/data/gosquito/conf
         """
     }

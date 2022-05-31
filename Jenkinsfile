@@ -18,7 +18,6 @@ properties([
     ])
 ])
 
-
 k8s_app({
     git_checkout()
 

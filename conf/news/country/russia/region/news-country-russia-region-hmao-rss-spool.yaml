@@ -1,0 +1,17 @@
+flow:
+  name: "news-country-russia-region-hmao-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: [
+        #"https://admhmansy.ru/news/rss/", 
+        "https://sitv.ru/arhiv/news/rss/"
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.country.russia.region.rss.spool"
+      schema:
+        short_name: "хмао"

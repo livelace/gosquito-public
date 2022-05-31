@@ -1,0 +1,18 @@
+flow:
+  name: "news-world-it-dlbi-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.it.rss.spool"
+      input: ["https://dlbi.ru/feed"]
+      ssl_verify: false
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.it.rss.spool"
+      schema:
+        tag3: "security"
+        tag4: "leak"
+        short_name: "dlbi"

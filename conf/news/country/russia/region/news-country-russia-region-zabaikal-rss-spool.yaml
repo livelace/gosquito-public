@@ -1,0 +1,17 @@
+flow:
+  name: "news-country-russia-region-zabaikal-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: [
+        "https://zab.ru/rss/", 
+        #"https://www.chita.ru/rss/"
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.country.russia.region.rss.spool"
+      schema:
+        short_name: "забайкал"

@@ -1,0 +1,15 @@
+flow:
+  name: "news-country-russia-region-kaliningrad-twitter-spool"
+
+  input:
+    plugin: "twitter"
+    params:
+      cred: "cred.twitter.default"
+      input: ["ruwest_news"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.country.russia.region.twitter.spool"
+      schema:
+        short_name: "калининград"

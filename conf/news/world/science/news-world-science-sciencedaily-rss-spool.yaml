@@ -1,0 +1,15 @@
+flow:
+  name: "news-world-science-sciencedaily-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.science.rss.spool"
+      input: ["https://www.sciencedaily.com/rss/all.xml"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.science.rss.spool"
+      schema:
+        short_name: "sciencedaily"

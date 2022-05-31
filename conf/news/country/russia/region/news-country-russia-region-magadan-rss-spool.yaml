@@ -1,0 +1,17 @@
+flow:
+  name: "news-country-russia-region-magadan-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: [
+        "https://magadanpravda.ru/rss", 
+        #"https://primamedia.gcdn.co/export/new/news_main31.rss"
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.country.russia.region.rss.spool"
+      schema:
+        short_name: "магадан"

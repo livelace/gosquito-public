@@ -1,0 +1,15 @@
+flow:
+  name: "news-world-politics-foxnews-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.politics.rss.spool"
+      input: ["https://moxie.foxnews.com/feedburner/politics.xml"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.politics.rss.spool"
+      schema:
+        short_name: "foxnews"

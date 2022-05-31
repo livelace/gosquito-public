@@ -1,0 +1,17 @@
+flow:
+  name: "news-country-russia-region-orenburg-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: [
+        "https://orenday.ru/rss.html", 
+        #"https://ria56.ru/feed"
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.country.russia.region.rss.spool"
+      schema:
+        short_name: "оренбург"

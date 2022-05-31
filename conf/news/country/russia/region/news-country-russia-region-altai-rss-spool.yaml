@@ -1,0 +1,15 @@
+flow:
+  name: "news-country-russia-region-altai-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: ["https://www.altairegion22.ru/rss_news/"]
+      ssl_verify: false
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.country.russia.region.rss.spool"
+      schema:
+        short_name: "алтай"

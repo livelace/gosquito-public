@@ -1,0 +1,14 @@
+flow:
+  name: "news-country-russia-region-dagestan-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: ["https://www.kavkaz-uzel.eu/dagestan.rss"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.country.russia.region.rss.spool"
+      schema:
+        short_name: "дагестан"

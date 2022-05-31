@@ -1,0 +1,15 @@
+flow:
+  name: "news-world-common-iz-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.common.rss.spool"
+      input: ["https://iz.ru/xml/rss/all.xml"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.common.rss.spool"
+      schema:
+        short_name: "izvestia"

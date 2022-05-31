@@ -1,0 +1,15 @@
+flow:
+  name: "news-world-politics-nytimes-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.politics.rss.spool"
+      input: ["https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/politics/rss.xml"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.politics.rss.spool"
+      schema:
+        short_name: "nytimes"

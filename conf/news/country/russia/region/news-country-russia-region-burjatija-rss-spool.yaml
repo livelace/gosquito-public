@@ -1,0 +1,14 @@
+flow:
+  name: "news-country-russia-region-burjatija-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: ["https://www.baikal-daily.ru/news/rss.xml"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.country.russia.region.rss.spool"
+      schema:
+        short_name: "бурятия"

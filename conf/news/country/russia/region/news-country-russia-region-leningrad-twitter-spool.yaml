@@ -1,0 +1,15 @@
+flow:
+  name: "news-country-russia-region-leningrad-twitter-spool"
+
+  input:
+    plugin: "twitter"
+    params:
+      cred: "cred.twitter.default"
+      input: ["47News_ru"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.country.russia.region.twitter.spool"
+      schema:
+        short_name: "ленинград"

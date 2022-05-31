@@ -1,0 +1,14 @@
+flow:
+  name: "news-country-russia-region-sverdlovsk-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: ["http://midural.ru/news/list/newsRSS/"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.country.russia.region.rss.spool"
+      schema:
+        short_name: "свердловск"

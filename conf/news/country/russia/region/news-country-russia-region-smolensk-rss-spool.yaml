@@ -1,0 +1,14 @@
+flow:
+  name: "news-country-russia-region-smolensk-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: ["https://smolensk-i.ru/feed"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.country.russia.region.rss.spool"
+      schema:
+        short_name: "смоленск"

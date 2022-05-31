@@ -1,0 +1,14 @@
+flow:
+  name: "news-country-russia-region-rjazan-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: ["https://rss.rzn.info/rss/news/ryazan.xml"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.country.russia.region.rss.spool"
+      schema:
+        short_name: "рязань"

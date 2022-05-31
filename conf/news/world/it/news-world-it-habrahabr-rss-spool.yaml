@@ -1,0 +1,15 @@
+flow:
+  name: "news-world-it-habrahabr-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.it.rss.spool"
+      input: ["https://habrahabr.ru/rss/all"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.it.rss.spool"
+      schema:
+        short_name: "habrahabr"

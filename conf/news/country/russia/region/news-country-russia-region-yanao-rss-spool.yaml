@@ -1,0 +1,14 @@
+flow:
+  name: "news-country-russia-region-yanao-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: ["https://ks-yanao.ru/rss/"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.country.russia.region.rss.spool"
+      schema:
+        short_name: "янао"

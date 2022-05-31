@@ -1,0 +1,16 @@
+flow:
+  name: "news-country-russia-region-mordovia-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: [
+        "https://stolica-s.su/feed"
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.country.russia.region.rss.spool"
+      schema:
+        short_name: "мордовия"

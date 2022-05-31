@@ -1,0 +1,16 @@
+flow:
+  name: "news-world-it-thehackernews-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.it.rss.spool"
+      input: ["https://feeds.feedburner.com/TheHackersNews"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.it.rss.spool"
+      schema:
+        tag3: "security"
+        short_name: "thehackernews"

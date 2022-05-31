@@ -1,0 +1,15 @@
+flow:
+  name: "news-world-common-nytimes-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.common.rss.spool"
+      input: ["https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.common.rss.spool"
+      schema:
+        short_name: "nytimes"

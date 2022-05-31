@@ -1,0 +1,16 @@
+flow:
+  name: "news-world-common-xinhua-twitter-spool"
+
+  input:
+    plugin: "twitter"
+    params:
+      cred: "cred.twitter.default"
+      template: "template.in.world.common.twitter.spool"
+      input: ["XHNews"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.common.twitter.spool"
+      schema:
+        short_name: "xinhua"

@@ -1,0 +1,15 @@
+flow:
+  name: "news-world-politics-washingtonpost-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.politics.rss.spool"
+      input: ["https://feeds.washingtonpost.com/rss/politics"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.politics.rss.spool"
+      schema:
+        short_name: "washingtonpost"

@@ -1,0 +1,380 @@
+[default]
+
+log_level = "DEBUG"
+
+flow_conf     = "/etc/gosquito/conf"
+flow_data     = "/data/gosquito/data"
+flow_interval = "5m"
+
+time_format   = "15:04 02.01.2006"
+time_zone     = "Europe/Moscow"
+flow_limit    = 2
+
+user_agent    = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
+
+# ----------------------------------------------------------------------------
+# credentials: minio default
+
+[cred.minio.default]
+access_key = "vault://secret/host/minio.livelace.ru/service/minio/gosquito,access_key"
+secret_key = "vault://secret/host/minio.livelace.ru/service/minio/gosquito,secret_key"
+server     = "minio.livelace.ru"
+
+[cred.minio.default.vault]
+address    = "env://GOSQUITO_VAULT_ADDRESS"
+app_role   = "env://GOSQUITO_VAULT_APP_ROLE"
+app_secret = "env://GOSQUITO_VAULT_APP_SECRET"
+
+# ----------------------------------------------------------------------------
+# credentials: telegram private
+
+[cred.telegram.private]
+api_id    = "vault://secret/service/online/messengers/telegram/private,api_id"
+api_hash  = "vault://secret/service/online/messengers/telegram/private,api_hash"
+
+[cred.telegram.private.vault]
+address    = "env://GOSQUITO_VAULT_ADDRESS"
+app_role   = "env://GOSQUITO_VAULT_APP_ROLE"
+app_secret = "env://GOSQUITO_VAULT_APP_SECRET"
+
+# ----------------------------------------------------------------------------
+# credentials: twitter default
+
+[cred.twitter.default]
+access_token    = "vault://secret/service/online/messengers/twitter/default,access_token"
+access_secret   = "vault://secret/service/online/messengers/twitter/default,access_secret"
+consumer_key    = "vault://secret/service/online/messengers/twitter/default,consumer_key"
+consumer_secret = "vault://secret/service/online/messengers/twitter/default,consumer_secret"
+
+[cred.twitter.default.vault]
+address    = "env://GOSQUITO_VAULT_ADDRESS"
+app_role   = "env://GOSQUITO_VAULT_APP_ROLE"
+app_secret = "env://GOSQUITO_VAULT_APP_SECRET"
+
+# ----------------------------------------------------------------------------
+# template: job-rss-spool
+
+[template.in.job.rss.spool]
+match_signature = ["rss.link"]
+match_ttl       = "90d"
+time_format     = "2006-01-02T15:04:05-0700"
+
+[template.out.job.rss.spool]
+brokers                 = "env://GOSQUITO_KAFKA_BROKER"
+confluent_avro          = true
+output                  = ["gosquito-public-job-rss-spool"]
+schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
+schema_subject_strategy = "TopicName"
+
+[template.out.job.rss.spool.schema]
+flow       = "flow"
+plugin     = "plugin"
+source     = "source"
+time       = "timeformat"
+
+full_desc  = "data.text1"
+short_desc = "rss.description"
+tags       = "data.text2"
+title      = "rss.title"
+urls       = "rss.link"
+
+# ----------------------------------------------------------------------------
+# template: country-russia-region-rss-spool
+
+[template.out.country.russia.region.rss.spool]
+brokers                 = "env://GOSQUITO_KAFKA_BROKER"
+confluent_avro          = true
+output                  = ["gosquito-public-country-russia-region-rss-spool"]
+schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
+schema_subject_strategy = "TopicRecordName"
+
+[template.out.country.russia.region.rss.spool.schema]
+flow        = "flow"
+plugin      = "plugin"
+source      = "source"
+time        = "timeformat"
+
+categories  = "rss.categories"
+content     = "rss.content"
+description = "rss.description"
+guid        = "rss.guid"
+link        = "rss.link"
+title       = "rss.title"
+
+tag1        = "country"
+tag2        = "russia"
+tag3        = "region"
+
+# ----------------------------------------------------------------------------
+# template: country-russia-region-twitter-spool
+
+[template.out.country.russia.region.twitter.spool]
+brokers                 = "env://GOSQUITO_KAFKA_BROKER"
+confluent_avro          = true
+output                  = ["gosquito-public-country-russia-region-twitter-spool"]
+schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
+schema_subject_strategy = "TopicRecordName"
+
+[template.out.country.russia.region.twitter.spool.schema]
+flow   = "flow"
+plugin = "plugin"
+source = "source"
+time   = "timeformat"
+
+lang   = "twitter.lang"
+media  = "twitter.media"
+tags   = "twitter.tags"
+text   = "twitter.text"
+urls   = "twitter.urls"
+
+tag1   = "country"
+tag2   = "russia"
+tag3   = "region"
+
+# ----------------------------------------------------------------------------
+# template: world-common-rss-spool
+
+[template.in.world.common.rss.spool]
+match_signature = ["rss.link"]
+match_ttl       = "7d"
+
+[template.out.world.common.rss.spool]
+brokers                 = "env://GOSQUITO_KAFKA_BROKER"
+confluent_avro          = true
+output                  = ["gosquito-public-world-common-rss-spool"]
+schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
+schema_subject_strategy = "TopicRecordName"
+
+[template.out.world.common.rss.spool.schema]
+flow        = "flow"
+plugin      = "plugin"
+source      = "source"
+time        = "timeformat"
+
+categories  = "rss.categories"
+content     = "rss.content"
+description = "rss.description"
+guid        = "rss.guid"
+link        = "rss.link"
+title       = "rss.title"
+
+tag1        = "world"
+tag2        = "common"
+
+# ----------------------------------------------------------------------------
+# template: world-common-twitter-spool
+
+[template.in.world.common.twitter.spool]
+match_signature = ["twitter.text"]
+match_ttl       = "7d"
+
+[template.out.world.common.twitter.spool]
+brokers                 = "env://GOSQUITO_KAFKA_BROKER"
+confluent_avro          = true
+output                  = ["gosquito-public-world-common-twitter-spool"]
+schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
+schema_subject_strategy = "TopicRecordName"
+
+[template.out.world.common.twitter.spool.schema]
+flow   = "flow"
+plugin = "plugin"
+source = "source"
+time   = "timeformat"
+
+lang   = "twitter.lang"
+media  = "twitter.media"
+tags   = "twitter.tags"
+text   = "twitter.text"
+urls   = "twitter.urls"
+
+tag1   = "world"
+tag2   = "common"
+
+# ----------------------------------------------------------------------------
+# template: world-finance-rss-spool
+
+[template.in.world.finance.rss.spool]
+match_signature = ["rss.link"]
+match_ttl       = "7d"
+
+[template.out.world.finance.rss.spool]
+brokers                 = "env://GOSQUITO_KAFKA_BROKER"
+confluent_avro          = true
+output                  = ["gosquito-public-world-finance-rss-spool"]
+schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
+schema_subject_strategy = "TopicRecordName"
+
+[template.out.world.finance.rss.spool.schema]
+flow        = "flow"
+plugin      = "plugin"
+source      = "source"
+time        = "timeformat"
+
+categories  = "rss.categories"
+content     = "rss.content"
+description = "rss.description"
+guid        = "rss.guid"
+link        = "rss.link"
+title       = "rss.title"
+
+tag1        = "world"
+tag2        = "finance"
+
+# ----------------------------------------------------------------------------
+# template: world-it-rss-spool
+
+[template.in.world.it.rss.spool]
+match_signature = ["rss.link"]
+match_ttl       = "7d"
+
+[template.out.world.it.rss.spool]
+brokers                 = "env://GOSQUITO_KAFKA_BROKER"
+confluent_avro          = true
+output                  = ["gosquito-public-world-it-rss-spool"]
+schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
+schema_subject_strategy = "TopicRecordName"
+
+[template.out.world.it.rss.spool.schema]
+flow        = "flow"
+plugin      = "plugin"
+source      = "source"
+time        = "timeformat"
+
+categories  = "rss.categories"
+content     = "rss.content"
+description = "rss.description"
+guid        = "rss.guid"
+link        = "rss.link"
+title       = "rss.title"
+
+tag1        = "world"
+tag2        = "it"
+
+# ----------------------------------------------------------------------------
+# template: world-politics-rss-spool
+
+[template.in.world.politics.rss.spool]
+match_signature = ["rss.link"]
+match_ttl       = "7d"
+
+[template.out.world.politics.rss.spool]
+brokers                 = "env://GOSQUITO_KAFKA_BROKER"
+confluent_avro          = true
+output                  = ["gosquito-public-world-politics-rss-spool"]
+schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
+schema_subject_strategy = "TopicRecordName"
+
+[template.out.world.politics.rss.spool.schema]
+flow        = "flow"
+plugin      = "plugin"
+source      = "source"
+time        = "timeformat"
+
+categories  = "rss.categories"
+content     = "rss.content"
+description = "rss.description"
+guid        = "rss.guid"
+link        = "rss.link"
+title       = "rss.title"
+
+tag1        = "world"
+tag2        = "politics"
+
+# ----------------------------------------------------------------------------
+# template: world-science-rss-spool
+
+[template.in.world.science.rss.spool]
+match_signature = ["rss.link"]
+match_ttl       = "7d"
+
+[template.out.world.science.rss.spool]
+brokers                 = "env://GOSQUITO_KAFKA_BROKER"
+confluent_avro          = true
+output                  = ["gosquito-public-world-science-rss-spool"]
+schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
+schema_subject_strategy = "TopicRecordName"
+
+[template.out.world.science.rss.spool.schema]
+flow        = "flow"
+plugin      = "plugin"
+source      = "source"
+time        = "timeformat"
+
+categories  = "rss.categories"
+content     = "rss.content"
+description = "rss.description"
+guid        = "rss.guid"
+link        = "rss.link"
+title       = "rss.title"
+
+tag1        = "world"
+tag2        = "science"
+
+# ----------------------------------------------------------------------------
+# template: telegram-spool
+
+[template.in.telegram.spool]
+chat_save          = true
+device_model       = "gosquito-public"
+fetch_dir          = "/data/gosquito/files"
+match_signature    = ["telegram.messageurl"]
+match_ttl          = "7d"
+message_type_fetch = [""]
+status_period      = "5m"
+time_format        = "2006-01-02T15:04:05-0700"
+
+[template.out.telegram.spool]
+brokers                 = "env://GOSQUITO_KAFKA_BROKER"
+confluent_avro          = true
+output                  = ["gosquito-public-telegram-spool"]
+schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
+schema_subject_strategy = "TopicName"
+
+[template.out.telegram.spool.schema]
+flow                 = "flow"
+plugin               = "plugin"
+source               = "source"
+time                 = "timeformat"
+warnings             = "warnings"
+
+chatid               = "telegram.chatid"
+chatname             = "telegram.chatname"
+chattype             = "telegram.chattype"
+chattitle            = "telegram.chattile"
+chatclientdata       = "telegram.chatclientdata"
+chatmemberonline     = "telegram.chatmemberonline"
+chatlastinboxid      = "telegram.chatlastoutboxid"
+chatlastoutboxid     = "telegram.chatlastoutboxid"
+chatmessagettl       = "telegram.chatmessagettl"
+chatprotectedcontent = "telegram.chatprotectedcontent"
+chatunreadcount      = "telegram.chatunreadcount"
+chattimestamp        = "telegram.chattimestamp"
+
+messageid            = "telegram.messageid"
+messagemedia         = "telegram.messagemedia"
+messagesenderid      = "telegram.messagesenderid"
+messagetext          = "telegram.messagetext"
+messagetexturl       = "telegram.messagetexturl"
+messagetype          = "telegram.messagetype"
+messagetimestamp     = "telegram.messagetimestamp"
+messageurl           = "telegram.messageurl"
+
+userid               = "telegram.userid"
+userversion          = "telegram.userversion"
+username             = "telegram.username"
+usertype             = "telegram.usertype"
+userlang             = "telegram.userlang"
+userfirstname        = "telegram.userfirstname"
+userlastname         = "telegram.userlastname"
+userphone            = "telegram.userphone"
+userstatus           = "telegram.userstatus"
+useraccessible       = "telegram.useraccessible"
+usercontact          = "telegram.usercontact" 
+userfake             = "telegram.userfake"
+usermutualcontact    = "telegram.usermutualcontact"
+userscam             = "telegram.userscam"
+usersupport          = "telegram.usersupport"
+userverified         = "telegram.userverified"
+userrestriction      = "telegram.userrestriction"
+usertimestamp        = "telegram.usertimestamp"
+

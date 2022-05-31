@@ -1,0 +1,15 @@
+flow:
+  name: "news-world-science-mgu-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.science.rss.spool"
+      input: ["https://www.msu.ru/news/rss/"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.science.rss.spool"
+      schema:
+        short_name: "mgu"

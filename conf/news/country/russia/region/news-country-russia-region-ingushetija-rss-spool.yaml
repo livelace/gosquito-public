@@ -1,0 +1,14 @@
+flow:
+  name: "news-country-russia-region-ingushetija-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: ["https://www.kavkaz-uzel.eu/ingushetia.rss"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.country.russia.region.rss.spool"
+      schema:
+        short_name: "ингушетия"

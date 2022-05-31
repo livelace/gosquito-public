@@ -1,0 +1,17 @@
+flow:
+  name: "news-country-russia-region-habarovsk-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: [
+        "https://www.dvnovosti.ru/rss/", 
+        "https://todaykhv.ru/rss"
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.country.russia.region.rss.spool"
+      schema:
+        short_name: "хабаровск"

@@ -1,0 +1,15 @@
+flow:
+  name: "news-world-it-thenewstack-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.it.rss.spool"
+      input: ["https://thenewstack.io/blog/feed/"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.it.rss.spool"
+      schema:
+        short_name: "thenewstack"

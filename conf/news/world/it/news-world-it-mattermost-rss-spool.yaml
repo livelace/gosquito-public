@@ -1,0 +1,17 @@
+flow:
+  name: "news-world-it-mattermost-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.it.rss.spool"
+      input: ["https://github.com/mattermost/platform/releases.atom"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.it.rss.spool"
+      output: ["gosquito-spool-rss-it"]
+      schema:
+        tag3: "release"
+        short_name: "mattermost"

@@ -1,0 +1,15 @@
+flow:
+  name: "news-world-common-washingtonpost-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.common.rss.spool"
+      input: ["https://feeds.washingtonpost.com/rss/world"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.common.rss.spool"
+      schema:
+        short_name: "washingtonpost"

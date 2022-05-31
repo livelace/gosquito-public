@@ -1,0 +1,17 @@
+flow:
+  name: "news-country-russia-region-saratov-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: [
+        "https://www.vzsar.ru/rss/index.php", 
+        "https://nversia.ru/rss"
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.country.russia.region.rss.spool"
+      schema:
+        short_name: "саратов"

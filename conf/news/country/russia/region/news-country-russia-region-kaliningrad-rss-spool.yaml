@@ -1,0 +1,16 @@
+flow:
+  name: "news-country-russia-region-kaliningrad-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: [
+        "https://rss.klops.ru/rss"
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.country.russia.region.rss.spool"
+      schema:
+        short_name: "калининград"

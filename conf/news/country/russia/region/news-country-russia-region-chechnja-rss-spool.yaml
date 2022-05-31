@@ -1,0 +1,18 @@
+flow:
+  name: "news-country-russia-region-chechnja-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: [
+        "https://www.kavkaz-uzel.eu/chechnya.rss", 
+        "https://riaderbent.ru/feed", 
+        "https://grozny.tv/feed"
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.country.russia.region.rss.spool"
+      schema:
+        short_name: "чечня"

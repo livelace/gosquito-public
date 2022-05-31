@@ -1,0 +1,15 @@
+flow:
+  name: "news-world-it-cnews-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.it.rss.spool"
+      input: ["https://www.cnews.ru/inc/rss/biz.xml"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.it.rss.spool"
+      schema:
+        short_name: "cnews"

@@ -1,0 +1,15 @@
+flow:
+  name: "news-world-science-indicator-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.science.rss.spool"
+      input: ["https://indicator.ru/exports/rss"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.science.rss.spool"
+      schema:
+        short_name: "indicator"

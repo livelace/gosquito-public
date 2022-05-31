@@ -1,0 +1,66 @@
+flow:
+  name: "telegram-spool"
+  params:
+    interval: "15s"
+
+  input:
+    plugin: "telegram"
+    params:
+      cred: "cred.telegram.private"
+      template: "template.in.telegram.spool"
+      input: [
+        # -----------------------
+        # country-russia-region:
+          
+        "iakhakasia",        # Хакасия
+        "bloknot_stavropol", # Ставрополь
+        "khabkraj",          # Хабаровск
+        "news63ru",          # Самара
+        "odinobl",           # Челябинск
+        
+        # -----------------------
+        # world-common:
+        
+        "interfaxonline",
+        "tass_agency",
+        
+        # -----------------------
+        # world-it:
+      
+        "DataEconomyRU",
+        "icipr",
+       
+        # -----------------------
+        # world-politics:
+        
+        "balkanossiper",
+        "brussinf",
+        "india_tv2020",
+        "istanbul_wolf",
+        "kremlinprachka",
+        "lumandao",
+        "riafan_everywhere",
+      ]
+
+  process:
+    - id: 0
+      alias: "exclude ads"
+      plugin: "regexpmatch"
+      params:
+        input:  ["telegram.username"]
+        regexp: ["sponsoredMessage"]
+        match_not: true
+    
+    - id: 1
+      alias: "match text"
+      plugin: "regexpmatch"
+      params:
+        require: [0]
+        include: true
+        input:  ["telegram.messagetext"]
+        regexp: [".*"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.telegram.spool"

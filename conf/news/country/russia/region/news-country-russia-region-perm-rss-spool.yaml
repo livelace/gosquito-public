@@ -1,0 +1,14 @@
+flow:
+  name: "news-country-russia-region-perm-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: ["https://permkrai.ru/bitrix/rss.php?ID=&LANG=s1&TYPE=news&LIMIT=20"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.country.russia.region.rss.spool"
+      schema:
+        short_name: "перьм"

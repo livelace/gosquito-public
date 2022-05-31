@@ -1,0 +1,15 @@
+flow:
+  name: "news-world-it-opennet-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.it.rss.spool"
+      input: ["https://www.opennet.ru/opennews/opennews_all.rss"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.it.rss.spool"
+      schema:
+        short_name: "opennet"

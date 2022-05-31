@@ -13,7 +13,9 @@ k8s_app({
 
     stage("update") {
         sh """
-            echo update
+            ls -l \${TEMP_DIR}
+            ls -l \${WORK_DIR}
+            ls -l data/gosquito/conf
         """
     }
 

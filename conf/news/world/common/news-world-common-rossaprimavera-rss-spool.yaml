@@ -10,6 +10,6 @@ flow:
   output:
     plugin: "kafka"
     params:
-      template: "template.out.world.politics.rss.spool"
+      template: "template.out.world.common.rss.spool"
       schema:
         short_name: "rossaprimavera"

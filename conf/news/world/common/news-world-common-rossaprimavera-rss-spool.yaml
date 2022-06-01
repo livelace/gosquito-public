@@ -4,7 +4,7 @@ flow:
   input:
     plugin: "rss"
     params:
-      template: "template.in.world.politics.rss.spool"
+      template: "template.in.world.common.rss.spool"
       input: ["https://rossaprimavera.ru/rss"]
 
   output:

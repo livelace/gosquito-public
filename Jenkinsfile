@@ -3,6 +3,7 @@ def K8S_DEPLOYMENT = "gosquito-public"
 def K8S_NS = "dmz"
 def K8S_SA = "k8s-1-jenkins3-sa"
 def K8S_TIMEOUT = "60s"
+def WEBHOOK_CRED = "github-gosquito-public-webhook"
 
 properties([
     buildDiscarder(logRotator(
@@ -21,7 +22,7 @@ properties([
             regexpFilterText: '', 
             silentResponse: true, 
             token: '', 
-            tokenCredentialId: 'github-gosquito-public-webhook')
+            tokenCredentialId: WEBHOOK_CRED)
     ])
 ])
 

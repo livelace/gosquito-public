@@ -6,7 +6,6 @@ flow:
     params:
       input: [
         "https://www.dvnovosti.ru/rss/", 
-        "https://todaykhv.ru/rss"
       ]
 
   output:

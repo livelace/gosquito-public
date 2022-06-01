@@ -5,8 +5,7 @@ flow:
     plugin: "rss"
     params:
       input: [
-        "https://magadanpravda.ru/rss", 
-        #"https://primamedia.gcdn.co/export/new/news_main31.rss"
+        "https://magadanmedia.ru/rss/feed/",
       ]
 
   output:

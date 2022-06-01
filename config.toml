@@ -165,8 +165,8 @@ tag2        = "common"
 # template: world-common-twitter-spool
 
 [template.in.world.common.twitter.spool]
-match_signature = ["twitter.text"]
-match_ttl       = "7d"
+#match_signature = ["twitter.text"]
+#match_ttl       = "7d"
 
 [template.out.world.common.twitter.spool]
 brokers                 = "env://GOSQUITO_KAFKA_BROKER"
@@ -340,7 +340,7 @@ warnings             = "warnings"
 chatid               = "telegram.chatid"
 chatname             = "telegram.chatname"
 chattype             = "telegram.chattype"
-chattitle            = "telegram.chattile"
+chattitle            = "telegram.chattitle"
 chatclientdata       = "telegram.chatclientdata"
 chatmemberonline     = "telegram.chatmemberonline"
 chatlastinboxid      = "telegram.chatlastoutboxid"

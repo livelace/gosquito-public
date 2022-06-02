@@ -25,10 +25,15 @@ flow:
         "tass_agency",
         
         # -----------------------
+        # world-industry:
+      
+        "fabrichka",
+        "geonrgru",
+        
+        # -----------------------
         # world-it:
       
         "DataEconomyRU",
-        "fabrichka",
         "icipr",
         "imaxairu",
        

@@ -1,5 +1,5 @@
 flow:
-  name: "news-world-it-novostikanala-rss-spool"
+  name: "news-world-it-novostiitkanala-rss-spool"
 
   input:
     plugin: "rss"
@@ -12,4 +12,4 @@ flow:
     params:
       template: "template.out.world.it.rss.spool"
       schema:
-        short_name: "novostikanala"
+        short_name: "novostiitkanala"

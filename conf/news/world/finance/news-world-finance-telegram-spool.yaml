@@ -1,5 +1,5 @@
 flow:
-  name: "news-world-industry-telegram-spool"
+  name: "news-world-finance-telegram-spool"
   params:
     interval: "15s"
 
@@ -8,11 +8,9 @@ flow:
     params:
       cred: "cred.telegram.private"
       template: "template.in.telegram.spool"
-      device_model: "receiver-news-world-industry"
+      device_model: "receiver-news-world-finance"
       input: [
-        "fabrichka",
-        "geonrgru",
-        "ruselectronics_official",
+        "business_ru",
       ]
 
   process:
@@ -37,4 +35,4 @@ flow:
     plugin: "kafka"
     params:
       template: "template.out.telegram.spool"
-      output: ["gosquito-public-world-industry-telegram-spool"]
+      output: ["gosquito-public-world-finance-telegram-spool"]

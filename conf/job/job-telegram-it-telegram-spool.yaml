@@ -1,0 +1,93 @@
+flow:
+  name: "job-telegram-it-telegram-spool"
+  params:
+    interval: "15s"
+
+  input:
+    plugin: "telegram"
+    params:
+      cred: "cred.telegram.private"
+      template: "template.in.telegram.spool"
+      device_model: "receiver-job-it"
+      input: [
+        # -------------------
+        # common
+        "Getitrussia",
+        "Relocats",
+        "Remoteit",
+        "fordev",
+        "geekjobs",
+        "it_vac",
+        "jobGeeks",
+        "jobforjunior",
+        "jobs_it",
+        "jobscode_infull",
+        "logic",
+        "myjobit",
+        "profunctor_jobs",
+        "seohr",
+        
+        # -------------------
+        # data 
+        "analyst_job",
+        "datajob",
+        "foranalysts",
+        
+        # -------------------
+        # devops 
+        "JobsforDevsandOps",
+        "devops_jobs_feed",
+        "fordevops",
+        
+        # -------------------
+        # frontend
+        "forfrontend",
+        
+        # -------------------
+        # gamedev 
+        "Gamedevjobs",
+        "devjobs",
+        "forgamedev",
+        "gamedevjob",
+        
+        # -------------------
+        # mobile
+        "forallmobile",
+        "mobile_jobs",
+        
+        # -------------------
+        # qa 
+        "forallqa",
+        "qa_jobs",
+        "qajoboffer",
+        
+        # -------------------
+        # top 
+        "forchiefs",
+        "itarchitect_jobs",
+        "jobfortm",
+      ]
+
+  process:
+    - id: 0
+      alias: "exclude ads"
+      plugin: "regexpmatch"
+      params:
+        input:  ["telegram.username"]
+        regexp: ["sponsoredMessage"]
+        match_not: true
+    
+    - id: 1
+      alias: "messages with text"
+      plugin: "regexpmatch"
+      params:
+        require: [0]
+        include: true
+        input:  ["telegram.messagetext"]
+        regexp: [".*"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.telegram.spool"
+      output: ["gosquito-public-job-telegram-spool"]

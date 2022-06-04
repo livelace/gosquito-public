@@ -6,6 +6,7 @@ flow_conf     = "/etc/gosquito/conf"
 flow_data     = "/data/gosquito/data"
 flow_interval = "5m"
 flow_limit    = 3
+flow_enable   = ["job-telegram-it-telegram-spool"]
 
 time_format   = "15:04 02.01.2006"
 time_zone     = "Europe/Moscow"

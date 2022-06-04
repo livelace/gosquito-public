@@ -5,7 +5,7 @@ flow:
     plugin: "rss"
     params:
       input: [
-        "https://penzanews.ru/rss/", 
+        "https://penzavzglyad.ru/rss", 
         "https://rss.penzainform.ru/"
       ]
 

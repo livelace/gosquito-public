@@ -324,6 +324,7 @@ match_ttl          = "7d"
 message_type_fetch = [""]
 status_period      = "5m"
 time_format        = "2006-01-02T15:04:05-0700"
+user_save          = false
 
 [template.out.telegram.spool]
 brokers                 = "env://GOSQUITO_KAFKA_BROKER"

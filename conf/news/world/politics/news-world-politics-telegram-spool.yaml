@@ -1,5 +1,5 @@
 flow:
-  name: "telegram-spool"
+  name: "news-world-politics-telegram-spool"
   params:
     interval: "15s"
 
@@ -9,37 +9,6 @@ flow:
       cred: "cred.telegram.private"
       template: "template.in.telegram.spool"
       input: [
-        # -----------------------
-        # country-russia-region:
-          
-        "iakhakasia",        # Хакасия
-        "bloknot_stavropol", # Ставрополь
-        "khabkraj",          # Хабаровск
-        "news63ru",          # Самара
-        "odinobl",           # Челябинск
-        
-        # -----------------------
-        # world-common:
-        
-        "interfaxonline",
-        "tass_agency",
-        
-        # -----------------------
-        # world-industry:
-      
-        "fabrichka",
-        "geonrgru",
-        
-        # -----------------------
-        # world-it:
-      
-        "DataEconomyRU",
-        "icipr",
-        "imaxairu",
-       
-        # -----------------------
-        # world-politics:
-        
         "balkanossiper",
         "brussinf",
         "india_tv2020",
@@ -71,3 +40,4 @@ flow:
     plugin: "kafka"
     params:
       template: "template.out.telegram.spool"
+      output: ["gosquito-public-world-politics-telegram-spool"]

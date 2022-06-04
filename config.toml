@@ -5,10 +5,12 @@ log_level = "DEBUG"
 flow_conf     = "/etc/gosquito/conf"
 flow_data     = "/data/gosquito/data"
 flow_interval = "5m"
+flow_limit    = 3
+flow_enable   = ["news-country-russia-region-telegram-spool"]
+
 
 time_format   = "15:04 02.01.2006"
 time_zone     = "Europe/Moscow"
-flow_limit    = 2
 
 user_agent    = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
 
@@ -326,7 +328,6 @@ time_format        = "2006-01-02T15:04:05-0700"
 [template.out.telegram.spool]
 brokers                 = "env://GOSQUITO_KAFKA_BROKER"
 confluent_avro          = true
-output                  = ["gosquito-public-telegram-spool"]
 schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
 schema_subject_strategy = "TopicName"
 

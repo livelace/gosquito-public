@@ -1,0 +1,41 @@
+flow:
+  name: "news-country-russia-region-telegram-spool"
+  params:
+    interval: "15s"
+
+  input:
+    plugin: "telegram"
+    params:
+      cred: "cred.telegram.private"
+      template: "template.in.telegram.spool"
+      input: [
+        "iakhakasia",        # Хакасия
+        "bloknot_stavropol", # Ставрополь
+        "khabkraj",          # Хабаровск
+        "news63ru",          # Самара
+        "odinobl",           # Челябинск
+      ]
+
+  process:
+    - id: 0
+      alias: "exclude ads"
+      plugin: "regexpmatch"
+      params:
+        input:  ["telegram.username"]
+        regexp: ["sponsoredMessage"]
+        match_not: true
+    
+    - id: 1
+      alias: "messages with text"
+      plugin: "regexpmatch"
+      params:
+        require: [0]
+        include: true
+        input:  ["telegram.messagetext"]
+        regexp: [".*"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.telegram.spool"
+      output: ["gosquito-public-country-russia-region-telegram-spool"]

@@ -1,0 +1,39 @@
+flow:
+  name: "news-world-it-telegram-spool"
+  params:
+    interval: "15s"
+
+  input:
+    plugin: "telegram"
+    params:
+      cred: "cred.telegram.private"
+      template: "template.in.telegram.spool"
+      input: [
+        "DataEconomyRU",
+        "icipr",
+        "imaxairu",
+      ]
+
+  process:
+    - id: 0
+      alias: "exclude ads"
+      plugin: "regexpmatch"
+      params:
+        input:  ["telegram.username"]
+        regexp: ["sponsoredMessage"]
+        match_not: true
+    
+    - id: 1
+      alias: "messages with text"
+      plugin: "regexpmatch"
+      params:
+        require: [0]
+        include: true
+        input:  ["telegram.messagetext"]
+        regexp: [".*"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.telegram.spool"
+      output: ["gosquito-public-world-it-telegram-spool"]

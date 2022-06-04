@@ -10,6 +10,7 @@ flow:
       template: "template.in.telegram.spool"
       device_model: "receiver-news-world-industry"
       input: [
+        "energytodaygroup",
         "fabrichka",
         "geonrgru",
         "ruselectronics_official",

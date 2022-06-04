@@ -4,7 +4,7 @@ flow:
   input:
     plugin: "rss"
     params:
-      input: ["https://riamo.ru/export/rss.xml"]
+      input: ["https://agmo.mosreg.ru/sobytiya/oblastnaya-povestka?format=rss"]
 
   output:
     plugin: "kafka"

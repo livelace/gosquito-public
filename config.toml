@@ -314,15 +314,16 @@ tag2        = "science"
 # template: telegram-spool
 
 [template.in.telegram.spool]
-chat_save          = true
-device_model       = "gosquito-public"
-fetch_dir          = "/data/gosquito/files"
-match_signature    = ["telegram.messageurl"]
-match_ttl          = "7d"
-message_type_fetch = [""]
-status_period      = "5m"
-time_format        = "2006-01-02T15:04:05-0700"
-user_save          = false
+chat_save            = true
+device_model         = "gosquito-public"
+fetch_dir            = "/data/gosquito/files"
+match_signature      = ["telegram.messageurl"]
+match_ttl            = "7d"
+message_type_fetch   = [""]
+message_type_process = ["text"]
+status_period        = "5m"
+time_format          = "2006-01-02T15:04:05-0700"
+user_save            = false
 
 [template.out.telegram.spool]
 brokers                 = "env://GOSQUITO_KAFKA_BROKER"

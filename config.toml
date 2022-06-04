@@ -322,7 +322,7 @@ message_type_fetch   = [""]
 message_type_process = ["text"]
 status_period        = "5m"
 time_format          = "2006-01-02T15:04:05-0700"
-user_save            = false
+user_save            = true
 
 [template.out.telegram.spool]
 brokers                 = "env://GOSQUITO_KAFKA_BROKER"

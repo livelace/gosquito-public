@@ -13,6 +13,7 @@ flow:
         "DataEconomyRU",
         "icipr",
         "imaxairu",
+        "livelace_test4",
       ]
 
   process:

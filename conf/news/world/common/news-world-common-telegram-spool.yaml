@@ -8,6 +8,7 @@ flow:
     params:
       cred: "cred.telegram.private"
       template: "template.in.telegram.spool"
+      device_model: "receiver-news-world-common"
       input: [
         "interfaxonline",
         "tass_agency",

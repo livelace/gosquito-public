@@ -5,7 +5,10 @@ flow:
     plugin: "rss"
     params:
       template: "template.in.world.it.rss.spool"
-      input: ["http://rss.slashdot.org/Slashdot/slashdotMain"]
+      input: [
+        "http://rss.slashdot.org/Slashdot/slashdotLinux",
+        "http://rss.slashdot.org/Slashdot/slashdotDevelopers",
+      ]
 
   output:
     plugin: "kafka"

@@ -1,0 +1,17 @@
+flow:
+  name: "news-world-science-slashdot-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.science.rss.spool"
+      input: [
+        "http://rss.slashdot.org/Slashdot/slashdotScience",
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.science.rss.spool"
+      schema:
+        short_name: "slashdot"

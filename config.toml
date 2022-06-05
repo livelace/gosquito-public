@@ -71,7 +71,7 @@ regexp = [
 method = "GET"
 target = "http://girie.dmz.svc.k8s-1.livelace.ru:8080/api"
 
-[template.girie.job.params]
+[template.proc.girie.telegram.job.params]
 query = '{data(url:"{{ .ITER.VALUE }}"){article{html}}}'
 
 # ----------------------------------------------------------------------------

@@ -61,6 +61,7 @@ regexp = [
 [regexp.job.sites]
 regexp = [
   'https://geekjob.ru\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)',
+  'https://hh.ru\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)',
   'https://proglib.io\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)',
   'https://telegra.ph\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)',
 ]
@@ -72,7 +73,7 @@ method = "GET"
 target = "http://girie.dmz.svc.k8s-1.livelace.ru:8080/api"
 
 [template.proc.girie.telegram.job.params]
-query = '{data(url:"{{ .ITER.VALUE }}"){article{html}}}'
+query = '{data(url:"{{ .ITER.VALUE | ToEscape }}"){article{html}}}'
 
 # ----------------------------------------------------------------------------
 # template: job-rss-spool

@@ -92,7 +92,7 @@ flow:
       plugin: "regexpfind"
       params:
         require: [1]
-        input:  ["telegram.messagetexturl"]
+        input:  ["telegram.messagetext"]
         output: ["data.arrayA"]
         regexp: ["regexp.job.sites"]
 

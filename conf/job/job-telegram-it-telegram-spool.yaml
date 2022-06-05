@@ -92,46 +92,47 @@ flow:
       plugin: "regexpfind"
       params:
         require: [1]
-        input:  ["telegram.messagetext"]
-        output: ["data.arrayA"]
-        regexp: ["regexp.job.sites"]
+        input:  ["telegram.messagetext", "telegram.messagetexturl"]
+        output: ["data.arrayA", "data.arrayB"]
+        regexp: ["regexp.job.sites", "regexp.job.sites"]
 
     - id: 3
-      alias: "echo job sites"
-      plugin: "echo"
+      plugin: "unique"
+      alias: "unique links"
       params:
         require: [2]
-        input:  ["data.arrayA"]
+        input:  ["data.arrayA", "data.arrayB"]
+        output: ["data.arrayC"]
 
     - id: 4
+      alias: "show job sites"
+      plugin: "echo"
+      params:
+        require: [3]
+        input:  ["data.arrayC"]
+
+    - id: 5
       alias: "get article html"
       plugin: "resty"
       params:
         template: "template.proc.girie.telegram.job"
-        require: [2]
-        input:  ["data.arrayA"]
-        output: ["data.arrayB"]
+        require: [3]
+        input:  ["data.arrayC"]
+        output: ["data.arrayD"]
     
-    - id: 5
+    - id: 6
       alias: "extract html"
       plugin: "jq"
       params:
-        require: [4]
-        input:  ["data.arrayB"]
-        output: ["data.arrayC"]
+        require: [5]
+        input:  ["data.arrayD"]
+        output: ["data.arrayE"]
         query:  [".data.article.html"]
     
-    - id: 6
-      alias: "show html"
-      plugin: "echo"
-      params:
-        require: [5]
-        input:  ["data.arrayC"]
-
   output:
     plugin: "kafka"
     params:
       template: "template.out.telegram.spool"
       output: ["gosquito-public-job-telegram-spool"]
       schema:
-        article_html: "data.arrayC"
+        article_html: "data.arrayE"

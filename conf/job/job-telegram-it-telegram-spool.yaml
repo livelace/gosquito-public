@@ -10,6 +10,7 @@ flow:
       template: "template.in.telegram.spool"
       device_model: "receiver-job-it"
       input: [
+        "livelace_test4",
         # -------------------
         # common
         "Getitrussia",

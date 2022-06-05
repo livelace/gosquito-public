@@ -60,9 +60,9 @@ regexp = [
 
 [regexp.job.sites]
 regexp = [
-  'https://geekjob.ru/.*',
-  'https://proglib.io/.*',
-  'https://telegra.ph/.*',
+  'https://geekjob.ru\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)',
+  'https://proglib.io\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)',
+  'https://telegra.ph\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)',
 ]
 
 # ----------------------------------------------------------------------------

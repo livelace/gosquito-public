@@ -97,6 +97,13 @@ flow:
         regexp: ["regexp.job.sites"]
 
     - id: 3
+      alias: "echo job sites"
+      plugin: "echo"
+      params:
+        require: [2]
+        input:  ["data.arrayA"]
+
+    - id: 4
       alias: "get article html"
       plugin: "resty"
       params:
@@ -105,11 +112,11 @@ flow:
         input:  ["data.arrayA"]
         output: ["data.arrayB"]
     
-    - id: 4
+    - id: 5
       alias: "extract html"
       plugin: "jq"
       params:
-        require: [3]
+        require: [4]
         input:  ["data.arrayB"]
         output: ["data.arrayC"]
         query:  [".data.article.html"]

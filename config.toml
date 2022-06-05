@@ -314,7 +314,6 @@ tag2        = "science"
 
 [template.in.telegram.spool]
 chat_save            = true
-device_model         = "gosquito-public"
 fetch_dir            = "/data/gosquito/files"
 match_signature      = ["telegram.messageurl"]
 match_ttl            = "7d"

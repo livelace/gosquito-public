@@ -1,15 +1,17 @@
 flow:
-  name: "news-world-finance-ft-rss-spool"
+  name: "news-world-finance-vc-rss-spool"
 
   input:
     plugin: "rss"
     params:
       template: "template.in.world.finance.rss.spool"
-      input: ["https://www.ft.com/rss/home/uk"]
+      input: [
+          "https://vc.ru/rss/new",
+      ]
 
   output:
     plugin: "kafka"
     params:
       template: "template.out.world.finance.rss.spool"
       schema:
-        short_name: "financial times"
+        short_name: "vc.ru"

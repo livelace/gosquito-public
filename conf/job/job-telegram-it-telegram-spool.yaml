@@ -85,9 +85,38 @@ flow:
         include: true
         input:  ["telegram.messagetext"]
         regexp: [".*"]
+    
+    - id: 2
+      alias: "search job sites"
+      plugin: "regexpfind"
+      params:
+        require: [1]
+        input:  ["telegram.messagetexturl"]
+        output: ["data.arrayA"]
+        regexp: ["regexp.job.sites"]
+
+    - id: 3
+      alias: "get article html"
+      plugin: "resty"
+      params:
+        template: "template.proc.girie.telegram.job"
+        require: [2]
+        input:  ["data.arrayA"]
+        output: ["data.arrayB"]
+    
+    - id: 4
+      alias: "extract html"
+      plugin: "jq"
+      params:
+        require: [3]
+        input:  ["data.arrayB"]
+        output: ["data.arrayC"]
+        query:  [".data.article.html"]
 
   output:
     plugin: "kafka"
     params:
       template: "template.out.telegram.spool"
       output: ["gosquito-public-job-telegram-spool"]
+      schema:
+        article_html: "data.arrayC"

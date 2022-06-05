@@ -51,6 +51,30 @@ app_role   = "env://GOSQUITO_VAULT_APP_ROLE"
 app_secret = "env://GOSQUITO_VAULT_APP_SECRET"
 
 # ----------------------------------------------------------------------------
+# regexps:
+
+[regexp.urls]
+regexp = [
+  'http[s]?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)',
+]
+
+[regexp.job.sites]
+regexp = [
+  'https://geekjob.ru/.*',
+  'https://proglib.io/.*',
+  'https://telegra.ph/.*',
+]
+
+# ----------------------------------------------------------------------------
+# template: girie-telegram-job
+[template.proc.girie.telegram.job]
+method = "GET"
+target = "http://girie.dmz.svc.k8s-1.livelace.ru:8080/api"
+
+[template.girie.job.params]
+query = '{data(url:"{{ .ITER.VALUE }}"){article{html}}}'
+
+# ----------------------------------------------------------------------------
 # template: job-rss-spool
 
 [template.in.job.rss.spool]

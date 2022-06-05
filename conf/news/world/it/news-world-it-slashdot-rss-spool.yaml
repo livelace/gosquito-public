@@ -6,8 +6,9 @@ flow:
     params:
       template: "template.in.world.it.rss.spool"
       input: [
-        "http://rss.slashdot.org/Slashdot/slashdotLinux",
         "http://rss.slashdot.org/Slashdot/slashdotDevelopers",
+        "http://rss.slashdot.org/Slashdot/slashdotHardware",
+        "http://rss.slashdot.org/Slashdot/slashdotLinux",
       ]
 
   output:

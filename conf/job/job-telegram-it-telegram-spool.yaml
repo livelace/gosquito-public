@@ -120,6 +120,13 @@ flow:
         input:  ["data.arrayB"]
         output: ["data.arrayC"]
         query:  [".data.article.html"]
+    
+    - id: 6
+      alias: "show html"
+      plugin: "echo"
+      params:
+        require: [5]
+        input:  ["data.arrayC"]
 
   output:
     plugin: "kafka"

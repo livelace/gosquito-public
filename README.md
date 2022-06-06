@@ -7,4 +7,4 @@ Demo telegram channels with filtered data:
 2. [gosquito_hardware](https://t.me/gosquito_hardware) 
 3. [gosquito_orgs](https://t.me/gosquito_orgs) 
 4. [gosquito_persons](https://t.me/gosquito_persons) 
-5. [gosquito_science](https://t.me/gosquito_persons) 
+5. [gosquito_science](https://t.me/gosquito_science) 

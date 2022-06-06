@@ -189,8 +189,8 @@ tag2        = "common"
 # template: world-common-twitter-spool
 
 [template.in.world.common.twitter.spool]
-#match_signature = ["twitter.text"]
-#match_ttl       = "7d"
+match_signature = ["twitter.text"]
+match_ttl       = "7d"
 
 [template.out.world.common.twitter.spool]
 brokers                 = "env://GOSQUITO_KAFKA_BROKER"

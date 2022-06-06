@@ -4,8 +4,9 @@ flow:
   input:
     plugin: "rss"
     params:
-      input: ["https://www.pskov.ru/rss.xml"]
-      ssl_verify: false
+      input: [
+        "https://informpskov.ru/rss.xml"
+      ]
 
   output:
     plugin: "kafka"

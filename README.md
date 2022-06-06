@@ -1,4 +1,4 @@
-This repository contains public [gosquito](https://github.com/livelace/gosquito) flow configurations for showcase purpose.
+This repository contains [gosquito](https://github.com/livelace/gosquito) configurations for showcase purpose.
 Flows just send data to Kafka topics, all futher postprocessing (matching, keeping, enriching etc.) happens on private side.
 
 Demo telegram channels with filtered data:

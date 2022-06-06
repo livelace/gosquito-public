@@ -10,6 +10,7 @@ flow:
       template: "template.in.telegram.spool"
       device_model: "receiver-news-country-russia-region"
       input: [
+        "news59ru",          # Пермь
         "bloknot_stavropol", # Ставрополь
         "iakhakasia",        # Хакасия
         "khabkraj",          # Хабаровск

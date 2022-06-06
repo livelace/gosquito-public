@@ -359,7 +359,7 @@ time                 = "timeformat"
 warnings             = "warnings"
 
 chatid               = "telegram.chatid"
-chatname             = "telegram.chatname"
+chatsource           = "telegram.chatsource"
 chattype             = "telegram.chattype"
 chattitle            = "telegram.chattitle"
 chatclientdata       = "telegram.chatclientdata"

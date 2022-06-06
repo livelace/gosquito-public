@@ -4,7 +4,7 @@ flow:
   input:
     plugin: "rss"
     params:
-      input: ["https://ulgov.ru/news/feed/rss/"]
+      input: ["https://73online.ru/multi.rss.php"]
 
   output:
     plugin: "kafka"

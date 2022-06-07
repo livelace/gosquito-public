@@ -353,6 +353,11 @@ tag2        = "politics"
 [template.in.world.science.rss.spool]
 match_signature = ["rss.link"]
 match_ttl       = "7d"
+time_format     = "2006-01-02T15:04:05-0700"
+time_format_a   = "15:04"
+time_format_b   = "02.01.2006"
+time_zone_a     = "Europe/Moscow"
+time_zone_b     = "Europe/Moscow"
 
 [template.out.world.science.rss.spool]
 brokers                 = "env://GOSQUITO_KAFKA_BROKER"

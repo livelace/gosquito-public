@@ -7,8 +7,9 @@ flow_data     = "/data/gosquito/data"
 flow_interval = "5m"
 flow_limit    = 4
 
-time_format   = "15:04 02.01.2006"
-time_zone     = "Europe/Moscow"
+time_format   = "2006-01-02T15:04:05-0700"
+time_zone     = "UTC"
+
 user_agent    = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
 
 # ----------------------------------------------------------------------------
@@ -336,6 +337,8 @@ flow        = "flow"
 plugin      = "plugin"
 source      = "source"
 time        = "timeformat"
+time_a      = "timeformata"
+time_b      = "timeformatb"
 
 categories  = "rss.categories"
 content     = "rss.content"

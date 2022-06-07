@@ -1,5 +1,5 @@
 flow:
-  name: "news-country-russia-region-yaroslavl-rss-spool"
+  name: "news-country-russia-region-yaroslavl-twitter-spool"
 
   input:
     plugin: "twitter"

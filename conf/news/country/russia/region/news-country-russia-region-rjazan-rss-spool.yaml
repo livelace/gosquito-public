@@ -4,6 +4,7 @@ flow:
   input:
     plugin: "rss"
     params:
+      template: "template.in.country.russia.region.rss.spool"
       input: ["https://rss.rzn.info/rss/news/ryazan.xml"]
 
   output:

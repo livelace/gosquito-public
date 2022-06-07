@@ -82,6 +82,10 @@ query = '{data(url:"{{ .ITER.VALUE | ToEscape }}"){article{html}}}'
 match_signature = ["rss.link"]
 match_ttl       = "90d"
 time_format     = "2006-01-02T15:04:05-0700"
+time_format_a   = "15:04"
+time_format_b   = "02.01.2006"
+time_zone_a     = "Europe/Moscow"
+time_zone_b     = "Europe/Moscow"
 
 [template.out.job.rss.spool]
 brokers                 = "env://GOSQUITO_KAFKA_BROKER"
@@ -95,6 +99,8 @@ flow       = "flow"
 plugin     = "plugin"
 source     = "source"
 time       = "timeformat"
+time_a     = "timeformata"
+time_b     = "timeformatb"
 
 full_desc  = "data.text1"
 short_desc = "rss.description"
@@ -117,6 +123,8 @@ flow        = "flow"
 plugin      = "plugin"
 source      = "source"
 time        = "timeformat"
+time_a      = "timeformata"
+time_b      = "timeformatb"
 
 categories  = "rss.categories"
 content     = "rss.content"
@@ -144,6 +152,8 @@ flow   = "flow"
 plugin = "plugin"
 source = "source"
 time   = "timeformat"
+time_a = "timeformata"
+time_b = "timeformatb"
 
 lang   = "twitter.lang"
 media  = "twitter.media"
@@ -161,6 +171,11 @@ tag3   = "region"
 [template.in.world.common.rss.spool]
 match_signature = ["rss.link"]
 match_ttl       = "7d"
+time_format     = "2006-01-02T15:04:05-0700"
+time_format_a   = "15:04"
+time_format_b   = "02.01.2006"
+time_zone_a     = "Europe/Moscow"
+time_zone_b     = "Europe/Moscow"
 
 [template.out.world.common.rss.spool]
 brokers                 = "env://GOSQUITO_KAFKA_BROKER"
@@ -174,6 +189,8 @@ flow        = "flow"
 plugin      = "plugin"
 source      = "source"
 time        = "timeformat"
+time_a      = "timeformata"
+time_b      = "timeformatb"
 
 categories  = "rss.categories"
 content     = "rss.content"
@@ -191,6 +208,11 @@ tag2        = "common"
 [template.in.world.common.twitter.spool]
 match_signature = ["twitter.text"]
 match_ttl       = "7d"
+time_format     = "2006-01-02T15:04:05-0700"
+time_format_a   = "15:04"
+time_format_b   = "02.01.2006"
+time_zone_a     = "Europe/Moscow"
+time_zone_b     = "Europe/Moscow"
 
 [template.out.world.common.twitter.spool]
 brokers                 = "env://GOSQUITO_KAFKA_BROKER"
@@ -204,6 +226,8 @@ flow   = "flow"
 plugin = "plugin"
 source = "source"
 time   = "timeformat"
+time_a = "timeformata"
+time_b = "timeformatb"
 
 lang   = "twitter.lang"
 media  = "twitter.media"
@@ -220,6 +244,11 @@ tag2   = "common"
 [template.in.world.finance.rss.spool]
 match_signature = ["rss.link"]
 match_ttl       = "7d"
+time_format     = "2006-01-02T15:04:05-0700"
+time_format_a   = "15:04"
+time_format_b   = "02.01.2006"
+time_zone_a     = "Europe/Moscow"
+time_zone_b     = "Europe/Moscow"
 
 [template.out.world.finance.rss.spool]
 brokers                 = "env://GOSQUITO_KAFKA_BROKER"
@@ -233,6 +262,8 @@ flow        = "flow"
 plugin      = "plugin"
 source      = "source"
 time        = "timeformat"
+time_a      = "timeformata"
+time_b      = "timeformatb"
 
 categories  = "rss.categories"
 content     = "rss.content"
@@ -250,6 +281,11 @@ tag2        = "finance"
 [template.in.world.it.rss.spool]
 match_signature = ["rss.link"]
 match_ttl       = "7d"
+time_format     = "2006-01-02T15:04:05-0700"
+time_format_a   = "15:04"
+time_format_b   = "02.01.2006"
+time_zone_a     = "Europe/Moscow"
+time_zone_b     = "Europe/Moscow"
 
 [template.out.world.it.rss.spool]
 brokers                 = "env://GOSQUITO_KAFKA_BROKER"
@@ -263,6 +299,8 @@ flow        = "flow"
 plugin      = "plugin"
 source      = "source"
 time        = "timeformat"
+time_a      = "timeformata"
+time_b      = "timeformatb"
 
 categories  = "rss.categories"
 content     = "rss.content"
@@ -280,6 +318,11 @@ tag2        = "it"
 [template.in.world.politics.rss.spool]
 match_signature = ["rss.link"]
 match_ttl       = "7d"
+time_format     = "2006-01-02T15:04:05-0700"
+time_format_a   = "15:04"
+time_format_b   = "02.01.2006"
+time_zone_a     = "Europe/Moscow"
+time_zone_b     = "Europe/Moscow"
 
 [template.out.world.politics.rss.spool]
 brokers                 = "env://GOSQUITO_KAFKA_BROKER"
@@ -323,6 +366,8 @@ flow        = "flow"
 plugin      = "plugin"
 source      = "source"
 time        = "timeformat"
+time_a      = "timeformata"
+time_b      = "timeformatb"
 
 categories  = "rss.categories"
 content     = "rss.content"
@@ -345,8 +390,8 @@ match_signature      = ["telegram.messagetext"]
 match_ttl            = "7d"
 status_period        = "5m"
 time_format          = "2006-01-02T15:04:05-0700"
-time_format_a        = "15:04 02.01.2006"
-time_format_b        = "15:04"
+time_format_a        = "15:04"
+time_format_b        = "02.01.2006"
 time_zone_a          = "Europe/Moscow"
 time_zone_b          = "Europe/Moscow"
 user_save            = true

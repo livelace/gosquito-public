@@ -1,5 +1,5 @@
 flow:
-  name: "news-world-industry-rss-spool"
+  name: "news-world-industry-sdelanounas-rss-spool"
 
   input:
     plugin: "rss"
@@ -11,3 +11,5 @@ flow:
     params:
       template: "template.out.world.industry.rss.spool"
       output: ["gosquito-public-world-industry-rss-spool"]
+      schema:
+        short_name: "sdelanounas"

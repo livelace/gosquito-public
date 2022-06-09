@@ -1,0 +1,13 @@
+flow:
+  name: "news-world-industry-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: ["https://sdelanounas.ru/index/rss/"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.industry.rss.spool"
+      output: ["gosquito-public-world-industry-rss-spool"]

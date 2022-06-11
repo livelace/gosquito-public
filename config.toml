@@ -448,6 +448,7 @@ tag2        = "science"
 [template.in.telegram.spool]
 chat_save            = true
 fetch_dir            = "/data/gosquito/files"
+message_edited       = true
 message_type_fetch   = [""]
 match_signature      = ["telegram.messagetext"]
 match_ttl            = "7d"

@@ -6,6 +6,7 @@ flow_conf     = "/etc/gosquito/conf"
 flow_data     = "/data/gosquito/data"
 flow_interval = "5m"
 flow_limit    = 4
+flow_disable  = ["job-hh-common-rss-spool", "job-hh-it-rss-spool"]
 
 time_format   = "2006-01-02T15:04:05-0700"
 time_zone     = "UTC"
@@ -89,11 +90,9 @@ time_zone_a     = "Europe/Moscow"
 time_zone_b     = "Europe/Moscow"
 
 [template.out.job.rss.spool]
-brokers                 = "env://GOSQUITO_KAFKA_BROKER"
-confluent_avro          = true
-output                  = ["gosquito-public-job-rss-spool-elastic"]
-schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
-schema_subject_strategy = "TopicRecordName"
+brokers         = "env://GOSQUITO_KAFKA_BROKER"
+output          = ["gosquito-public-job-rss-spool-elastic"]
+schema_registry = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
 
 [template.out.job.rss.spool.schema]
 flow       = "flow"
@@ -123,10 +122,8 @@ time_zone_b     = "Europe/Moscow"
 
 [template.out.country.russia.region.rss.spool]
 brokers                 = "env://GOSQUITO_KAFKA_BROKER"
-confluent_avro          = true
 output                  = ["gosquito-public-country-russia-region-rss-spool"]
 schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
-schema_subject_strategy = "TopicRecordName"
 
 [template.out.country.russia.region.rss.spool.schema]
 flow        = "flow"
@@ -160,11 +157,9 @@ time_zone_a     = "Europe/Moscow"
 time_zone_b     = "Europe/Moscow"
 
 [template.out.country.russia.region.twitter.spool]
-brokers                 = "env://GOSQUITO_KAFKA_BROKER"
-confluent_avro          = true
-output                  = ["gosquito-public-country-russia-region-twitter-spool"]
-schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
-schema_subject_strategy = "TopicRecordName"
+brokers         = "env://GOSQUITO_KAFKA_BROKER"
+output          = ["gosquito-public-country-russia-region-twitter-spool"]
+schema_registry = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
 
 [template.out.country.russia.region.twitter.spool.schema]
 flow   = "flow"
@@ -198,10 +193,8 @@ time_zone_b     = "Europe/Moscow"
 
 [template.out.world.common.rss.spool]
 brokers                 = "env://GOSQUITO_KAFKA_BROKER"
-confluent_avro          = true
 output                  = ["gosquito-public-world-common-rss-spool"]
 schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
-schema_subject_strategy = "TopicRecordName"
 
 [template.out.world.common.rss.spool.schema]
 flow        = "flow"
@@ -234,11 +227,9 @@ time_zone_a     = "Europe/Moscow"
 time_zone_b     = "Europe/Moscow"
 
 [template.out.world.common.twitter.spool]
-brokers                 = "env://GOSQUITO_KAFKA_BROKER"
-confluent_avro          = true
-output                  = ["gosquito-public-world-common-twitter-spool"]
-schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
-schema_subject_strategy = "TopicRecordName"
+brokers         = "env://GOSQUITO_KAFKA_BROKER"
+output          = ["gosquito-public-world-common-twitter-spool"]
+schema_registry = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
 
 [template.out.world.common.twitter.spool.schema]
 flow   = "flow"
@@ -271,10 +262,8 @@ time_zone_b     = "Europe/Moscow"
 
 [template.out.world.finance.rss.spool]
 brokers                 = "env://GOSQUITO_KAFKA_BROKER"
-confluent_avro          = true
 output                  = ["gosquito-public-world-finance-rss-spool"]
 schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
-schema_subject_strategy = "TopicRecordName"
 
 [template.out.world.finance.rss.spool.schema]
 flow        = "flow"
@@ -307,11 +296,9 @@ time_zone_a     = "Europe/Moscow"
 time_zone_b     = "Europe/Moscow"
 
 [template.out.world.industry.rss.spool]
-brokers                 = "env://GOSQUITO_KAFKA_BROKER"
-confluent_avro          = true
-output                  = ["gosquito-public-world-it-rss-spool"]
-schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
-schema_subject_strategy = "TopicRecordName"
+brokers         = "env://GOSQUITO_KAFKA_BROKER"
+output          = ["gosquito-public-world-it-rss-spool"]
+schema_registry = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
 
 [template.out.world.industry.rss.spool.schema]
 flow        = "flow"
@@ -344,11 +331,9 @@ time_zone_a     = "Europe/Moscow"
 time_zone_b     = "Europe/Moscow"
 
 [template.out.world.it.rss.spool]
-brokers                 = "env://GOSQUITO_KAFKA_BROKER"
-confluent_avro          = true
-output                  = ["gosquito-public-world-it-rss-spool"]
-schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
-schema_subject_strategy = "TopicRecordName"
+brokers         = "env://GOSQUITO_KAFKA_BROKER"
+output          = ["gosquito-public-world-it-rss-spool"]
+schema_registry = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
 
 [template.out.world.it.rss.spool.schema]
 flow        = "flow"
@@ -381,11 +366,9 @@ time_zone_a     = "Europe/Moscow"
 time_zone_b     = "Europe/Moscow"
 
 [template.out.world.politics.rss.spool]
-brokers                 = "env://GOSQUITO_KAFKA_BROKER"
-confluent_avro          = true
-output                  = ["gosquito-public-world-politics-rss-spool"]
-schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
-schema_subject_strategy = "TopicRecordName"
+brokers         = "env://GOSQUITO_KAFKA_BROKER"
+output          = ["gosquito-public-world-politics-rss-spool"]
+schema_registry = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
 
 [template.out.world.politics.rss.spool.schema]
 flow        = "flow"
@@ -418,11 +401,9 @@ time_zone_a     = "Europe/Moscow"
 time_zone_b     = "Europe/Moscow"
 
 [template.out.world.science.rss.spool]
-brokers                 = "env://GOSQUITO_KAFKA_BROKER"
-confluent_avro          = true
-output                  = ["gosquito-public-world-science-rss-spool"]
-schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
-schema_subject_strategy = "TopicRecordName"
+brokers         = "env://GOSQUITO_KAFKA_BROKER"
+output          = ["gosquito-public-world-science-rss-spool"]
+schema_registry = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
 
 [template.out.world.science.rss.spool.schema]
 flow        = "flow"
@@ -461,10 +442,8 @@ time_zone_b          = "Europe/Moscow"
 user_save            = true
 
 [template.out.telegram.spool]
-brokers                 = "env://GOSQUITO_KAFKA_BROKER"
-confluent_avro          = true
-schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
-schema_subject_strategy = "TopicName"
+brokers         = "env://GOSQUITO_KAFKA_BROKER"
+schema_registry = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
 
 [template.out.telegram.spool.schema]
 flow                 = "flow"

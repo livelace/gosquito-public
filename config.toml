@@ -1,11 +1,11 @@
 [default]
 
-log_level     = "DEBUG"
+#log_level     = "DEBUG"
 
 flow_conf     = "/etc/gosquito/conf"
 flow_data     = "/data/gosquito/data"
 flow_interval = "5m"
-flow_limit    = 4
+flow_limit    = 3
 
 time_format   = "2006-01-02T15:04:05-0700"
 time_zone     = "UTC"

@@ -91,9 +91,8 @@ time_zone_b     = "Europe/Moscow"
 [template.out.job.rss.spool]
 brokers                 = "env://GOSQUITO_KAFKA_BROKER"
 confluent_avro          = true
-output                  = ["gosquito-public-job-rss-spool"]
+output                  = ["gosquito-public-job-rss-spool-elastic"]
 schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
-schema_subject_strategy = "TopicName"
 
 [template.out.job.rss.spool.schema]
 flow       = "flow"

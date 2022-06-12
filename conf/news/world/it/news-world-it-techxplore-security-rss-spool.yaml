@@ -1,11 +1,11 @@
 flow:
-  name: "news-world-it-antimalware-rss-spool"
+  name: "news-world-it-techxplore-security-rss-spool"
 
   input:
     plugin: "rss"
     params:
       template: "template.in.world.it.rss.spool"
-      input: ["https://www.anti-malware.ru/news1/feed"]
+      input: ["https://techxplore.com/rss-feed/security-news/"]
 
   output:
     plugin: "kafka"
@@ -14,4 +14,4 @@ flow:
       schema:
         tag3: "security"
         tag4: "common"
-        short_name: "antimalware"
+        short_name: "techxplore"

@@ -1,0 +1,19 @@
+flow:
+  name: "news-world-it-techxplore-common-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.it.rss.spool"
+      input: [
+        "https://techxplore.com/rss-feed/computer-sciences-news/",
+        "https://techxplore.com/rss-feed/internet-news/",
+        "https://techxplore.com/rss-feed/software-news/",
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.it.rss.spool"
+      schema:
+        short_name: "techxplore"

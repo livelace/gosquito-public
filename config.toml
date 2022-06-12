@@ -1,6 +1,6 @@
 [default]
 
-#log_level     = "DEBUG"
+log_level     = "DEBUG"
 
 flow_conf     = "/etc/gosquito/conf"
 flow_data     = "/data/gosquito/data"
@@ -93,6 +93,7 @@ brokers                 = "env://GOSQUITO_KAFKA_BROKER"
 confluent_avro          = true
 output                  = ["gosquito-public-job-rss-spool-elastic"]
 schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
+schema_subject_strategy = "TopicRecordName"
 
 [template.out.job.rss.spool.schema]
 flow       = "flow"

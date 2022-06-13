@@ -6,7 +6,7 @@ flow_conf     = "/etc/gosquito/conf"
 flow_data     = "/data/gosquito/data"
 flow_interval = "5m"
 flow_limit    = 4
-flow_disable  = ["job-hh-common-rss-spool", "job-hh-it-rss-spool"]
+#flow_disable  = ["job-hh-common-rss-spool", "job-hh-it-rss-spool"]
 
 time_format   = "2006-01-02T15:04:05-0700"
 time_zone     = "UTC"
@@ -90,9 +90,10 @@ time_zone_a     = "Europe/Moscow"
 time_zone_b     = "Europe/Moscow"
 
 [template.out.job.rss.spool]
-brokers         = "env://GOSQUITO_KAFKA_BROKER"
-output          = ["gosquito-public-job-rss-spool-elastic"]
-schema_registry = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
+brokers                 = "env://GOSQUITO_KAFKA_BROKER"
+output                  = ["gosquito-public-job-rss-spool-elastic"]
+schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
+schema_subject_strategy = "TopicName" # need for kafka connect
 
 [template.out.job.rss.spool.schema]
 flow       = "flow"

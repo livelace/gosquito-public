@@ -116,7 +116,7 @@ link    = "data.text4"
 brokers         = "env://GOSQUITO_KAFKA_BROKER"
 schema_registry = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
 
-[template.out.rss.spool.schema]
+[template.out.nlp.rss.spool.schema]
 flow    = "data.text0"
 plugin  = "data.text1"
 source  = "data.text2"

@@ -105,7 +105,7 @@ query = '{data(url:"{{ .ITER.VALUE | ToEscape }}"){article{html}}}'
 brokers         = "env://GOSQUITO_KAFKA_BROKER"
 schema_registry = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
 
-[template.in.rss.spool.schema]
+[template.in.nlp.rss.spool.schema]
 flow    = "data.text0"
 plugin  = "data.text1"
 source  = "data.text2"

@@ -69,6 +69,27 @@ regexp = [
 ]
 
 # ----------------------------------------------------------------------------
+# template: digator-nlp-rss
+[template.proc.digator.nlp.rss]
+method = "POST"
+target = "http://digator.data.svc.k8s-1.livelace.ru:8080/ner/news/ru/all?format=label-array"
+
+[template.proc.digator.nlp.rss.headers]
+content-type = "application/json"
+
+[template.proc.digator.nlp.rss.params]
+body = '{"text": "{{ .ITER.VALUE | ToEscape }}"}'
+
+# ----------------------------------------------------------------------------
+# template: girie-nlp-rss
+[template.proc.girie.nlp.rss]
+method = "GET"
+target = "http://girie.data.svc.k8s-1.livelace.ru:8080/api"
+
+[template.proc.girie.nlp.rss.params]
+query = '{data(url:"{{ .ITER.VALUE }}"){article{text_spans{lang,text,tokens_amount}}}}'
+
+# ----------------------------------------------------------------------------
 # template: girie-telegram-job
 [template.proc.girie.telegram.job]
 method = "GET"
@@ -76,6 +97,32 @@ target = "http://girie.data.svc.k8s-1.livelace.ru:8080/api"
 
 [template.proc.girie.telegram.job.params]
 query = '{data(url:"{{ .ITER.VALUE | ToEscape }}"){article{html}}}'
+
+# ----------------------------------------------------------------------------
+# template: nlp-rss-spool
+
+[template.in.nlp.rss.spool]
+brokers         = "env://GOSQUITO_KAFKA_BROKER"
+schema_registry = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
+
+[template.in.rss.spool.schema]
+flow    = "data.text0"
+plugin  = "data.text1"
+source  = "data.text2"
+time    = "data.text3"
+link    = "data.text4"
+
+[template.out.nlp.rss.spool]
+brokers         = "env://GOSQUITO_KAFKA_BROKER"
+schema_registry = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
+
+[template.out.rss.spool.schema]
+flow    = "data.text0"
+plugin  = "data.text1"
+source  = "data.text2"
+time    = "data.text3"
+link    = "data.text4"
+json    = "data.arrayB"
 
 # ----------------------------------------------------------------------------
 # template: job-rss-spool

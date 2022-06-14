@@ -1,0 +1,43 @@
+flow:
+  name: "nlp-world-common-rss-spool-ner-spool"
+  params:
+    interval: "5m"
+
+  input:
+    plugin: "kafka"
+    params:
+      template: "template.in.nlp.rss.spool"
+      input: [
+        "gosquito-public-world-common-rss-spool",
+      ]
+
+  process:
+    - id: 0
+      plugin: "resty"
+      alias: "send rss link to girie"
+      params:
+        template: "template.proc.girie.nlp.rss"
+        input:  ["data.text4"]
+        output: ["data.textA"]
+
+    - id: 1
+      plugin: "jq"
+      alias: "extract spans"
+      params:
+        input:  ["data.textA"]
+        output: ["data.arrayA"]
+        query:  [".data.article.text_spans[].text"]
+
+    - id: 2
+      plugin: "resty"
+      alias: "send spans to digator"
+      params:
+        template: "template.proc.digator.nlp.rss"
+        input:  ["data.arrayA"]
+        output: ["data.arrayB"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.nlp.rss.spool"
+      output: ["gosquito-public-world-common-rss-spool-ner-spool"]

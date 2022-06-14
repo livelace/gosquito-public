@@ -24,14 +24,23 @@ flow:
       plugin: "jq"
       alias: "extract spans"
       params:
+        require: [0]
         input:  ["data.textA"]
         output: ["data.arrayA"]
         query:  [".data.article.text_spans[].text"]
 
     - id: 2
+      alias: "show spans"
+      plugin: "echo"
+      params:
+        require: [1]
+        input: ["data.arrayA"]
+
+    - id: 3
       plugin: "resty"
       alias: "send spans to digator"
       params:
+        require: [1]
         template: "template.proc.digator.nlp.rss"
         input:  ["data.arrayA"]
         output: ["data.arrayB"]

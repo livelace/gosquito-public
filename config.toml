@@ -72,7 +72,7 @@ regexp = [
 # template: girie-telegram-job
 [template.proc.girie.telegram.job]
 method = "GET"
-target = "http://girie.dmz.svc.k8s-1.livelace.ru:8080/api"
+target = "http://girie.data.svc.k8s-1.livelace.ru:8080/api"
 
 [template.proc.girie.telegram.job.params]
 query = '{data(url:"{{ .ITER.VALUE | ToEscape }}"){article{html}}}'

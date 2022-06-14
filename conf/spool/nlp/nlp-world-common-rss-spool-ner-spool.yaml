@@ -30,13 +30,6 @@ flow:
         query:  [".data.article.text_spans[].text"]
 
     - id: 2
-      alias: "show spans"
-      plugin: "echo"
-      params:
-        require: [1]
-        input: ["data.arrayA"]
-
-    - id: 3
       plugin: "resty"
       alias: "send spans to digator"
       params:
@@ -46,13 +39,6 @@ flow:
         input:  ["data.arrayA"]
         output: ["data.arrayB"]
     
-    - id: 4
-      alias: "show json"
-      plugin: "echo"
-      params:
-        require: [3]
-        input: ["data.arrayB"]
-
   output:
     plugin: "kafka"
     params:

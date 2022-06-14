@@ -112,6 +112,7 @@ link    = "data.text4"
 
 [template.out.nlp.rss.spool]
 brokers         = "env://GOSQUITO_KAFKA_BROKER"
+output          = ["gosquito-public-world-common-spool-ner-spool"]
 schema_registry = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
 
 [template.out.nlp.rss.spool.schema]

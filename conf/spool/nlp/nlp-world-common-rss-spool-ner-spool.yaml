@@ -43,4 +43,3 @@ flow:
     plugin: "kafka"
     params:
       template: "template.out.nlp.rss.spool"
-      output: ["gosquito-public-world-common-rss-spool-ner-spool"]

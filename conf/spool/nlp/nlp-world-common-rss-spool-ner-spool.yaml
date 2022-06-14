@@ -1,7 +1,7 @@
 flow:
   name: "nlp-world-common-rss-spool-ner-spool"
   params:
-    interval: "5m"
+    interval: "60s"
 
   input:
     plugin: "kafka"

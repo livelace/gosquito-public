@@ -73,12 +73,10 @@ regexp = [
 [template.proc.digator.nlp.rss]
 method = "POST"
 target = "http://digator.data.svc.k8s-1.livelace.ru:8080/ner/news/ru/all?format=label-array"
+body = '{"text": "{{ .ITER.VALUE | ToEscape }}"}'
 
 [template.proc.digator.nlp.rss.headers]
 content-type = "application/json"
-
-[template.proc.digator.nlp.rss.params]
-body = '{"text": "{{ .ITER.VALUE | ToEscape }}"}'
 
 # ----------------------------------------------------------------------------
 # template: girie-nlp-rss

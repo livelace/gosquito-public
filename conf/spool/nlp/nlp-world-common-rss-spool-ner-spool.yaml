@@ -41,9 +41,17 @@ flow:
       alias: "send spans to digator"
       params:
         require: [1]
+        include: true
         template: "template.proc.digator.nlp.rss"
         input:  ["data.arrayA"]
         output: ["data.arrayB"]
+    
+    - id: 4
+      alias: "show json"
+      plugin: "echo"
+      params:
+        require: [3]
+        input: ["data.arrayB"]
 
   output:
     plugin: "kafka"

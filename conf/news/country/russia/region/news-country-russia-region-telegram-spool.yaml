@@ -19,6 +19,7 @@ flow:
         "news63ru",          # Самара
         "nn_ru",             # Нижний Новгород
         "odinobl",           # Челябинск
+        "tlinia",            # Тюмень
       ]
 
   process:

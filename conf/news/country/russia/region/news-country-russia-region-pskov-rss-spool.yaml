@@ -6,7 +6,8 @@ flow:
     params:
       template: "template.in.country.russia.region.rss.spool"
       input: [
-        "https://informpskov.ru/rss.xml"
+        "https://informpskov.ru/rss.xml",
+        "https://pln-pskov.ru/rss.php",
       ]
 
   output:

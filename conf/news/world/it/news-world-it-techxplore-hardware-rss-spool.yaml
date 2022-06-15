@@ -6,10 +6,10 @@ flow:
     params:
       template: "template.in.world.it.rss.spool"
       input: [
+        "https://techxplore.com/rss-feed/consumer-gadgets-news/",
+        "https://techxplore.com/rss-feed/engineering-news/",
         "https://techxplore.com/rss-feed/hardware-news/",
         "https://techxplore.com/rss-feed/semiconductors-news/",
-        "https://techxplore.com/rss-feed/engineering-news/",
-        "https://techxplore.com/rss-feed/consumer-gadgets-news/",
       ]
 
   output:

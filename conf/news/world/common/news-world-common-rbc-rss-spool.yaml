@@ -1,0 +1,15 @@
+flow:
+  name: "news-world-common-rbc-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.common.rss.spool"
+      input: ["https://rssexport.rbc.ru/rbcnews/news/30/full.rss"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.common.rss.spool"
+      schema:
+        short_name: "rbc"

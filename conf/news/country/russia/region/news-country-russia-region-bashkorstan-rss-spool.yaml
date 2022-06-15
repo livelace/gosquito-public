@@ -5,7 +5,7 @@ flow:
     plugin: "rss"
     params:
       template: "template.in.country.russia.region.rss.spool"
-      input: ["https://feeds.feedburner.com/bashinform/all"]
+      input: ["https://www.bashinform.ru/rss/yandex.xml"]
 
   output:
     plugin: "kafka"

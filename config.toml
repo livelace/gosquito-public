@@ -122,7 +122,9 @@ plugin  = "data.text1"
 source  = "data.text2"
 time    = "data.text3"
 link    = "data.text4"
-json    = "data.arrayB"
+lang    = "data.text5"
+
+data    = "data.arrayB"
 
 # ----------------------------------------------------------------------------
 # template: job-rss-spool

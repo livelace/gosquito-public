@@ -1,0 +1,69 @@
+flow:
+  name: "nlp-world-common-telegram-spool-ner-spool"
+  params:
+    interval: "10s"
+
+  input:
+    plugin: "kafka"
+    params:
+      template: "template.in.nlp.telegram.spool"
+      input: [
+        "gosquito-public-world-common-telegram-spool",
+      ]
+
+  process:
+    - id: 0
+      alias: "match ru"
+      plugin: "regexpmatch"
+      params:
+        input:  ["data.text4"]
+        regexp: ["ru"]
+
+    - id: 1
+      plugin: "regexpfind"
+      params:
+        require: [0]
+        input:  ["data.text5"]
+        output: ["data.arrayA"]
+        regexp: ["regexp.urls"]
+    
+    - id: 2
+      alias: "merge urls"
+      plugin: "unique"
+      params:
+        require: [0]
+        input:  ["data.array0", "data.arrayA"]
+        output: ["data.arrayB"]
+
+    - id: 3
+      plugin: "resty"
+      alias: "send links to girie"
+      params:
+        require: [0]
+        template: "template.proc.girie.nlp.rss"
+        input:  ["data.arrayB"]
+        output: ["data.arrayC"]
+
+    - id: 4
+      plugin: "jq"
+      alias: "extract spans"
+      params:
+        require: [3]
+        input:  ["data.arrayC"]
+        output: ["data.arrayD"]
+        query:  [".data.article.text_spans[].text"]
+
+    - id: 5
+      plugin: "resty"
+      alias: "send spans to digator"
+      params:
+        require: [4]
+        include: true
+        template: "template.proc.digator.nlp.rss"
+        input:  ["data.arrayD"]
+        output: ["data.arrayE"]
+    
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.nlp.telegram.spool"

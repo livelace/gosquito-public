@@ -155,6 +155,36 @@ time    = "data.text3"
 data    = "data.arrayB"
 
 # ----------------------------------------------------------------------------
+# template: nlp-telegram-spool
+
+[template.in.nlp.telegram.spool]
+brokers         = "env://GOSQUITO_KAFKA_BROKER"
+schema_registry = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
+
+[template.in.nlp.telegram.spool.schema]
+flow           = "data.text0"
+plugin         = "data.text1"
+source         = "data.text2"
+time           = "data.text3"
+
+lang           = "data.text4"
+messagetext    = "data.text5"
+messagetexturl = "data.array0"
+
+[template.out.nlp.telegram.spool]
+brokers         = "env://GOSQUITO_KAFKA_BROKER"
+output          = ["gosquito-public-world-common-spool-ner-spool"]
+schema_registry = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
+
+[template.out.nlp.telegram.spool.schema]
+flow    = "data.text0"
+plugin  = "data.text1"
+source  = "data.text2"
+time    = "data.text3"
+
+data    = "data.arrayE"
+
+# ----------------------------------------------------------------------------
 # template: nlp-twitter-spool
 
 [template.in.nlp.twitter.spool]

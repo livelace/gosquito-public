@@ -1,0 +1,16 @@
+flow:
+  name: "news-world-common-fondsk-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.common.rss.spool"
+      input: ["https://www.fondsk.ru/rss.html"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.common.rss.spool"
+      schema:
+        lang: "ru"
+        short_name: "fondsk"

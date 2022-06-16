@@ -13,27 +13,35 @@ flow:
 
   process:
     - id: 0
+      alias: "match ru"
+      plugin: "regexpmatch"
+      params:
+        input:  ["data.text5"]
+        regexp: ["ru"]
+
+    - id: 1
       plugin: "resty"
       alias: "send rss link to girie"
       params:
+        require: [0]
         template: "template.proc.girie.nlp.rss"
         input:  ["data.text4"]
         output: ["data.textA"]
 
-    - id: 1
+    - id: 2
       plugin: "jq"
       alias: "extract spans"
       params:
-        require: [0]
+        require: [1]
         input:  ["data.textA"]
         output: ["data.arrayA"]
         query:  [".data.article.text_spans[].text"]
 
-    - id: 2
+    - id: 3
       plugin: "resty"
       alias: "send spans to digator"
       params:
-        require: [1]
+        require: [2]
         include: true
         template: "template.proc.digator.nlp.rss"
         input:  ["data.arrayA"]

@@ -109,6 +109,7 @@ plugin  = "data.text1"
 source  = "data.text2"
 time    = "data.text3"
 link    = "data.text4"
+lang    = "data.text5"
 
 [template.out.nlp.rss.spool]
 brokers         = "env://GOSQUITO_KAFKA_BROKER"

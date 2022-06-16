@@ -1,0 +1,78 @@
+flow:
+  name: "nlp-world-common-twitter-spool-ner-spool"
+  params:
+    interval: "10s"
+
+  input:
+    plugin: "kafka"
+    params:
+      template: "template.in.nlp.twitter.spool"
+      input: [
+        "gosquito-public-world-common-twitter-spool",
+      ]
+
+  process:
+    - id: 0
+      alias: "match ru"
+      plugin: "regexpmatch"
+      params:
+        input:  ["data.text4"]
+        regexp: ["ru"]
+
+    - id: 1
+      alias: "search urls"
+      plugin: "regexpfind"
+      params:
+        require: [0]
+        input:  ["data.array0", "data.array0"]
+        output: ["data.arrayA", "data.arrayB"]
+        regexp: ["regexp.full.urls", "regexp.short.urls"]
+
+    - id: 2
+      alias: "expand short urls"
+      plugin: "expandurl"
+      params:
+        require: [0]
+        input:  ["data.arrayB"]
+        output: ["data.arrayC"]
+
+    - id: 3
+      alias: "merge urls"
+      plugin: "unique"
+      params:
+        require: [0]
+        input:  ["data.arrayA", "data.arrayC"]
+        output: ["data.arrayD"]
+
+    - id: 4
+      plugin: "resty"
+      alias: "send links to girie"
+      params:
+        require: [0]
+        template: "template.proc.girie.nlp.rss"
+        input:  ["data.arrayD"]
+        output: ["data.arrayE"]
+
+    - id: 5
+      plugin: "jq"
+      alias: "extract spans"
+      params:
+        require: [4]
+        input:  ["data.arrayE"]
+        output: ["data.arrayF"]
+        query:  [".data.article.text_spans[].text"]
+
+    - id: 6
+      plugin: "resty"
+      alias: "send spans to digator"
+      params:
+        require: [5]
+        include: true
+        template: "template.proc.digator.nlp.rss"
+        input:  ["data.arrayF"]
+        output: ["data.arrayG"]
+    
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.nlp.twitter.spool"

@@ -55,6 +55,35 @@ app_secret = "env://GOSQUITO_VAULT_APP_SECRET"
 # ----------------------------------------------------------------------------
 # regexps:
 
+[regexp.full.urls]
+regexp = [
+  "https://47news.ru/.*",
+  "https://gazeta.ru/.*",
+  "https://iz.ru/.*",
+  "https://regnum.ru/.*",
+  "https://ria.ru/.*",
+  "https://rsport.ria.ru/.*",
+  "https://www.aninews.in/.*",
+  "https://www.independent.co.uk/.*",
+  "https://www.theguardian.com/.*",
+]
+
+[regexp.short.urls]
+regexp = [
+  "http[s]?://amp.gs/.*",
+  "http[s]?://apne.ws/.*",
+  "http[s]?://bbc.in/.*",
+  "http[s]?://bit.ly/.*",
+  "http[s]?://go.tass.ru/.*",
+  "http[s]?://hill.cm/.*",
+  "http[s]?://nyti.ms/.*",
+  "http[s]?://reut.rs/.*",
+  "http[s]?://t.co/.*",
+  "http[s]?://trib.al/.*",
+  "http[s]?://xhne.ws/.*"
+  "http[s]?://youtu.be/.*",
+]
+
 [regexp.urls]
 regexp = [
   'http[s]?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)',
@@ -108,6 +137,7 @@ flow    = "data.text0"
 plugin  = "data.text1"
 source  = "data.text2"
 time    = "data.text3"
+
 link    = "data.text4"
 lang    = "data.text5"
 
@@ -121,10 +151,38 @@ flow    = "data.text0"
 plugin  = "data.text1"
 source  = "data.text2"
 time    = "data.text3"
-link    = "data.text4"
-lang    = "data.text5"
 
 data    = "data.arrayB"
+
+# ----------------------------------------------------------------------------
+# template: nlp-twitter-spool
+
+[template.in.nlp.twitter.spool]
+brokers         = "env://GOSQUITO_KAFKA_BROKER"
+schema_registry = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
+
+[template.in.nlp.twitter.spool.schema]
+flow    = "data.text0"
+plugin  = "data.text1"
+source  = "data.text2"
+time    = "data.text3"
+
+lang    = "data.text4"
+
+urls    = "data.array0"
+
+[template.out.nlp.twitter.spool]
+brokers         = "env://GOSQUITO_KAFKA_BROKER"
+output          = ["gosquito-public-world-common-spool-ner-spool"]
+schema_registry = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
+
+[template.out.nlp.twitter.spool.schema]
+flow    = "data.text0"
+plugin  = "data.text1"
+source  = "data.text2"
+time    = "data.text3"
+
+data    = "data.arrayG"
 
 # ----------------------------------------------------------------------------
 # template: job-rss-spool

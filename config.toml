@@ -146,8 +146,6 @@ flow       = "flow"
 plugin     = "plugin"
 source     = "source"
 time       = "timeformat"
-time_a     = "timeformata"
-time_b     = "timeformatb"
 
 full_desc  = "data.text1"
 short_desc = "rss.description"

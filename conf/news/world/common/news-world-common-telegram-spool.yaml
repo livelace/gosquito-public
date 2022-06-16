@@ -39,3 +39,6 @@ flow:
     params:
       template: "template.out.telegram.spool"
       output: ["gosquito-public-world-common-telegram-spool"]
+      schema:
+        lang: "ru"
+

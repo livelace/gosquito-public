@@ -14,4 +14,5 @@ flow:
     params:
       template: "template.out.world.science.rss.spool"
       schema:
+        lang: "en"
         short_name: "nature"

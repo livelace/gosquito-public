@@ -12,6 +12,7 @@ flow:
     params:
       template: "template.out.world.it.rss.spool"
       schema:
+        lang: "en"
         tag3: "security"
         tag4: "common"
         short_name: "bleepingcomputer"

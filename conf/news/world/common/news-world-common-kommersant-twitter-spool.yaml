@@ -13,4 +13,5 @@ flow:
     params:
       template: "template.out.world.common.twitter.spool"
       schema:
+        lang: "ru"
         short_name: "kommersant"

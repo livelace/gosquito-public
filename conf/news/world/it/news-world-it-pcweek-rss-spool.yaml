@@ -12,4 +12,5 @@ flow:
     params:
       template: "template.out.world.it.rss.spool"
       schema:
+        lang: "ru"
         short_name: "pcweek"

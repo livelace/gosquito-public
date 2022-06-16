@@ -189,6 +189,8 @@ tag1        = "country"
 tag2        = "russia"
 tag3        = "region"
 
+lang        = "ru"
+
 # ----------------------------------------------------------------------------
 # template: country-russia-region-twitter-spool
 

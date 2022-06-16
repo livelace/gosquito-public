@@ -13,6 +13,7 @@ flow:
     params:
       template: "template.out.world.it.rss.spool"
       schema:
+        lang: "ru"
         tag3: "security"
         tag4: "leak"
         short_name: "dlbi"

@@ -16,4 +16,5 @@ flow:
     params:
       template: "template.out.world.it.rss.spool"
       schema:
+        lang: "en"
         short_name: "slashdot"

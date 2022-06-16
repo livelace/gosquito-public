@@ -14,4 +14,5 @@ flow:
     params:
       template: "template.out.world.finance.rss.spool"
       schema:
+        lang: "ru"
         short_name: "rusbase"

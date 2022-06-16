@@ -15,4 +15,5 @@ flow:
     params:
       template: "template.out.world.finance.rss.spool"
       schema:
+        lang: "en"
         short_name: "economist"

@@ -12,5 +12,6 @@ flow:
     params:
       template: "template.out.world.it.rss.spool"
       schema:
+        lang: "en"
         tag3: "development"
         short_name: "dzone"

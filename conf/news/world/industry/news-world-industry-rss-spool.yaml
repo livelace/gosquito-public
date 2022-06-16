@@ -12,4 +12,5 @@ flow:
       template: "template.out.world.industry.rss.spool"
       output: ["gosquito-public-world-industry-rss-spool"]
       schema:
+        lang: "ru"
         short_name: "sdelanounas"

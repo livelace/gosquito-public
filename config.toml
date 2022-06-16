@@ -80,7 +80,7 @@ regexp = [
   "http[s]?://reut.rs/.*",
   "http[s]?://t.co/.*",
   "http[s]?://trib.al/.*",
-  "http[s]?://xhne.ws/.*"
+  "http[s]?://xhne.ws/.*",
   "http[s]?://youtu.be/.*",
 ]
 

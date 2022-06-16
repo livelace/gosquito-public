@@ -12,6 +12,7 @@ flow:
       input: [
         "baltnews",
         "bbbreaking",
+        "forbesrussia",
         "interfaxonline",
         "tass_agency",
       ]

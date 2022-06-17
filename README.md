@@ -7,7 +7,7 @@ Demo telegram channels with filtered data:
 2. [gosquito_dark](https://t.me/gosquito_dark) (dark side of humanity)
 3. [gosquito_hardware](https://t.me/gosquito_hardware) (cpu, gpu, sdr etc.)
 4. [gosquito_light](https://t.me/gosquito_light) (light side of humanity)
-5. [gosquito_ner](https://t.me/gosquito_ner) (automatic NER labeling, every 30 minutes) 
+5. [gosquito_ner](https://t.me/gosquito_ner) (automatic NER labeling, updates every 30 minutes) 
 6. [gosquito_orgs](https://t.me/gosquito_orgs) (organizations, movements, teams etc.) 
 7. [gosquito_persons](https://t.me/gosquito_persons) (persons, dead or alive) 
 8. [gosquito_science](https://t.me/gosquito_science) (brain, cancer, space etc.)

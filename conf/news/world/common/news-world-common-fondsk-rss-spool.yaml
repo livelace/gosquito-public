@@ -6,6 +6,7 @@ flow:
     params:
       template: "template.in.world.common.rss.spool"
       input: ["https://www.fondsk.ru/rss.html"]
+      ssl_verify: false
 
   output:
     plugin: "kafka"

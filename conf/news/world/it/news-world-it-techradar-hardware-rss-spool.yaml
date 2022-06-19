@@ -1,0 +1,22 @@
+flow:
+  name: "news-world-it-techradar-hardware-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.it.rss.spool"
+      input: [
+        "https://www.techradar.com/rss/news/computing-components",
+        "https://www.techradar.com/rss/news/digital-home",
+        "https://www.techradar.com/rss/news/mobile-computing",
+        "https://www.techradar.com/rss/news/networking",
+        "https://www.techradar.com/rss/news/portable-devices",
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.it.rss.spool"
+      schema:
+        lang: "en"
+        short_name: "techradar"

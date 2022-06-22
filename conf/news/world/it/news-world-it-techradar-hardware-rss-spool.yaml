@@ -6,6 +6,7 @@ flow:
     params:
       template: "template.in.world.it.rss.spool"
       input: [
+        "https://www.techradar.com/rss/news/computing",
         "https://www.techradar.com/rss/news/computing-components",
         "https://www.techradar.com/rss/news/digital-home",
         "https://www.techradar.com/rss/news/mobile-computing",

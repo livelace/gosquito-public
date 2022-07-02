@@ -1,0 +1,17 @@
+flow:
+  name: "news-world-common-thejapannews-twitter-spool"
+
+  input:
+    plugin: "twitter"
+    params:
+      cred: "cred.twitter.default"
+      template: "template.in.world.common.twitter.spool"
+      input: ["The_Japan_News"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.common.twitter.spool"
+      schema:
+        lang: "en"
+        short_name: "thejapannews"

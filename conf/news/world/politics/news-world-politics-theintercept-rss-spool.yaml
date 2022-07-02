@@ -1,0 +1,16 @@
+flow:
+  name: "news-world-politics-theintercept-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.politics.rss.spool"
+      input: ["https://theintercept.com/feed/?lang=en"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.politics.rss.spool"
+      schema:
+        lang: "en"
+        short_name: "theintercept"

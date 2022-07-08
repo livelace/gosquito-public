@@ -1,0 +1,16 @@
+flow:
+  name: "news-world-it-marktechpost-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.it.rss.spool"
+      input: ["https://www.marktechpost.com/feed/"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.it.rss.spool"
+      schema:
+        lang: "en"
+        short_name: "marktechpost"

@@ -1,0 +1,16 @@
+flow:
+  name: "news-world-science-thepast-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.science.rss.spool"
+      input: ["https://the-past.com/feed/"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.science.rss.spool"
+      schema:
+        lang: "en"
+        short_name: "thepast"

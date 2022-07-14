@@ -1,0 +1,16 @@
+flow:
+  name: "news-world-industry-arenaev-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: ["https://www.arenaev.com/rss-articles.php3"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.industry.rss.spool"
+      output: ["gosquito-public-world-industry-rss-spool"]
+      schema:
+        lang: "en"
+        short_name: "arenaev"

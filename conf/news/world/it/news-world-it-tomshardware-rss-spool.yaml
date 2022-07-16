@@ -1,0 +1,19 @@
+flow:
+  name: "news-world-it-tomshardware-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.it.rss.spool"
+      input: [
+        "https://www.tomshardware.com/feeds/all",
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.it.rss.spool"
+      schema:
+        lang: "en"
+        tag3: "hardware"
+        short_name: "tomshardware"

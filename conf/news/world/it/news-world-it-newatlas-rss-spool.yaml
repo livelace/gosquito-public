@@ -1,0 +1,18 @@
+flow:
+  name: "news-world-it-newatlas-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.it.rss.spool"
+      input: [
+        "https://newatlas.com/technology/index.rss",
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.it.rss.spool"
+      schema:
+        lang: "en"
+        short_name: "newatlas"

@@ -1,6 +1,6 @@
 [default]
 
-log_level     = "DEBUG"
+#log_level     = "DEBUG"
 
 flow_conf     = "/etc/gosquito/conf"
 flow_data     = "/data/gosquito/data"

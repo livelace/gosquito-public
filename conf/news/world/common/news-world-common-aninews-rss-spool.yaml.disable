@@ -1,0 +1,16 @@
+flow:
+  name: "news-world-common-aninews-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.common.rss.spool"
+      input: ["https://aninews.in/rss/feed/category/world.xml"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.common.rss.spool"
+      schema:
+        lang: "en"
+        short_name: "aninews"

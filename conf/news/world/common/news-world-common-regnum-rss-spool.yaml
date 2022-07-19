@@ -1,5 +1,5 @@
 flow:
-  name: "news-world-common-iz-rss-spool"
+  name: "news-world-common-regnum-rss-spool"
 
   input:
     plugin: "rss"

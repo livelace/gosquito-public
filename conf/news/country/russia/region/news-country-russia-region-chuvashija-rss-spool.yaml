@@ -6,7 +6,6 @@ flow:
     params:
       template: "template.in.country.russia.region.rss.spool"
       input: [
-        "https://pg21.ru/rss", 
         "https://chgtrk.ru/rss/"
       ]
 

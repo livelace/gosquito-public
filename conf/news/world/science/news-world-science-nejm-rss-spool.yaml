@@ -1,0 +1,16 @@
+flow:
+  name: "news-world-science-nejm-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.science.rss.spool"
+      input: ["https://www.nejm.org/trends/viewed/last1Week?viewType=Rss"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.science.rss.spool"
+      schema:
+        lang: "en"
+        short_name: "nejm"

@@ -8,12 +8,9 @@ flow:
       input: [
         "https://www.techradar.com/rss/news/computing",
         "https://www.techradar.com/rss/news/computing-components",
-        "https://www.techradar.com/rss/news/digital-home",
         "https://www.techradar.com/rss/news/mobile-computing",
         "https://www.techradar.com/rss/news/networking",
-        "https://www.techradar.com/rss/news/portable-devices",
       ]
-      expire_interval: "30d" 
 
   output:
     plugin: "kafka"

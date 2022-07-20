@@ -6,6 +6,7 @@ flow:
     params:
       template: "template.in.world.it.rss.spool"
       input: ["https://github.com/mattermost/platform/releases.atom"]
+      expire_interval: "180d"
 
   output:
     plugin: "kafka"
@@ -14,4 +15,4 @@ flow:
       schema:
         lang: "en"
         tag3: "release"
-        short_name: "delta.io"
+        short_name: "mattermost"

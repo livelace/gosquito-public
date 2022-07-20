@@ -6,7 +6,7 @@ flow:
     params:
       template: "template.in.world.it.rss.spool"
       input: ["https://github.com/zfsonlinux/zfs/releases.atom"]
-      expire_interval: "90d"
+      expire_interval: "180d"
 
   output:
     plugin: "kafka"

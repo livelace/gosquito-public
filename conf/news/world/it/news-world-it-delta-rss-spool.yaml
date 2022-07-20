@@ -6,6 +6,7 @@ flow:
     params:
       template: "template.in.world.it.rss.spool"
       input: ["https://github.com/delta-io/delta/releases.atom"]
+      expire_interval: "180d"
   
   output:
     plugin: "kafka"

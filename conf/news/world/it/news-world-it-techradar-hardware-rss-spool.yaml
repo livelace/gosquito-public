@@ -13,6 +13,7 @@ flow:
         "https://www.techradar.com/rss/news/networking",
         "https://www.techradar.com/rss/news/portable-devices",
       ]
+      expire_interval: "30d" 
 
   output:
     plugin: "kafka"

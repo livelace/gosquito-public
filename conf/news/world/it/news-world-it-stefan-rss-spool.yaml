@@ -6,6 +6,7 @@ flow:
     params:
       template: "template.in.world.it.rss.spool"
       input: ["https://blog.vmsplice.net/feeds/posts/default?alt=rss"]
+      expire_interval: "180d"
 
   output:
     plugin: "kafka"

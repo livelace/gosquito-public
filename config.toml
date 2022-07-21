@@ -93,6 +93,7 @@ regexp = [
 regexp = [
   'https://geekjob.ru\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)',
   'https://hh.ru\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)',
+  'https://profunctor.io\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)',
   'https://proglib.io\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)',
   'https://telegra.ph\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)',
 ]

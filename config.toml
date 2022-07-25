@@ -563,6 +563,32 @@ tag1        = "world"
 tag2        = "science"
 
 # ----------------------------------------------------------------------------
+# template: world-science-rss-anticaptcha-spool
+
+[template.out.world.science.rss.anticaptcha.spool]
+brokers         = "env://GOSQUITO_KAFKA_BROKER"
+output          = ["gosquito-public-world-science-rss-spool"]
+schema_registry = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
+
+[template.out.world.science.rss.anticaptcha.spool.schema]
+flow        = "flow"
+plugin      = "plugin"
+source      = "source"
+time        = "timeformat"
+time_a      = "timeformata"
+time_b      = "timeformatb"
+
+categories  = "rss.categories"
+content     = "rss.content"
+description = "rss.description"
+guid        = "rss.guid"
+link        = "rss.link"
+title       = "rss.title"
+
+tag1        = "world"
+tag2        = "science"
+
+# ----------------------------------------------------------------------------
 # template: telegram-spool
 
 [template.in.telegram.spool]
@@ -636,4 +662,21 @@ userverified         = "telegram.userverified"
 userrestriction      = "telegram.userrestriction"
 userfirstseen        = "telegram.userfirstseen"
 userlastseen         = "telegram.userlastseen"
+
+# ----------------------------------------------------------------------------
+# template: webchela-rss-anticaptcha.
+
+[templates.webchela.rss.anticaptcha]
+batch_size = 10
+browser_instance = 1
+browser_instance_tab = 10
+browser_script_timeout = 30
+browser_type = "chrome"
+cpu_load = 50
+script = ["return document.body.innerText"]
+server = ["webchela.data.svc.k8s-1.livelace.ru:50051"]
+timeout = 120
+
+# ----------------------------------------------------------------------------
+
 

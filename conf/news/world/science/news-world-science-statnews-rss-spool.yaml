@@ -6,6 +6,7 @@ flow:
   input:
     plugin: "io"
     params:
+      template: "template.in.rss.anticaptcha.spool"
       input: ["https://www.statnews.com/feed/"]
 
   process:

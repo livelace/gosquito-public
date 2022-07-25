@@ -6,6 +6,7 @@ flow:
     params:
       template: "template.in.world.politics.rss.spool"
       input: ["https://www.telegraph.co.uk/politics/rss.xml"]
+      proxy: "socks5://10.0.102.254:9050"
 
   output:
     plugin: "kafka"

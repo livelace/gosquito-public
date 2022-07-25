@@ -565,12 +565,11 @@ tag2        = "science"
 # ----------------------------------------------------------------------------
 # template: world-science-rss-anticaptcha-spool
 
-[template.out.world.science.rss.anticaptcha.spool]
+[template.out.rss.anticaptcha.spool]
 brokers         = "env://GOSQUITO_KAFKA_BROKER"
-output          = ["gosquito-public-world-science-rss-spool"]
 schema_registry = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
 
-[template.out.world.science.rss.anticaptcha.spool.schema]
+[template.out.rss.anticaptcha.spool.schema]
 flow        = "flow"
 plugin      = "plugin"
 source      = "source"
@@ -578,15 +577,12 @@ time        = "timeformat"
 time_a      = "timeformata"
 time_b      = "timeformatb"
 
-categories  = "rss.categories"
-content     = "rss.content"
-description = "rss.description"
-guid        = "rss.guid"
-link        = "rss.link"
-title       = "rss.title"
-
-tag1        = "world"
-tag2        = "science"
+categories  = ""
+content     = ""
+description = "data.textC"
+guid        = "data.textD"
+link        = "data.textA"
+title       = "data.textB"
 
 # ----------------------------------------------------------------------------
 # template: telegram-spool

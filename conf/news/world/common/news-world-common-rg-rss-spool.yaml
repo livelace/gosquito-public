@@ -1,5 +1,7 @@
 flow:
   name: "news-world-common-rg-rss-spool"
+  params:
+    interval: "1h"
 
   input:
     plugin: "rss"

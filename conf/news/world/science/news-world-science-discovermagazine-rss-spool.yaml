@@ -1,0 +1,21 @@
+flow:
+  name: "news-world-science-discovermagazine-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.science.rss.spool"
+      input: [
+        "https://feeds.feedburner.com/DiscoverEnvironment",
+        "https://feeds.feedburner.com/DiscoverHealthMedicine",
+        "https://feeds.feedburner.com/DiscoverMindBrain",
+        "https://feeds.feedburner.com/DiscoverSpace",
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.science.rss.spool"
+      schema:
+        lang: "en"
+        short_name: "discovermagazine"

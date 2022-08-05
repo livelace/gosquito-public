@@ -56,7 +56,7 @@ flow:
       plugin: "same"
       alias: "filter repeated links"
       params:
-        input: ["data.array1"]
+        input: ["data.array0"]
         same_ratio_max: 0
         same_ratio_min: 0
         same_share_max: 100

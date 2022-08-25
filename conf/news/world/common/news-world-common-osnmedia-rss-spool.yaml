@@ -1,7 +1,7 @@
 flow:
   name: "news-world-common-osnmedia-rss-spool"
   params:
-    interval: "1h"
+    interval: "8h"
 
   input:
     plugin: "io"

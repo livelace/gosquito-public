@@ -5,7 +5,7 @@ flow:
     plugin: "rss"
     params:
       template: "template.in.world.it.rss.spool"
-      input: ["https://thenewstack.io/blog/feed/"]
+      input: ["https://thenewstack.io/feed/"]
 
   output:
     plugin: "kafka"

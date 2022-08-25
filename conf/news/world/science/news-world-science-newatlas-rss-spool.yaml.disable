@@ -1,0 +1,94 @@
+flow:
+  name: "news-world-science-newatlas-rss-spool"
+  params:
+    interval: "1h"
+
+  input:
+    plugin: "io"
+    params:
+      template: "template.in.rss.anticaptcha.spool"
+      input: ["https://newatlas.com/science/index.rss"]
+
+  process:
+    - id: 0
+      plugin: "webchela"
+      alias: "avoid cloudflare"
+      params:
+        template: "templates.webchela.rss.anticaptcha"
+        input:  ["io.text"]
+        output: ["data.text0"]
+    
+    - id: 1
+      plugin: "regexpreplace"
+      alias: "use script output"
+      params:
+        input:  ["data.text0"]
+        output: ["data.text1"]
+        regexp: ["body.html"]
+        replace: ["script0.txt"]
+    
+    - id: 2
+      plugin: "xpath"
+      alias: "extract xml nodes"
+      params:
+        input:  [
+          "data.text1", 
+          "data.text1", 
+          "data.text1",
+          "data.text1",
+        ]
+        output: [
+          "data.array0", 
+          "data.array1", 
+          "data.array2",
+          "data.array3",
+        ]
+        xpath:  [
+          "//item/link", 
+          "//item/title", 
+          "//item/description",
+          "//item/guid",
+        ]
+        xpath_array: true
+        xpath_mode: "xml"
+    
+    - id: 3
+      plugin: "split"
+      params:
+        require: [2]
+        input: [
+          "data.array0", 
+          "data.array1", 
+          "data.array2", 
+          "data.array3"
+        ]
+        output: [
+          "data.textA", 
+          "data.textB", 
+          "data.textC", 
+          "data.textD"
+        ]
+    
+    - id: 4
+      plugin: "same"
+      alias: "filter repeated links"
+      params:
+        include: true
+        require: [3]
+        input: ["data.textA"]
+        same_ratio_max: 99
+        same_ratio_min: 0
+        same_share_max: 100
+        same_share_min: 100
+        same_ttl: "180d"
+    
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.rss.anticaptcha.spool"
+      output: ["gosquito-public-world-science-rss-spool"]
+      schema:
+        lang: "en"
+        short_name: "newatlas"
+        tag1: "world"
+        tag2: "science"

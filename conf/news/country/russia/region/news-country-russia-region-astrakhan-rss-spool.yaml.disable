@@ -1,0 +1,15 @@
+flow:
+  name: "news-country-russia-region-astrakhan-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.country.russia.region.rss.spool"
+      input: ["https://astrakhan.su/feed/"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.country.russia.region.rss.spool"
+      schema:
+        short_name: "астрахань"

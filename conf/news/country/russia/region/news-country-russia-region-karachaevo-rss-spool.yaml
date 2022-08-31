@@ -1,5 +1,7 @@
 flow:
   name: "news-country-russia-region-karachaevo-rss-spool"
+  params:
+    interval: "3h"
 
   input:
     plugin: "rss"

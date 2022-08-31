@@ -1,5 +1,7 @@
 flow:
   name: "news-country-russia-region-osetia-rss-spool"
+  params:
+    interval: "3h"
 
   input:
     plugin: "rss"

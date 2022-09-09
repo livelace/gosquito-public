@@ -607,7 +607,7 @@ time_format_a        = "15:04"
 time_format_b        = "02.01.2006"
 time_zone_a          = "Europe/Moscow"
 time_zone_b          = "Europe/Moscow"
-user_save            = true
+user_save            = false
 
 [template.out.telegram.spool]
 brokers         = "env://GOSQUITO_KAFKA_BROKER"

@@ -1,0 +1,18 @@
+flow:
+  name: "news-world-it-openmetadata-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.it.rss.spool"
+      input: ["https://github.com/open-metadata/OpenMetadata/releases.atom"]
+      expire_interval: "180d"
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.it.rss.spool"
+      schema:
+        lang: "en"
+        tag3: "release"
+        short_name: "openmetadata"

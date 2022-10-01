@@ -1,0 +1,17 @@
+flow:
+  name: "news-world-it-spectrum-ieee-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.it.rss.spool"
+      input: ["https://spectrum.ieee.org/feeds/feed.rss"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.it.rss.spool"
+      schema:
+        lang: "en"
+        tag3: "hardware"
+        short_name: "spectrum-ieee"

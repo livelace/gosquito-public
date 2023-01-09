@@ -596,7 +596,7 @@ title       = "data.textB"
 
 [template.in.telegram.spool]
 chat_save            = false
-fetch_dir            = "/data/gosquito/files"
+fetch_dir            = "/data/gosquito/data/files"
 message_edited       = false
 message_type_fetch   = [""]
 match_signature      = ["telegram.messagetext"]

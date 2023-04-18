@@ -8,9 +8,7 @@ flow:
     params:
       template: "template.in.country.russia.region.rss.spool"
       input: [
-        "https://www.kavkaz-uzel.eu/chechnya.rss", 
         "https://riaderbent.ru/feed", 
-        "https://grozny.tv/feed"
       ]
 
   output:

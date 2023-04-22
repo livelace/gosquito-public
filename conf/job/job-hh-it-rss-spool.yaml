@@ -1,7 +1,7 @@
 flow:
   name: "job-hh-it-rss-spool"
   params:
-    interval: "15s"
+    interval: "60s"
 
   input:
     plugin: "rss"

@@ -1,7 +1,7 @@
 flow:
   name: "job-telegram-it-telegram-spool"
   params:
-    interval: "15s"
+    interval: "60s"
 
   input:
     plugin: "telegram"

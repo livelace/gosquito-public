@@ -2,6 +2,7 @@
 
 log_level     = "DEBUG"
 #log_level     = "INFO"
+loop_sleep    = 5000
 
 flow_conf     = "/etc/gosquito/conf"
 flow_data     = "/data/gosquito/data"

@@ -1,7 +1,7 @@
 flow:
   name: "news-world-finance-telegram-spool"
   params:
-    interval: "15s"
+    interval: "60s"
 
   input:
     plugin: "telegram"

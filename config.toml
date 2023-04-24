@@ -6,7 +6,7 @@ loop_sleep    = 3000
 
 flow_conf     = "/etc/gosquito/conf"
 flow_data     = "/data/gosquito/data"
-flow_interval = "5m"
+flow_interval = "15m"
 flow_limit    = 10
 #flow_disable  = ["job-hh-common-rss-spool", "job-hh-it-rss-spool"]
 

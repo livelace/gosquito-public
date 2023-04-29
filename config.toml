@@ -228,6 +228,7 @@ time_format_a   = "15:04"
 time_format_b   = "02.01.2006"
 time_zone_a     = "Europe/Moscow"
 time_zone_b     = "Europe/Moscow"
+timeout         = 300
 
 [template.out.job.rss.spool]
 brokers                 = "env://GOSQUITO_KAFKA_BROKER"

@@ -6,6 +6,7 @@ flow:
     params:
       template: "template.in.world.it.rss.spool"
       input: ["https://bdu.fstec.ru/ubi/vul/rss"]
+      ssl_verify: false
 
   output:
     plugin: "kafka"

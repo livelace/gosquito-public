@@ -6,10 +6,17 @@ flow:
     params:
       template: "template.in.world.it.rss.spool"
       input: [
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UC3BGlwmI-Vk6PWyMt15dKGw", # oreilly
         "https://www.youtube.com/feeds/videos.xml?channel_id=UC4-GrpQBx6WCGwmwozP744Q", # UsenixOrg
         "https://www.youtube.com/feeds/videos.xml?channel_id=UCIdV7bE97mSPTH1mOi_yUrw", # USENIXEnigmaConference
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCL2H6Z8JNydJgOjbmfu7JFg", # NDSSSymposium
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCN2nbMPLJWv3Y__4JuF_hMQ", # socallinuxexpo
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCO570reC1zAvYbwIU9ubGGw", # EuroBSDCon
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCPyA0XmU6aS4JCwVoIBTmIQ", # TheOfficialACM
         "https://www.youtube.com/feeds/videos.xml?channel_id=UCXXNOelGiY_N96a2nfhcaDA", # SecuritybsidesOrgUk
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCfX55Sx5hEFjoC3cNs6mCUQ", # LinuxfoundationOrg
         "https://www.youtube.com/feeds/videos.xml?channel_id=UCkAQCw5_sIZmj2IkSrNy00A", # ITRevolution
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCphR-rPFRLhsQNElk2dSbtw", # acmsigmobileonline4068
         "https://www.youtube.com/feeds/videos.xml?channel_id=UCvqbFHwN-nwalWPjPUKpvTA", # cncf
         "https://www.youtube.com/feeds/videos.xml?channel_id=UCwHL6WHUarjGfUM_586me8w", # HighLoadChannel
       ]

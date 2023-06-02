@@ -1,0 +1,18 @@
+flow:
+  name: "news-world-it-securelist-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.it.rss.spool"
+      input: ["https://securelist.com/feed/"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.it.rss.spool"
+      schema:
+        lang: "en"
+        tag3: "security"
+        tag4: "common"
+        short_name: "securelist"

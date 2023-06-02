@@ -6,7 +6,7 @@ flow:
     params:
       template: "template.in.world.science.rss.spool"
       input: [
-        "http://feeds.nature.com/nature/rss/current"
+        "https://www.nature.com/nature.rss"
       ]
 
   output:

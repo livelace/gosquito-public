@@ -5,7 +5,7 @@ flow:
     plugin: "rss"
     params:
       template: "template.in.world.common.rss.spool"
-      input: ["https://www.fondsk.ru/rss.html"]
+      input: ["https://www.fondsk.ru/rss.xml"]
       ssl_verify: false
 
   output:

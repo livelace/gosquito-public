@@ -16,4 +16,4 @@ flow:
       template: "template.out.world.finance.rss.spool"
       schema:
         lang: "ru"
-        short_name: "rusbase"
+        short_name: "wsj"

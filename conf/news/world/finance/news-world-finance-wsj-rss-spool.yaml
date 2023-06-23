@@ -1,0 +1,19 @@
+flow:
+  name: "news-world-finance-wsj-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.finance.rss.spool"
+      input: [
+          "https://feeds.a.dj.com/rss/RSSMarketsMain.xml",
+          "https://feeds.a.dj.com/rss/WSJcomUSBusiness.xml",
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.finance.rss.spool"
+      schema:
+        lang: "ru"
+        short_name: "rusbase"

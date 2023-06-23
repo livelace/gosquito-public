@@ -11,8 +11,10 @@ flow:
       device_model: "receiver-news-world-finance"
       input: [
         "banksta",
+        "bloomberg",
         "business_ru",
         "forbesrussia",
+        "kommersant",
       ]
 
   process:

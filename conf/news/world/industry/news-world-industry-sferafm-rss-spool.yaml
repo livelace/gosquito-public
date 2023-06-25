@@ -1,0 +1,18 @@
+flow:
+  name: "news-world-industry-sferafm-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: [
+        "https://sfera.fm/rss/yandex_news.xml",
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.industry.rss.spool"
+      output: ["gosquito-public-world-industry-rss-spool"]
+      schema:
+        lang: "ru"
+        short_name: "sferafm"

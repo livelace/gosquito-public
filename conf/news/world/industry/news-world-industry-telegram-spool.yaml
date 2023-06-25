@@ -12,10 +12,11 @@ flow:
       input: [
         "RU_Hardware_Soft",
         "energytodaygroup",
-        #"fabrichka",
+        "eprussia",
         "geonrgru",
-        "ruselectronics_official",
         "globalcio1",
+        "ruselectronics_official",
+        #"fabrichka",
       ]
 
   process:

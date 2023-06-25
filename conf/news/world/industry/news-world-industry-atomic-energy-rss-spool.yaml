@@ -1,0 +1,18 @@
+flow:
+  name: "news-world-industry-atomic-energy-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: [
+        "https://www.atomic-energy.ru/news/rss.xml",
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.industry.rss.spool"
+      output: ["gosquito-public-world-industry-rss-spool"]
+      schema:
+        lang: "ru"
+        short_name: "atomic-energy"

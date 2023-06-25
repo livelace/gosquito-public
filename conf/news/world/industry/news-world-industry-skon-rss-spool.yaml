@@ -1,0 +1,18 @@
+flow:
+  name: "news-world-industry-skon-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: [
+        "https://energy.s-kon.ru/feed/",
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.industry.rss.spool"
+      output: ["gosquito-public-world-industry-rss-spool"]
+      schema:
+        lang: "ru"
+        short_name: "skon"

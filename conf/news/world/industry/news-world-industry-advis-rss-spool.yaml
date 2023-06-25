@@ -1,0 +1,30 @@
+flow:
+  name: "news-world-industry-advis-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: [
+        "https://advis.ru/export/6.xml",  # Нефтяная и газовая
+        "https://advis.ru/export/14.xml", # Энергетика и ЖКХ
+        "https://advis.ru/export/5.xml",  # Металлургия и ГОКи
+        "https://advis.ru/export/3.xml",  # Лесная и мебельная
+        "https://advis.ru/export/8.xml",  # Продукты питания
+        "https://advis.ru/export/1.xml",  # Автомобильный рынок
+        "https://advis.ru/export/13.xml", # Химическая и фармацевтическая
+        "https://advis.ru/export/4.xml",  # Машино- и приборостроение
+        "https://advis.ru/export/7.xml",  # Парфюмерно-косметическая
+        "https://advis.ru/export/12.xml", # Транспорт и логистика
+        "https://advis.ru/export/11.xml", # Строительство России
+        "https://advis.ru/export/10.xml", # Строительные материалы
+        "https://advis.ru/export/2.xml",  # Другие отрасли
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.industry.rss.spool"
+      output: ["gosquito-public-world-industry-rss-spool"]
+      schema:
+        lang: "ru"
+        short_name: "advis"

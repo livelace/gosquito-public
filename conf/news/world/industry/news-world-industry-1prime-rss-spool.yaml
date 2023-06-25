@@ -1,0 +1,19 @@
+flow:
+  name: "news-world-industry-1prime-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: [
+        "http://1prime.ru/export/rss2/energy/index.xml",
+        "http://1prime.ru/export/rss2/industry_and_energy/index.xml",
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.industry.rss.spool"
+      output: ["gosquito-public-world-industry-rss-spool"]
+      schema:
+        lang: "ru"
+        short_name: "1prime"

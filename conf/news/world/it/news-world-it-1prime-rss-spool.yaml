@@ -1,0 +1,18 @@
+flow:
+  name: "news-world-it-1prime-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.it.rss.spool"
+      input: [
+        "https://1prime.ru/export/rss2/telecommunications_and_technologies/index.xml"
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.it.rss.spool"
+      schema:
+        lang: "ru"
+        short_name: "1prime"

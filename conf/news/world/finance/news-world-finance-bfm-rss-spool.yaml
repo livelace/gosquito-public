@@ -1,0 +1,19 @@
+flow:
+  name: "news-world-finance-bfm-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.finance.rss.spool"
+      input: [
+        "https://www.bfm.ru/news.rss?rubric=19", # Макроэкономика
+        "https://www.bfm.ru/news.rss?rubric=28", # Финансы
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.finance.rss.spool"
+      schema:
+        lang: "ru"
+        short_name: "bfm"

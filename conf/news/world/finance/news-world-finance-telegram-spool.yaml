@@ -10,6 +10,7 @@ flow:
       template: "template.in.telegram.spool"
       device_model: "receiver-news-world-finance"
       input: [
+        "DataInsight",
         "banksta",
         "bloomberg",
         "business_ru",

@@ -249,6 +249,44 @@ title      = "rss.title"
 urls       = "rss.link"
 
 # ----------------------------------------------------------------------------
+# template: country-russia-gov-rss-spool
+
+[template.in.country.russia.gov.rss.spool]
+match_signature = ["rss.link"]
+match_ttl       = "7d"
+time_format     = "2006-01-02T15:04:05-0700"
+time_format_a   = "15:04"
+time_format_b   = "02.01.2006"
+time_zone_a     = "Europe/Moscow"
+time_zone_b     = "Europe/Moscow"
+
+[template.out.country.russia.gov.rss.spool]
+brokers                 = "env://GOSQUITO_KAFKA_BROKER"
+output                  = ["gosquito-public-country-russia-gov-rss-spool"]
+schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
+
+[template.out.country.russia.gov.rss.spool.schema]
+flow        = "flow"
+plugin      = "plugin"
+source      = "source"
+time        = "timeformat"
+time_a      = "timeformata"
+time_b      = "timeformatb"
+
+categories  = "rss.categories"
+content     = "rss.content"
+description = "rss.description"
+guid        = "rss.guid"
+link        = "rss.link"
+title       = "rss.title"
+
+tag1        = "country"
+tag2        = "russia"
+tag3        = "region"
+
+lang        = "ru"
+
+# ----------------------------------------------------------------------------
 # template: country-russia-region-rss-spool
 
 [template.in.country.russia.region.rss.spool]

@@ -1,0 +1,16 @@
+flow:
+  name: "news-world-industry-ingenium-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      input: ["https://cloud.mave.digital/42462"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.industry.rss.spool"
+      output: ["gosquito-public-world-industry-rss-spool"]
+      schema:
+        lang: "ru"
+        short_name: "инжениум"

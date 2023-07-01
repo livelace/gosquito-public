@@ -8,6 +8,7 @@ flow:
       input: [
         "https://minpromtorg.gov.ru/api/ssp-news/v1/rss",
       ]
+      ssl_verify: false
 
   output:
     plugin: "kafka"

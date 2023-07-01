@@ -6,7 +6,7 @@ flow:
     params:
       template: "template.in.country.russia.gov.rss.spool"
       input: [
-        "https://www.minobrnauki.gov.ru/press-center/news/?rss=y",
+        "https://www.minobrnauki.gov.ru/press-center/news/rss/",
       ]
 
   output:

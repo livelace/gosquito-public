@@ -1,0 +1,17 @@
+flow:
+  name: "news-country-russia-gov-ministry-labour-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.country.russia.gov.rss.spool"
+      input: [
+        "https://mintrud.gov.ru/news/rss/official",
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.country.russia.gov.rss.spool"
+      schema:
+        short_name: "минтруд"

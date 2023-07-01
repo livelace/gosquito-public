@@ -1,0 +1,17 @@
+flow:
+  name: "news-country-russia-gov-ministry-justice-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.country.russia.gov.rss.spool"
+      input: [
+        "https://minjust.gov.ru/ru/subscription/rss/all/",
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.country.russia.gov.rss.spool"
+      schema:
+        short_name: "минюст"

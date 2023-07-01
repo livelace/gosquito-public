@@ -14,11 +14,13 @@ flow:
         "banksta",
         "bloomberg",
         "business_ru",
+        "economika",
+        "fatcat18",
         "forbesrussia",
         "frank_media",
         "kommersant",
-        "sberpromedia",
         "macroresearch",
+        "sberpromedia",
       ]
 
   process:

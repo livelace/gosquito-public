@@ -14,6 +14,8 @@ flow:
         "minstroyrf", # минстрой
         "Mintrans_Russia", # минтранс
         "minec_russia", # минэкномразвития
+        "mintsifry", # минцифры
+        "MID_Russia", # мид
       ]
 
   process:

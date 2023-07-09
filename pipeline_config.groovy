@@ -5,6 +5,7 @@ libraries {
     k8s_app {
         cluster = "k8s-1"
         namespace = "task"
+        node = "k8s-1-node1"
 
         image = "harbor-core.k8s-2.livelace.ru/infra/tools:22.04"
 

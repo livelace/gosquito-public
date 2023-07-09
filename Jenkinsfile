@@ -1,6 +1,6 @@
 def K8S_API = "https://k8s-1-master1.livelace.ru:6443"
 def K8S_DEPLOYMENT = "gosquito-public"
-def K8S_NS = "dmz"
+def K8S_NS = "data"
 def K8S_SA = "k8s-1-jenkins3-sa"
 def K8S_TIMEOUT = "60s"
 def WEBHOOK_CRED = "github-gosquito-public-webhook"

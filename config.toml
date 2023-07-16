@@ -14,7 +14,8 @@ flow_limit    = 5
 time_format   = "2006-01-02T15:04:05-0700"
 time_zone     = "UTC"
 
-user_agent    = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
+#user_agent    = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
+user_agent    = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 YaBrowser/23.7.0.2483 Yowser/2.5 Safari/537.36"
 
 # ----------------------------------------------------------------------------
 # credentials: minio default

@@ -1,0 +1,16 @@
+flow:
+  name: "news-world-it-9to5linux-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.it.rss.spool"
+      input: ["https://9to5linux.com/feed/atom"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.it.rss.spool"
+      schema:
+        lang: "en"
+        short_name: "9to5linux"

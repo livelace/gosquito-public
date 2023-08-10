@@ -19,9 +19,10 @@ flow:
         "finversiaru",
         "forbesrussia",
         "frank_media",
+        "incrussiamedia",
         "kommersant",
         "macroresearch",
-        "sberpromedia",
+        #"sberpromedia",
       ]
 
   process:

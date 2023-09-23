@@ -11,12 +11,13 @@ flow:
       device_model: "receiver-news-world-politics"
       input: [
         "balkanossiper",
+        "baltnews",
         "brussinf",
         "india_tv2020",
         "istanbul_wolf",
-        #"kremlinprachka",
         "lumandao",
         "riafan_everywhere",
+        #"kremlinprachka",
       ]
 
   process:

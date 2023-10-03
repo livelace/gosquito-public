@@ -1,0 +1,16 @@
+flow:
+  name: "news-world-common-insider-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.common.rss.spool"
+      input: ["https://feeds.insider.com/custom/insider-all"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.common.rss.spool"
+      schema:
+        lang: "en"
+        short_name: "insider"

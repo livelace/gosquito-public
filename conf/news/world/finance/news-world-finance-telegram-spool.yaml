@@ -11,6 +11,7 @@ flow:
       device_model: "receiver-news-world-finance"
       input: [
         "DataInsight",
+        "Econsonline",
         "banksta",
         "bloomberg",
         "business_ru",

@@ -106,7 +106,7 @@ regexp = [
 # template: digator-nlp-rss
 [template.proc.digator.nlp.rss]
 method = "POST"
-target = "http://digator.data.svc.k8s-1.livelace.ru:8080/ner/news/ru/all?format=label-array"
+target = "http://digator.digator.svc.k8s-4.livelace.ru:8080/ner/news/ru/all?format=label-array"
 body = '{"text": "{{ .ITER.VALUE | ToEscape }}"}'
 
 [template.proc.digator.nlp.rss.headers]
@@ -116,7 +116,7 @@ content-type = "application/json"
 # template: girie-nlp-rss
 [template.proc.girie.nlp.rss]
 method = "GET"
-target = "http://girie.data.svc.k8s-1.livelace.ru:8080/api"
+target = "http://girie.girie.svc.k8s-4.livelace.ru:8080/api"
 
 [template.proc.girie.nlp.rss.params]
 query = '{data(url:"{{ .ITER.VALUE }}"){article{text_spans{lang,text,tokens_amount}}}}'
@@ -125,7 +125,7 @@ query = '{data(url:"{{ .ITER.VALUE }}"){article{text_spans{lang,text,tokens_amou
 # template: girie-telegram-job
 [template.proc.girie.telegram.job]
 method = "GET"
-target = "http://girie.data.svc.k8s-1.livelace.ru:8080/api"
+target = "http://girie.girie.svc.k8s-4.livelace.ru:8080/api"
 
 [template.proc.girie.telegram.job.params]
 query = '{data(url:"{{ .ITER.VALUE | ToEscape }}"){article{html}}}'

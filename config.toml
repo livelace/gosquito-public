@@ -21,40 +21,25 @@ user_agent    = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML,
 # credentials: minio default
 
 [cred.minio.default]
-access_key = "vault://secret/host/minio.livelace.ru/service/minio/gosquito,access_key"
-secret_key = "vault://secret/host/minio.livelace.ru/service/minio/gosquito,secret_key"
+access_key = "env://GOSQUITO_MINIO_USERNAME"
+secret_key = "env://GOSQUITO_MINIO_PASSWORD"
 server     = "minio.livelace.ru"
-
-[cred.minio.default.vault]
-address    = "env://GOSQUITO_VAULT_ADDRESS"
-app_role   = "env://GOSQUITO_VAULT_APP_ROLE"
-app_secret = "env://GOSQUITO_VAULT_APP_SECRET"
 
 # ----------------------------------------------------------------------------
 # credentials: telegram private
 
 [cred.telegram.private]
-api_id    = "vault://secret/service/online/messengers/telegram/private,api_id"
-api_hash  = "vault://secret/service/online/messengers/telegram/private,api_hash"
-
-[cred.telegram.private.vault]
-address    = "env://GOSQUITO_VAULT_ADDRESS"
-app_role   = "env://GOSQUITO_VAULT_APP_ROLE"
-app_secret = "env://GOSQUITO_VAULT_APP_SECRET"
+api_id    = "env://GOSQUITO_TELEGRAM_PRIVATE_API_ID"
+api_hash  = "env://GOSQUITO_TELEGRAM_PRIVATE_API_HASH"
 
 # ----------------------------------------------------------------------------
 # credentials: twitter default
 
 [cred.twitter.default]
-access_token    = "vault://secret/service/online/messengers/twitter/default,access_token"
-access_secret   = "vault://secret/service/online/messengers/twitter/default,access_secret"
-consumer_key    = "vault://secret/service/online/messengers/twitter/default,consumer_key"
-consumer_secret = "vault://secret/service/online/messengers/twitter/default,consumer_secret"
-
-[cred.twitter.default.vault]
-address    = "env://GOSQUITO_VAULT_ADDRESS"
-app_role   = "env://GOSQUITO_VAULT_APP_ROLE"
-app_secret = "env://GOSQUITO_VAULT_APP_SECRET"
+access_token    = "env://GOSQUITO_TWITTER_DEFAULT_ACCESS_TOKEN"
+access_secret   = "env://GOSQUITO_TWITTER_DEFAULT_ACCESS_SECRET"
+consumer_key    = "env://GOSQUITO_TWITTER_DEFAULT_CONSUMER_KEY"
+consumer_secret = "env://GOSQUITO_TWITTER_DEFAULT_CONSUMER_SECRET"
 
 # ----------------------------------------------------------------------------
 # regexps:

@@ -1,6 +1,6 @@
 libraries {
     git {
-        repo_url = "git@github.com:livelace/gosquito-public.git"
+        repo_url = "https://github.com/livelace/gosquito-public.git"
     }
     k8s_app {
         cluster = "k8s-4"

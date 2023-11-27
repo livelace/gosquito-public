@@ -1,9 +1,8 @@
-def K8S_API = "https://k8s-1-master1.livelace.ru:6443"
+def K8S_API = "https://k8s-4-master-1.livelace.ru:6443"
 def K8S_DEPLOYMENT = "gosquito-public"
-def K8S_NS = "data"
-def K8S_SA = "k8s-1-jenkins3-sa"
+def K8S_NS = "gosquito"
+def K8S_SA = "ci-k8s-4"
 def K8S_TIMEOUT = "60s"
-def WEBHOOK_CRED = "github-gosquito-public-webhook"
 
 properties([
     buildDiscarder(logRotator(
@@ -21,8 +20,8 @@ properties([
             regexpFilterExpression: '', 
             regexpFilterText: '', 
             silentResponse: true, 
-            token: '', 
-            tokenCredentialId: WEBHOOK_CRED)
+            token: 'test',
+            tokenCredentialId: '')
     ])
 ])
 

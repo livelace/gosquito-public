@@ -5,7 +5,7 @@ flow:
     plugin: "rss"
     params:
       template: "template.in.world.it.rss.spool"
-      input: ["https://www.darkreading.com/rss_simple.asp"]
+      input: ["https://www.darkreading.com/rss.xml"]
   
   output:
     plugin: "kafka"

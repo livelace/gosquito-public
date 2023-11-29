@@ -1,8 +1,13 @@
+import ru.livelace.jgl.Vault
+
+def VAULT = new Vault(this)
+
 def K8S_API = "https://k8s-4-master-1.livelace.ru:6443"
 def K8S_DEPLOYMENT = "gosquito-public"
 def K8S_NS = "gosquito"
 def K8S_SA = "ci-k8s-4"
 def K8S_TIMEOUT = "60s"
+def WEBHOOK_TOKEN = VAULT.getSecret("string, null, self/node/zmd/jenkins/webhook/gosquito-public, token")[0]
 
 properties([
     buildDiscarder(logRotator(
@@ -20,7 +25,7 @@ properties([
             regexpFilterExpression: '', 
             regexpFilterText: '', 
             silentResponse: true, 
-            token: 'test',
+            token: WEBHOOK_TOKEN,
             tokenCredentialId: '')
     ])
 ])

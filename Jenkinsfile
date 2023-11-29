@@ -7,7 +7,7 @@ def K8S_DEPLOYMENT = "gosquito-public"
 def K8S_NS = "gosquito"
 def K8S_SA = "ci-k8s-4"
 def K8S_TIMEOUT = "60s"
-def WEBHOOK_TOKEN = VAULT.getSecret("string, null, kv2/self/node/zmd/jenkins/webhook/gosquito-public, token")[0]
+def WEBHOOK_TOKEN = VAULT.getSecret("string, null, kv2/self/node/zmd/jenkins/webhook/gosquito-public, token", 2)[0]
 
 properties([
     buildDiscarder(logRotator(

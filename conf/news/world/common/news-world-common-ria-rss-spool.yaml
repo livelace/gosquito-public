@@ -1,13 +1,9 @@
 flow:
   name: "news-world-common-ria-rss-spool"
-  params:
-    interval: "10s"
 
   input:
     plugin: "rss"
     params:
-      force: true
-      force_count: 10
       template: "template.in.world.common.rss.spool"
       input: ["https://ria.ru/export/rss2/archive/index.xml"]
 

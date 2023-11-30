@@ -1,12 +1,13 @@
 flow:
   name: "nlp-world-common-rss-spool-ner-spool"
   params:
-    interval: "60s"
+    interval: "1s"
 
   input:
     plugin: "kafka"
     params:
       template: "template.in.nlp.rss.spool"
+      offset: "earliest"
       input: [
         "gosquito-public-world-common-rss-spool",
       ]

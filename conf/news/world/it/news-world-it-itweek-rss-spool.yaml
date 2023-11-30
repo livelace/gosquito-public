@@ -1,11 +1,11 @@
 flow:
-  name: "news-world-it-pcweek-rss-spool"
+  name: "news-world-it-itweek-rss-spool"
 
   input:
     plugin: "rss"
     params:
       template: "template.in.world.it.rss.spool"
-      input: ["https://www.pcweek.ru/rss/"]
+      input: ["https://www.itweek.ru/rss/"]
 
   output:
     plugin: "kafka"
@@ -13,4 +13,4 @@ flow:
       template: "template.out.world.it.rss.spool"
       schema:
         lang: "ru"
-        short_name: "pcweek"
+        short_name: "itweek"

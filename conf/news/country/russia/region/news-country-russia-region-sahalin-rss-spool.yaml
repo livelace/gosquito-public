@@ -6,7 +6,6 @@ flow:
     params:
       template: "template.in.country.russia.region.rss.spool"
       input: [
-          "https://sakhalin.info/export/news/?page=&format=rss&notice=0&lines=10&sort=info&charset=utf-8",
           "https://astv.ru/rss/lenta"
       ]
 

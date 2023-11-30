@@ -121,7 +121,6 @@ query = '{data(url:"{{ .ITER.VALUE | ToEscape }}"){article{html}}}'
 [template.in.nlp.rss.spool]
 brokers         = "env://GOSQUITO_KAFKA_BROKER"
 schema_registry = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
-offset = "latest"
 
 [template.in.nlp.rss.spool.schema]
 flow    = "data.text0"
@@ -151,7 +150,6 @@ data    = "data.arrayB"
 [template.in.nlp.telegram.spool]
 brokers         = "env://GOSQUITO_KAFKA_BROKER"
 schema_registry = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
-offset = "latest"
 
 [template.in.nlp.telegram.spool.schema]
 flow           = "data.text0"
@@ -182,7 +180,6 @@ data    = "data.arrayE"
 [template.in.nlp.twitter.spool]
 brokers         = "env://GOSQUITO_KAFKA_BROKER"
 schema_registry = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
-offset = "latest"
 
 [template.in.nlp.twitter.spool.schema]
 flow    = "data.text0"

@@ -8,7 +8,7 @@ flow_conf     = "/etc/gosquito/conf"
 flow_data     = "/data/gosquito/data"
 flow_interval = "15m"
 flow_limit    = 10
-flow_enable  = ["nlp-world-common-rss-spool-ner-spool"]
+flow_enable  = ["nlp-world-common-rss-spool-ner-spool", "news-world-common-ria-rss-spool"]
 #flow_disable  = ["job-hh-common-rss-spool", "job-hh-it-rss-spool"]
 
 time_format   = "2006-01-02T15:04:05-0700"

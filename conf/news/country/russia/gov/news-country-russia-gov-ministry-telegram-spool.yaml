@@ -14,6 +14,7 @@ flow:
         "Mintrans_Russia", # минтранс
         "mcx_ru", # минсельхоз
         "minec_russia", # минэкномразвития
+        "minjust_russia", # минюст
         "minsport_russia", # спорт
         "minstroyrf", # минстрой
         "mintsifry", # минцифры

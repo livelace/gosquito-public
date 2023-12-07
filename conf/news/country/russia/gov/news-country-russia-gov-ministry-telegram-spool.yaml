@@ -10,12 +10,13 @@ flow:
       template: "template.in.telegram.spool"
       device_model: "receiver-news-country-russia-gov"
       input: [
-        "mcx_ru", # минсельхоз
-        "minstroyrf", # минстрой
-        "Mintrans_Russia", # минтранс
-        "minec_russia", # минэкномразвития
-        "mintsifry", # минцифры
         "MID_Russia", # мид
+        "Mintrans_Russia", # минтранс
+        "mcx_ru", # минсельхоз
+        "minec_russia", # минэкномразвития
+        "minsport_russia", # спорт
+        "minstroyrf", # минстрой
+        "mintsifry", # минцифры
       ]
 
   process:

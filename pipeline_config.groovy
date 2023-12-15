@@ -6,7 +6,7 @@ libraries {
         cluster = "k8s-4"
         namespace = "gosquito"
 
-        image = "harbor-core.k8s-2.livelace.ru/portage/gosquito-update:1.0.0"
+        image = "registry.livelace.ru/infra/portage-gosquito-update:latest"
 
         volume = """
             gosquito-public-conf, data/gosquito/conf, rw

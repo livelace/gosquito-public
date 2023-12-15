@@ -1,0 +1,20 @@
+flow:
+  name: "news-world-science-ncomms-rss-spool"
+  params:
+    interval: "60m"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.science.rss.spool"
+      input: [
+        "https://www.nature.com/ncomms.rss"
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.science.rss.spool"
+      schema:
+        lang: "en"
+        short_name: "ncomms"

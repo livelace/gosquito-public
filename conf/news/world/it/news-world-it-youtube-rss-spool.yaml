@@ -20,6 +20,7 @@ flow:
         "https://www.youtube.com/feeds/videos.xml?channel_id=UCvqbFHwN-nwalWPjPUKpvTA", # cncf
         "https://www.youtube.com/feeds/videos.xml?channel_id=UCwHL6WHUarjGfUM_586me8w", # HighLoadChannel
         "https://www.youtube.com/feeds/videos.xml?channel_id=UCF1li8L8kClsAZd3r7zK7ZQ", # CES
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCwFpzG5MK5Shg_ncAhrgr9g", # AwesomeOpenSource
       ]
 
   output:

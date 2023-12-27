@@ -1,0 +1,16 @@
+flow:
+  name: "news-world-common-tass-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.common.rss.spool"
+      input: ["https://tass.ru/rss/v2.xml"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.common.rss.spool"
+      schema:
+        lang: "ru"
+        short_name: "tass"

@@ -5,10 +5,11 @@ flow:
     plugin: "rss"
     params:
       proxy: "socks5://10.10.22.1:1080"
-      user_agent: "curl"
+      user_agent: "curl thing123"
       template: "template.in.world.it.rss.spool"
       input: [
         "https://www.reddit.com/r/linux/.rss"
+        "https://livelace.ru/feeds/all.atom.xml"
       ]
 
   output:

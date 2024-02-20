@@ -5,7 +5,7 @@ flow:
     plugin: "rss"
     params:
       proxy: "socks5://10.10.22.1:1080"
-      user_agent: "curl thing123"
+      user_agent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
       template: "template.in.world.it.rss.spool"
       input: [
         "https://www.reddit.com/r/linux/.rss",

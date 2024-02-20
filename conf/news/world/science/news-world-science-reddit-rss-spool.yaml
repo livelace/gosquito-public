@@ -5,7 +5,7 @@ flow:
     plugin: "rss"
     params:
       template: "template.in.world.science.rss.spool"
-      input: ["https://www.reddit.com/r/science/.rss"]
+      input: ["https://old.reddit.com/r/science/.rss"]
 
   output:
     plugin: "kafka"

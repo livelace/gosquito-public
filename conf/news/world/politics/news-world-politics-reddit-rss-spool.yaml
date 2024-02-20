@@ -5,7 +5,7 @@ flow:
     plugin: "rss"
     params:
       template: "template.in.world.politics.rss.spool"
-      input: ["https://www.reddit.com/r/politics/.rss"]
+      input: ["https://old.reddit.com/r/politics/.rss"]
 
   output:
     plugin: "kafka"
@@ -13,4 +13,4 @@ flow:
       template: "template.out.world.politics.rss.spool"
       schema:
         lang: "en"
-        short_name: "aninews"
+        short_name: "reddit politics"

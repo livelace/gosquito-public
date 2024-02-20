@@ -8,8 +8,8 @@ flow:
     params:
       template: "template.in.world.finance.rss.spool"
       input: [
-        "https://www.reddit.com/r/economy/.rss",
-        "https://www.reddit.com/r/finance/.rss",
+        "https://old.reddit.com/r/economy/.rss",
+        "https://old.reddit.com/r/finance/.rss",
       ]
 
   output:

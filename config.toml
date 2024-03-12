@@ -347,6 +347,41 @@ tag2   = "russia"
 tag3   = "region"
 
 # ----------------------------------------------------------------------------
+# template: misc-rss-spool
+
+[template.in.misc.rss.spool]
+proxy           = "socks5://10.10.22.1:1080"
+match_signature = ["rss.link"]
+match_ttl       = "7d"
+time_format     = "2006-01-02T15:04:05-0700"
+time_format_a   = "15:04"
+time_format_b   = "02.01.2006"
+time_zone_a     = "Europe/Moscow"
+time_zone_b     = "Europe/Moscow"
+
+[template.out.misc.rss.spool]
+brokers                 = "env://GOSQUITO_KAFKA_BROKER"
+output                  = ["gosquito-public-misc-rss-spool"]
+schema_registry         = "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
+
+[template.out.misc.rss.spool.schema]
+flow        = "flow"
+plugin      = "plugin"
+source      = "source"
+time        = "timeformat"
+time_a      = "timeformata"
+time_b      = "timeformatb"
+
+categories  = "rss.categories"
+content     = "rss.content"
+description = "rss.description"
+guid        = "rss.guid"
+link        = "rss.link"
+title       = "rss.title"
+
+tag1        = "misc"
+
+# ----------------------------------------------------------------------------
 # template: world-common-rss-spool
 
 [template.in.world.common.rss.spool]

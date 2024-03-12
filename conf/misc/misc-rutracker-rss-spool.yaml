@@ -1,0 +1,18 @@
+flow:
+  name: "misc-rutracker-rss-spool"
+  params:
+    interval: "60s"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.misc.rss.spool"
+      input: ["https://feed.rutracker.cc/atom/f/0.atom"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.misc.rss.spool"
+      schema:
+        lang: "ru"
+        short_name: "rutracker"

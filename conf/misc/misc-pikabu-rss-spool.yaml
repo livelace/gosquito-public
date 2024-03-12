@@ -1,0 +1,18 @@
+flow:
+  name: "misc-pikabu-rss-spool"
+  params:
+    interval: "60s"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.misc.rss.spool"
+      input: ["https://pikabu.ru/xmlfeeds.php?cmd=popular"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.misc.rss.spool"
+      schema:
+        lang: "ru"
+        short_name: "pikabu"

@@ -8,7 +8,7 @@ flow:
       template: "template.in.world.it.rss.spool"
       input: [
         "https://old.reddit.com/r/linux/.rss",
-        "https://livelace.ru/feeds/all.atom.xml"
+        "https://old.reddit.com/r/networking/.rss",
       ]
 
   output:

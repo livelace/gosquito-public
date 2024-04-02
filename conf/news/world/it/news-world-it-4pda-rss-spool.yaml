@@ -1,0 +1,16 @@
+flow:
+  name: "news-world-it-4pda-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.it.rss.spool"
+      input: ["https://4pda.to/feed"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.it.rss.spool"
+      schema:
+        lang: "ru"
+        short_name: "4pda"

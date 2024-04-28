@@ -7,6 +7,11 @@ flow:
     plugin: "resty"
     params:
       input: ["https://pikabu.ru/new"]
+      time_format: "2006-01-02T15:04:05-0700"
+      time_format_a: "15:04"
+      time_format_b: "02.01.2006"
+      time_zone_a: "Europe/Moscow"
+      time_zone_b: "Europe/Moscow"
 
   process:
     - id: 0
@@ -48,9 +53,15 @@ flow:
         flow: "flow"
         plugin: "plugin"
         source: "source"
-        time: "time"
+        time:   "timeformat"
+        time_a: "timeformata"
+        time_b: "timeformatb"
 
         author: "data.textB"
         headline: "data.textA"
+        lang: "ru"
+        short_name: "pikabu"
         tags: "data.textD"
         url: "data.textC"
+
+

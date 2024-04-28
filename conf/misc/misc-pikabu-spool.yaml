@@ -31,17 +31,24 @@ flow:
       plugin: "jq"
       params:
         require: [0]
-        input:  ["data.array0", "data.array0", "data.array0"]
-        output: ["data.arrayA", "data.arrayB", "data.arrayC"]
-        query:  [".headline", ".author.name", ".url"]
+        input:  ["data.array0", "data.array0", "data.array0", "data.array0", "data.array0"]
+        output: ["data.arrayA", "data.arrayB", "data.arrayC", "data.arrayD", "data.arrayE"]
+        query:  [".headline", ".author.name", ".url", ".mainEntityOfPage.id", ".image[].url"]
     
     - id: 2
       plugin: "split"
       params:
-        include: true
         require: [0, 1]
-        input:  ["data.arrayA", "data.arrayB", "data.arrayC", "data.array1"]
-        output: ["data.textA", "data.textB", "data.textC", "data.textH"]
+        input:  ["data.arrayA", "data.arrayB", "data.arrayC", "data.arrayD", "data.array1"]
+        output: ["data.textA", "data.textB", "data.textC", "data.textD", "data.textH"]
+
+    - id: 3
+      plugin: "unique"
+      params:
+        include: true
+        require: [2]
+        input:  ["data.arrayE", "data.textC", "data.textD"]
+        output: ["data.arrayF"]
 
   output:
     plugin: "kafka"
@@ -62,6 +69,6 @@ flow:
         lang: "ru"
         short_name: "pikabu"
         tags: "data.textH"
-        urls: [data.textC]
+        urls: "data.arrayF"
 
 

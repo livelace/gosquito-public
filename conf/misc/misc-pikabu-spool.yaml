@@ -13,6 +13,7 @@ flow:
       plugin: "xpath"
       alias: "extract data"
       params:
+        include: true
         input:  ["resty.body", "resty.body"]
         output: ["data.array0", "data.array1"]
         xpath:  [

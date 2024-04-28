@@ -45,6 +45,11 @@ flow:
       schema_registry: "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
       output: ["gosquito-public-misc-pikabu-spool"]
       schema:
+        flow: "flow"
+        plugin: "plugin"
+        source: "source"
+        time: "time"
+
         author: "data.textB"
         headline: "data.textA"
         tags: "data.textD"

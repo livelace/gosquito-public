@@ -36,7 +36,7 @@ flow:
         include: true
         require: [0, 1]
         input:  ["data.arrayA", "data.arrayB", "data.arrayC", "data.array1"]
-        output: ["data.textA", "data.textB", "data.textC", "data.arrayD"]
+        output: ["data.textA", "data.textB", "data.textC", "data.textD"]
 
   output:
     plugin: "kafka"
@@ -47,5 +47,5 @@ flow:
       schema:
         author: "data.textB"
         headline: "data.textA"
-        tags: "data.arrayD"
+        tags: "data.textD"
         url: "data.textC"

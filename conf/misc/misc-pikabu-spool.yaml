@@ -17,7 +17,7 @@ flow:
         output: ["data.array0", "data.array1"]
         xpath:  [
           "//script[contains(@type, 'application/ld+json')]", 
-          "//div[contains(@class, 'story__collapsed-tags-container')]/a/@data-tag", 
+          "//div[contains(@class, 'story__collapsed-tags-container')]", 
         ]
         xpath_array: true
         xpath_html: false

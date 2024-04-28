@@ -62,6 +62,6 @@ flow:
         lang: "ru"
         short_name: "pikabu"
         tags: "data.textH"
-        urls: ["data.textC"]
+        urls: [data.textC]
 
 

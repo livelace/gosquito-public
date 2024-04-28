@@ -25,11 +25,18 @@ flow:
     - id: 1
       plugin: "jq"
       params:
-        include: true
         require: [0]
         input:  ["data.array0", "data.array0", "data.array0"]
         output: ["data.array3", "data.array4", "data.array5"]
         query:  [".headline", ".author.name", ".url"]
+    
+    - id: 2
+      plugin: "split"
+      params:
+        include: true
+        require: [1]
+        input:  ["data.array3", "data.array4", "data.array5"]
+        output: ["data.textA", "data.textB", "data.textC"]
 
   output:
     plugin: "kafka"
@@ -38,7 +45,7 @@ flow:
       schema_registry: "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
       output: ["gosquito-public-misc-pikabu-spool"]
       schema:
-        author: "data.array4"
-        headline: "data.array3"
+        author: "data.textB"
+        headline: "data.textA"
         tags: "data.array1"
-        url: "data.array5"
+        url: "data.textC"

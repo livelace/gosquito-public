@@ -1,18 +1,34 @@
 flow:
-  name: "misc-pikabu-rss-spool"
+  name: "misc-pikabu-spool"
   params:
     interval: "60s"
 
   input:
-    plugin: "rss"
+    plugin: "resty"
     params:
-      template: "template.in.misc.rss.spool"
-      input: ["https://pikabu.ru/xmlfeeds.php?cmd=popular"]
+      input: ["https://pikabu.ru/new"]
+
+  process:
+    - id: 0
+      plugin: "xpath"
+      alias: "extract data"
+      params:
+        input:  ["resty.body", "resty.body"]
+        output: ["data.array0", "data.array1"]
+        xpath:  [
+          "//script[contains(@type, 'application/ld+json')]", 
+          "//div[contains(@class, 'story__collapsed-tags-container')]/a/@data-tag", 
+        ]
+        xpath_array: true
+        xpath_html: false
 
   output:
     plugin: "kafka"
     params:
-      template: "template.out.misc.rss.spool"
+      brokers: "env://GOSQUITO_KAFKA_BROKER"
+      output: ["gosquito-public-misc-pikabu-spool"]
       schema:
-        lang: "ru"
-        short_name: "pikabu"
+        author: "data.array4"
+        headline: "data.array3"
+        tags: "data.array1"
+        url: "data.array5"

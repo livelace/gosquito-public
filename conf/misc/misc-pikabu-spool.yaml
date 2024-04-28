@@ -27,7 +27,7 @@ flow:
       params:
         require: [0]
         input:  ["data.array0", "data.array0", "data.array0"]
-        output: ["data.array3", "data.array4", "data.array5"]
+        output: ["data.arrayA", "data.arrayB", "data.arrayC"]
         query:  [".headline", ".author.name", ".url"]
     
     - id: 2
@@ -35,8 +35,8 @@ flow:
       params:
         include: true
         require: [0, 1]
-        input:  ["data.array3", "data.array4", "data.array5"]
-        output: ["data.textA", "data.textB", "data.textC"]
+        input:  ["data.arrayA", "data.arrayB", "data.arrayC", "data.array1"]
+        output: ["data.textA", "data.textB", "data.textC", "data.arrayD"]
 
   output:
     plugin: "kafka"
@@ -47,5 +47,5 @@ flow:
       schema:
         author: "data.textB"
         headline: "data.textA"
-        tags: "data.array1"
+        tags: "data.arrayD"
         url: "data.textC"

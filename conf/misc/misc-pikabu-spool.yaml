@@ -13,7 +13,6 @@ flow:
       plugin: "xpath"
       alias: "extract data"
       params:
-        include: true
         input:  ["resty.body", "resty.body"]
         output: ["data.array0", "data.array1"]
         xpath:  [
@@ -22,6 +21,15 @@ flow:
         ]
         xpath_array: true
         xpath_html: false
+
+    - id: 1
+      plugin: "jq"
+      params:
+        include: true
+        require: [0]
+        input:  ["data.array0", "data.array0", "data.array0"]
+        output: ["data.array3", "data.array4", "data.array5"]
+        query:  [".headline", ".author.name", ".url"]
 
   output:
     plugin: "kafka"

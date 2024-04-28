@@ -35,6 +35,7 @@ flow:
     plugin: "kafka"
     params:
       brokers: "env://GOSQUITO_KAFKA_BROKER"
+      schema_registry: "env://GOSQUITO_KAFKA_SCHEMA_REGISTRY"
       output: ["gosquito-public-misc-pikabu-spool"]
       schema:
         author: "data.array4"

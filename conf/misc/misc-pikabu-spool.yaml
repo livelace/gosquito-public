@@ -46,7 +46,7 @@ flow:
       plugin: "unique"
       params:
         include: true
-        require: [2]
+        require: [0, 1, 2]
         input:  ["data.arrayE", "data.textC", "data.textD"]
         output: ["data.arrayF"]
 

@@ -34,7 +34,7 @@ flow:
       plugin: "split"
       params:
         include: true
-        require: [1]
+        require: [0, 1]
         input:  ["data.array3", "data.array4", "data.array5"]
         output: ["data.textA", "data.textB", "data.textC"]
 

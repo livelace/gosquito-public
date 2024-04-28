@@ -33,7 +33,7 @@ flow:
         require: [0]
         input:  ["data.array0", "data.array0", "data.array0", "data.array0", "data.array0"]
         output: ["data.arrayA", "data.arrayB", "data.arrayC", "data.arrayD", "data.arrayE"]
-        query:  [".headline", ".author.name", ".url", ".mainEntityOfPage.id", ".image[].url"]
+        query:  [".headline", ".author.name", ".url", '.mainEntityOfPage.[@id]', ".image[].url"]
     
     - id: 2
       plugin: "split"

@@ -80,30 +80,30 @@ flow:
           "data.array0", 
           "data.array0", 
           "data.array0", 
-          "data.array0"
-          "data.array0"
-          "data.array0"
-          "data.array0"
+          "data.array0",
+          "data.array0",
+          "data.array0",
+          "data.array0",
         ]
         query: [
           ".headline", 
           ".author.name", 
           ".url", 
           '.mainEntityOfPage.["@id"]', 
-          ".image[].url"
-          ".dateCreated"
-          ".datePublished"
-          ".dateModified"
+          ".image[].url",
+          ".dateCreated",
+          ".datePublished",
+          ".dateModified",
         ]
         output: [
           "data.arrayA", 
           "data.arrayB", 
           "data.arrayC", 
           "data.arrayD", 
-          "data.arrayE"
-          "data.arrayF"
-          "data.arrayG"
-          "data.arrayH"
+          "data.arrayE",
+          "data.arrayF",
+          "data.arrayG",
+          "data.arrayH",
         ]
     
     - id: 6
@@ -120,7 +120,7 @@ flow:
           "data.arrayG", 
           "data.arrayH", 
 
-          "data.array4"
+          "data.array4",
         ]
         output: [
           "data.textA",  # headline
@@ -129,9 +129,9 @@ flow:
           "data.textD",  # entity url
           "data.textF",  # date created
           "data.textG",  # date published
-          "data.textH"   # date modified
+          "data.textH",  # date modified
           
-          "data.textI"   # tags
+          "data.textI",  # tags
         ]
 
     - id: 7

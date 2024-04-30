@@ -83,7 +83,7 @@ flow:
       plugin: "split"
       alias: "separate objects into messages"
       params:
-        require: [5]
+        require: [4, 5]
         input:  ["data.arrayA", "data.arrayB", "data.arrayC", "data.arrayD", "data.array4"]
         output: ["data.textA", "data.textB", "data.textC", "data.textD", "data.textH"]
 

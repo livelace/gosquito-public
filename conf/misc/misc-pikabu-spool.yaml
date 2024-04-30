@@ -75,17 +75,64 @@ flow:
       alias: "extract data from json"
       params:
         require: [4]
-        input:  ["data.array0", "data.array0", "data.array0", "data.array0", "data.array0"]
-        output: ["data.arrayA", "data.arrayB", "data.arrayC", "data.arrayD", "data.arrayE"]
-        query:  [".headline", ".author.name", ".url", '.mainEntityOfPage.["@id"]', ".image[].url"]
+        input:  [
+          "data.array0", 
+          "data.array0", 
+          "data.array0", 
+          "data.array0", 
+          "data.array0"
+          "data.array0"
+          "data.array0"
+          "data.array0"
+        ]
+        query: [
+          ".headline", 
+          ".author.name", 
+          ".url", 
+          '.mainEntityOfPage.["@id"]', 
+          ".image[].url"
+          ".dateCreated"
+          ".datePublished"
+          ".dateModified"
+        ]
+        output: [
+          "data.arrayA", 
+          "data.arrayB", 
+          "data.arrayC", 
+          "data.arrayD", 
+          "data.arrayE"
+          "data.arrayF"
+          "data.arrayG"
+          "data.arrayH"
+        ]
     
     - id: 6
       plugin: "split"
       alias: "separate objects into messages"
       params:
         require: [5]
-        input:  ["data.arrayA", "data.arrayB", "data.arrayC", "data.arrayD", "data.array4"]
-        output: ["data.textA", "data.textB", "data.textC", "data.textD", "data.textH"]
+        input:  [
+          "data.arrayA", 
+          "data.arrayB", 
+          "data.arrayC", 
+          "data.arrayD", 
+          "data.arrayF", 
+          "data.arrayG", 
+          "data.arrayH", 
+
+          "data.array4"
+        ]
+        output: [
+          "data.textA",  # headline
+          "data.textB",  # author
+          "data.textC",  # url
+          "data.textD",  # entity url
+          "data.textF",  # date created
+          "data.textG",  # date published
+          "data.textH"   # date modified
+          
+          "data.textI"   # tags
+        ]
 
     - id: 7
       plugin: "unique"
@@ -94,13 +141,13 @@ flow:
         include: true
         require: [6]
         input:  ["data.arrayE", "data.textC", "data.textD"]
-        output: ["data.arrayF"]
+        output: ["data.arrayP"]
 
     - id: 8
       plugin: "echo"
       params:
         require: [7]
-        input: ["data.textH"]
+        input: ["data.textI"]
 
 
   output:
@@ -118,10 +165,13 @@ flow:
         time_b: "timeformatb"
 
         author: "data.textB"
+        date_created: "data.textF"
+        date_modified: "data.textH"
+        date_published: "data.textG"
         headline: "data.textA"
         lang: "ru"
         short_name: "pikabu"
-        tags: "data.textH"
-        urls: "data.arrayF"
+        tags: "data.textI"
+        urls: "data.arrayP"
 
 

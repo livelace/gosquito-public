@@ -16,39 +16,86 @@ flow:
   process:
     - id: 0
       plugin: "xpath"
-      alias: "extract data"
+      alias: "extract json"
       params:
-        input:  ["resty.body", "resty.body"]
-        output: ["data.array0", "data.array1"]
+        input:  ["resty.body"]
+        output: ["data.array0"]
         xpath:  [
           "//script[contains(@type, 'application/ld+json')]", 
-          "//div[contains(@class, 'story__collapsed-tags-container')]", 
         ]
         xpath_array: true
         xpath_html: false
 
     - id: 1
-      plugin: "jq"
+      plugin: "xpath"
+      alias: "extract html"
       params:
-        require: [0]
+        input:  ["resty.body"]
+        output: ["data.array1"]
+        xpath:  [
+          "//div[contains(@class, 'story__collapsed-tags-container')]", 
+        ]
+        xpath_array: true
+        xpath_html: true
+
+    - id: 2
+      plugin: "regexpreplace"
+      alias: "add space between tags"
+      params:
+        require: [1]
+        input:   ["data.array1"]
+        output:  ["data.array2"]
+        regexp:  ["</a>"]
+        replace: ["|</a>"]
+
+    - id: 3
+      plugin: "xpath"
+      alias: "extract href text"
+      params:
+        require: [2]
+        input:  ["data.array2"]
+        output: ["data.array3"]
+        xpath:  [
+          "//a", 
+        ]
+        xpath_array: false
+        xpath_html: false
+
+    - id: 4
+      plugin: "iconv"
+      alias: "convert href text encoding"
+      params:
+        require: [0, 3]
+        input:  ["data.array3"]
+        output:  ["data.array4"]
+        from: "cp1251" 
+
+    - id: 5
+      plugin: "jq"
+      alias: "extract data from json"
+      params:
+        require: [4]
         input:  ["data.array0", "data.array0", "data.array0", "data.array0", "data.array0"]
         output: ["data.arrayA", "data.arrayB", "data.arrayC", "data.arrayD", "data.arrayE"]
         query:  [".headline", ".author.name", ".url", '.mainEntityOfPage.["@id"]', ".image[].url"]
     
-    - id: 2
+    - id: 6
       plugin: "split"
+      alias: "separate objects into messages"
       params:
-        require: [0, 1]
-        input:  ["data.arrayA", "data.arrayB", "data.arrayC", "data.arrayD", "data.array1"]
+        require: [5]
+        input:  ["data.arrayA", "data.arrayB", "data.arrayC", "data.arrayD", "data.array4"]
         output: ["data.textA", "data.textB", "data.textC", "data.textD", "data.textH"]
 
-    - id: 3
+    - id: 7
       plugin: "unique"
+      alias: "make links unique"
       params:
         include: true
-        require: [0, 1, 2]
+        require: [6]
         input:  ["data.arrayE", "data.textC", "data.textD"]
         output: ["data.arrayF"]
+
 
   output:
     plugin: "kafka"

@@ -83,7 +83,7 @@ flow:
       plugin: "split"
       alias: "separate objects into messages"
       params:
-        require: [4, 5]
+        require: [5]
         input:  ["data.arrayA", "data.arrayB", "data.arrayC", "data.arrayD", "data.array4"]
         output: ["data.textA", "data.textB", "data.textC", "data.textD", "data.textH"]
 
@@ -95,6 +95,12 @@ flow:
         require: [6]
         input:  ["data.arrayE", "data.textC", "data.textD"]
         output: ["data.arrayF"]
+
+    - id: 8
+      plugin: "echo"
+      params:
+        require: [7]
+        input: ["data.textH"]
 
 
   output:

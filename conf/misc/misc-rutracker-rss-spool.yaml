@@ -6,7 +6,7 @@ flow:
   input:
     plugin: "rss"
     params:
-      template: "template.in.misc.rss.spool"
+      template: "template.in.proxy.rss.spool"
       input: ["https://feed.rutracker.cc/atom/f/0.atom"]
 
   output:

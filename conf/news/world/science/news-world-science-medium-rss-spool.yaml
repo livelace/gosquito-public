@@ -1,0 +1,18 @@
+flow:
+  name: "news-world-science-medium-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.proxy.rss.spool"
+      input: [
+        "https://medium.com/feed/tag/science",
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.science.rss.spool"
+      schema:
+        lang: "en"
+        short_name: "medium"

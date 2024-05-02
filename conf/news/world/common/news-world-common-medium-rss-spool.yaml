@@ -1,0 +1,19 @@
+flow:
+  name: "news-world-common-medium-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.proxy.rss.spool"
+      input: [
+        "https://medium.com/feed/tag/breaking",
+        "https://medium.com/feed/tag/news",
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.common.rss.spool"
+      schema:
+        lang: "en"
+        short_name: "medium"

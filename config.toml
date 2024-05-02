@@ -347,9 +347,9 @@ tag2   = "russia"
 tag3   = "region"
 
 # ----------------------------------------------------------------------------
-# template: misc-rss-spool
+# template: proxy-rss-spool
 
-[template.in.misc.rss.spool]
+[template.in.proxy.rss.spool]
 proxy           = "socks5://10.10.22.1:1080"
 match_signature = ["rss.link"]
 match_ttl       = "7d"

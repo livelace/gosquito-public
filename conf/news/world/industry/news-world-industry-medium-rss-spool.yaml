@@ -1,0 +1,19 @@
+flow:
+  name: "news-world-industry-medium-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.proxy.rss.spool"
+      input: [
+        "https://medium.com/feed/tag/industry",
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.industry.rss.spool"
+      output: ["gosquito-public-world-industry-rss-spool"]
+      schema:
+        lang: "en"
+        short_name: "medium"

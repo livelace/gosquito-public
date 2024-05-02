@@ -1,0 +1,23 @@
+flow:
+  name: "news-world-finance-medium-rss-spool"
+  params:
+    interval: "60m"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.proxy.rss.spool"
+      input: [
+        "https://medium.com/feed/tag/business",
+        "https://medium.com/feed/tag/economy",
+        "https://medium.com/feed/tag/finance",
+        "https://medium.com/feed/tag/money",
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.finance.rss.spool"
+      schema:
+        lang: "en"
+        short_name: "medium"

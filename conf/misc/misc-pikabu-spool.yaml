@@ -199,6 +199,7 @@ flow:
         time_b: "timeformatb"
 
         author: "data.textD"
+        community: "data.textA"
         date_created: "data.textG"
         date_modified: "data.textI"
         date_published: "data.textH"

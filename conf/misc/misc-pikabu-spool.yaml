@@ -203,7 +203,7 @@ flow:
         date_created: "data.textG"
         date_modified: "data.textI"
         date_published: "data.textH"
-        headline: "data.textA"
+        headline: "data.textC"
         lang: "ru"
         short_name: "pikabu"
         tags: "data.textB"

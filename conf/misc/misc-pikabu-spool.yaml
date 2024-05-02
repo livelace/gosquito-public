@@ -14,6 +14,9 @@ flow:
       time_zone_b: "Europe/Moscow"
 
   process:
+    # ------------------------------------------------------------------------
+    # extract story json:
+    
     - id: 0
       plugin: "xpath"
       alias: "extract json"
@@ -26,62 +29,105 @@ flow:
         xpath_array: true
         xpath_html: false
 
+    # ------------------------------------------------------------------------
+    # try to find story community (might be absent):
+
     - id: 1
+      alias: "extract story header"
       plugin: "xpath"
-      alias: "extract html"
       params:
         input:  ["resty.body"]
         output: ["data.array1"]
+        xpath:  [
+          "//header[contains(@class, 'story__header')]", 
+        ]
+        xpath_array: true
+        xpath_html: true
+
+    - id: 2
+      alias: "try to find community"
+      plugin: "xpath"
+      params:
+        input:  ["data.array1"]
+        output: ["data.array2"]
+        xpath:  [
+          "//span[contains(@class, 'story__community-name hint')]", 
+        ]
+        require: [1]
+        xpath_array: false
+        xpath_fill_empty: "null"
+        xpath_html: false
+
+    - id: 3
+      alias: "convert community to utf"
+      plugin: "iconv"
+       
+      params:
+        require: [2]
+        from: "cp1251"
+        input: ["data.array2"]
+        output: ["data.array3"]
+
+    # ------------------------------------------------------------------------
+    # extract tags:
+
+    - id: 4
+      alias: "extract tags container"
+      plugin: "xpath"
+      params:
+        input:  ["resty.body"]
+        output: ["data.array4"]
         xpath:  [
           "//div[contains(@class, 'story__collapsed-tags-container')]", 
         ]
         xpath_array: true
         xpath_html: true
 
-    - id: 2
+    - id: 5
+      alias: "put separator between tags"
       plugin: "regexpreplace"
-      alias: "add space between tags"
       params:
-        require: [1]
-        input:   ["data.array1"]
-        output:  ["data.array2"]
+        require: [4]
+        input:   ["data.array4"]
+        output:  ["data.array5"]
         regexp:  ["</a>"]
         replace: ["|</a>"]
 
-    - id: 3
+    - id: 6
+      alias: "extract tags as text"
       plugin: "xpath"
-      alias: "extract href text"
       params:
-        require: [2]
-        input:  ["data.array2"]
-        output: ["data.array3"]
+        require: [5]
+        input:  ["data.array5"]
+        output: ["data.array6"]
         xpath:  [
           "//a", 
         ]
         xpath_array: false
         xpath_html: false
 
-    - id: 4
+    - id: 7
+      alias: "convert tags to utf"
       plugin: "iconv"
-      alias: "convert href text encoding"
       params:
-        require: [0, 3]
-        input:  ["data.array3"]
-        output:  ["data.array4"]
-        from: "cp1251" 
+        require: [6]
+        input:  ["data.array6"]
+        output: ["data.array7"]
+        from: "cp1251"
 
-    - id: 5
-      plugin: "jq"
+    # ------------------------------------------------------------------------
+    # process json:
+
+    - id: 8
       alias: "extract data from json"
+      plugin: "jq"
       params:
-        require: [4]
+        require: [0]
         input:  [
           "data.array0", 
           "data.array0", 
           "data.array0", 
           "data.array0", 
-          "data.array0",
-          "data.array0",
           "data.array0",
           "data.array0",
         ]
@@ -89,65 +135,53 @@ flow:
           ".headline", 
           ".author.name", 
           ".url", 
-          '.mainEntityOfPage.["@id"]', 
-          ".image[].url",
           ".dateCreated",
           ".datePublished",
           ".dateModified",
         ]
         output: [
-          "data.arrayA", 
-          "data.arrayB", 
-          "data.arrayC", 
-          "data.arrayD", 
-          "data.arrayE",
-          "data.arrayF",
-          "data.arrayG",
-          "data.arrayH",
+          "data.array8", 
+          "data.array9", 
+          "data.array10", 
+          "data.array11", 
+          "data.array12",
+          "data.array13",
         ]
     
-    - id: 6
+    # ------------------------------------------------------------------------
+    # split object into messages:
+    
+    - id: 9
+      alias: "split objects into messages"
       plugin: "split"
-      alias: "separate objects into messages"
-      params:
-        require: [5]
-        input:  [
-          "data.arrayA", 
-          "data.arrayB", 
-          "data.arrayC", 
-          "data.arrayD", 
-          "data.arrayF", 
-          "data.arrayG", 
-          "data.arrayH", 
-
-          "data.array4",
-        ]
-        output: [
-          "data.textA",  # headline
-          "data.textB",  # author
-          "data.textC",  # url
-          "data.textD",  # entity url
-          "data.textF",  # date created
-          "data.textG",  # date published
-          "data.textH",  # date modified
-          
-          "data.textI",  # tags
-        ]
-
-    - id: 7
-      plugin: "unique"
-      alias: "make links unique"
       params:
         include: true
-        require: [6]
-        input:  ["data.arrayE", "data.textC", "data.textD"]
-        output: ["data.arrayP"]
+        input:  [
+          "data.array3", 
+          "data.array7", 
+          "data.array8", 
+          "data.array9", 
+          "data.array10", 
+          "data.array11", 
+          "data.array12", 
+          "data.array13", 
+        ]
+        output: [
+          "data.textA",  # community
+          "data.textB",  # tags
+          "data.textC",  # headline
+          "data.textD",  # author
+          "data.textE",  # url
+          "data.textG",  # date created
+          "data.textH",  # date published
+          "data.textI",  # date modified
+        ]
 
-    - id: 8
+    - id: 10
       plugin: "echo"
       params:
-        require: [7]
-        input: ["data.textI"]
+        require: [9]
+        input: ["data.textA"]
 
 
   output:
@@ -164,14 +198,14 @@ flow:
         time_a: "timeformata"
         time_b: "timeformatb"
 
-        author: "data.textB"
-        date_created: "data.textF"
-        date_modified: "data.textH"
-        date_published: "data.textG"
+        author: "data.textD"
+        date_created: "data.textG"
+        date_modified: "data.textI"
+        date_published: "data.textH"
         headline: "data.textA"
         lang: "ru"
         short_name: "pikabu"
-        tags: "data.textI"
-        urls: "data.arrayP"
+        tags: "data.textB"
+        url: "data.textE"
 
 

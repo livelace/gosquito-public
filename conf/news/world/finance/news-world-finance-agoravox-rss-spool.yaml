@@ -7,8 +7,6 @@ flow:
     plugin: "rss"
     params:
       template: "template.in.world.finance.rss.spool"
-      force: true
-      force_count: 1
       input: [
         "https://www.agoravox.fr/spip.php?page=backend&id_rubrique=30", # economy
         "https://www.agoravox.fr/spip.php?page=backend&id_rubrique=32", # company

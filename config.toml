@@ -88,6 +88,17 @@ regexp = [
 ]
 
 # ----------------------------------------------------------------------------
+# template: template.proc.libretranslate.rss
+[template.proc.libretranslate.rss]
+method = "POST"
+target = "https://libretranslate.livelace.ru/translate"
+body = '{"q":"{{.RSS.TITLE}}","source":"auto","target":"ru"}'
+
+
+[template.proc.libretranslate.rss.headers]
+content-type = "application/json"
+
+# ----------------------------------------------------------------------------
 # template: digator-nlp-rss
 [template.proc.digator.nlp.rss]
 method = "POST"

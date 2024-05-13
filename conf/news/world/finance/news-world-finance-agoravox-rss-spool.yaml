@@ -1,0 +1,46 @@
+flow:
+  name: "news-world-finance-agoravox-rss-spool"
+  params:
+    interval: "60m"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.finance.rss.spool"
+      input: [
+        "https://www.agoravox.fr/spip.php?page=backend&id_rubrique=30", # economy
+        "https://www.agoravox.fr/spip.php?page=backend&id_rubrique=32", # company
+      ]
+
+  process:
+    - id: 0
+      plugin: "resty"
+      params:
+        template: "template.proc.libretranslate.rss"
+        input:  ["rss.title"]
+        output: ["data.text0"]
+
+    - id: 1
+      plugin: "jq"
+      params:
+        require: [0]
+        input:  ["data.text0"]
+        output: ["data.array0"]
+        query:  [".translatedText"]
+
+    - id: 2
+      plugin: "io"
+      params:
+        include: true
+        require: [1]
+        text_wrap: " "
+        input: ["data.array0"]
+        output: ["rss.link"]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.finance.rss.spool"
+      schema:
+        lang: "auto"
+        short_name: "agoravox"

@@ -1,0 +1,20 @@
+flow:
+  name: "news-world-industry-robogeek-rss-spool"
+  params:
+    interval: "60m"
+
+  input:
+    plugin: "rss"
+    params:
+      input: [
+        "https://robogeek.ru/rss.xml",
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.industry.rss.spool"
+      output: ["gosquito-public-world-industry-rss-spool"]
+      schema:
+        lang: "ru"
+        short_name: "robogeek"

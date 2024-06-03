@@ -1,0 +1,22 @@
+flow:
+  name: "news-aread-asia-thediplomat-rss-spool"
+  params:
+    interval: "60m"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.area.asia.rss.spool"
+      input: [
+        "https://thediplomat.com/regions/central-asia/feed",
+        "https://thediplomat.com/regions/east-asia/feed",
+        "https://thediplomat.com/regions/south-asia/",
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.area.asia.rss.spool"
+      schema:
+        lang: "en"
+        short_name: "thediplomat"

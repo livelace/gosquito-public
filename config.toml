@@ -26,6 +26,15 @@ secret_key = "env://GOSQUITO_MINIO_PASSWORD"
 server     = "minio.livelace.ru"
 
 # ----------------------------------------------------------------------------
+# credentials: mattermost default
+
+[cred.mattermost.default]
+url      = "https://mattermost.livelace.ru"
+username = "env://GOSQUITO_MATTERMOST_USERNAME"
+password = "env://GOSQUITO_MATTERMOST_PASSWORD"
+team     = "livelace"
+
+# ----------------------------------------------------------------------------
 # credentials: telegram private
 
 [cred.telegram.private]

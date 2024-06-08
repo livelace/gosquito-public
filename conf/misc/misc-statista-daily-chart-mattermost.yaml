@@ -1,0 +1,68 @@
+flow:
+  name: "misc-statista-daily-chart-mattermost"
+  params:
+    interval: "1h"
+
+  input:
+    plugin: "resty"
+    params:
+      input: ["https://www.statista.com/chartoftheday/"]
+
+  process:
+    - id: 0
+      plugin: "xpath"
+      alias: "extract charts urls"
+      params:
+        input:  ["resty.body"]
+        output: ["data.array0"]
+        xpath:  [
+          "//img[contains(@class, 'infographicsPanelCard__image')]/@src", 
+        ]
+        xpath_array: true
+        xpath_html: false
+
+    - id: 1
+      plugin: "regexpreplace"
+      alias: "we need full size charts"
+      params:
+        input:   ["data.array0"]
+        output:  ["data.array1"]
+        regexp:  ["teaser"]
+        replace: ["normal"]
+
+    - id: 2
+      plugin: "same"
+      alias: "filter already seen links"
+      params:
+        require: [1]
+        input: ["data.array1"]
+        same_ratio_max: 0
+        same_ratio_min: 0
+        same_share_max: 100
+        same_share_min: 100
+        same_ttl: "365d"
+
+    - id: 3
+      plugin: "fetch"
+      alias: "fetch full size charts"
+      params:
+        require: [2]
+        input:  ["data.array1"]
+        output: ["data.array2"]
+
+    - id: 4
+      plugin: "split"
+      alias: "split fetched files to dedicated datums"
+      params:
+        include: true
+        require: [3]
+        input:  ["data.array2"]
+        output: ["data.textA"]
+
+  output:
+    plugin: "mattermost"
+    params:
+      cred: "cred.mattermost.default"
+      files: ["data.textA"]
+      output: ["news"]
+

@@ -64,5 +64,5 @@ flow:
     params:
       cred: "cred.mattermost.default"
       files: ["data.textA"]
-      output: ["news"]
+      output: ["news_charts"]
 

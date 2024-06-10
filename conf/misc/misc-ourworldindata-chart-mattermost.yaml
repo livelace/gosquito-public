@@ -100,4 +100,4 @@ flow:
     params:
       cred: "cred.mattermost.default"
       files: ["data.textA"]
-      output: ["trash"]
+      output: ["news_charts"]

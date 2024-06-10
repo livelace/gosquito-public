@@ -1,7 +1,7 @@
 flow:
   name: "misc-statista-daily-chart-mattermost"
   params:
-    interval: "1h"
+    interval: "12h"
 
   input:
     plugin: "resty"

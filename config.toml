@@ -750,6 +750,20 @@ userfirstseen        = "telegram.userfirstseen"
 userlastseen         = "telegram.userlastseen"
 
 # ----------------------------------------------------------------------------
+# template: webchela-default.
+
+[templates.webchela.default]
+batch_size = 10
+browser_instance = 1
+browser_instance_tab = 10
+browser_script_timeout = 30
+browser_type = "chrome"
+cpu_load = 50
+server = ["webchela.webchela.svc.k8s-4.livelace.ru:50051"]
+timeout = 300
+request_timeout = 300
+
+# ----------------------------------------------------------------------------
 # template: webchela-rss-anticaptcha.
 
 [templates.webchela.rss.anticaptcha]
@@ -760,7 +774,7 @@ browser_script_timeout = 30
 browser_type = "chrome"
 cpu_load = 50
 script = ["return document.body.innerText"]
-server = ["webchela.data.svc.k8s-1.livelace.ru:50051"]
+server = ["webchela.webchela.svc.k8s-4.livelace.ru:50051"]
 timeout = 120
 
 # ----------------------------------------------------------------------------

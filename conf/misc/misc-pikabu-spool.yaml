@@ -181,7 +181,7 @@ flow:
       plugin: "echo"
       params:
         require: [9]
-        input: ["data.textA"]
+        input: ["data.textB"]
 
 
   output:

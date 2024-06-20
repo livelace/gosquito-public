@@ -19,13 +19,11 @@ flow:
         "expert_mag",
         "fatcat18",
         "finversiaru",
-        "forbesrussia",
         "frank_media",
         "incrussiamedia",
         "kommersant",
         "macroresearch",
         "marketscreen",
-        #"sberpromedia",
       ]
 
   process:

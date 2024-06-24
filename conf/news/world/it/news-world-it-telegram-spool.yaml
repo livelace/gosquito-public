@@ -10,10 +10,10 @@ flow:
       template: "template.in.telegram.spool"
       device_model: "receiver-news-world-it"
       input: [
-        "DataEconomyRU",
-        "icipr",
-        "imaxairu",
-        "open_source_friend",
+        "DataEconomyRU",      # цифровая экономика
+        "astragroup",         # группа астра
+        "icipr",              # ципр
+        "open_source_friend", # open source
       ]
 
   process:

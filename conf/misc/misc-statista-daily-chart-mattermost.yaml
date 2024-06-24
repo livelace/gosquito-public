@@ -40,7 +40,7 @@ flow:
         same_ratio_min: 0
         same_share_max: 100
         same_share_min: 100
-        same_ttl: "365d"
+        same_ttl: "7d"
 
     - id: 3
       plugin: "fetch"

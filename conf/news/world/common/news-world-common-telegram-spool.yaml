@@ -10,9 +10,12 @@ flow:
       template: "template.in.telegram.spool"
       device_model: "receiver-news-world-common"
       input: [
-        "bbbreaking",
-        "interfaxonline",
-        "tass_agency",
+        "baltnews",           # baltnews
+        "bbbreaking",         # раньше всех ну почти
+        "india_tv2020",       # индия сегодня
+        "interfaxonline",     # интерфакс
+        "kazan_bass",         # asiatoday
+        "tass_agency",        # тасс
       ]
 
   process:

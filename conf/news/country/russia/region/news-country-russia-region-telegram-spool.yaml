@@ -10,17 +10,16 @@ flow:
       template: "template.in.telegram.spool"
       device_model: "receiver-news-country-russia-region"
       input: [
-        "MkPskov",           # Псков
-        "bloknot_stavropol", # Ставрополь
-        "iakhakasia",        # Хакасия
-        "khabkraj",          # Хабаровск
-        "moscowmap",         # Москва
-        "mosregtoday",       # Москва
-        "news59ru",          # Пермь
-        "news63ru",          # Самара
-        "nn_ru",             # Нижний Новгород
-        "odinobl",           # Челябинск
-        "tlinia",            # Тюмень
+        "MkPskov",           # мк в пскове
+        "bloknot_stavropol", # блокнот ставрополь
+        "khabkraj",          # хабаровский край z
+        "moscowmap",         # новости москвы
+        "news59ru",          # 59.ru новости перми
+        "news63ru",          # 63.ru новости самары
+        "newsregions",       # regions.ru новости подмосковья
+        "nn_ru",             # нижний новгород
+        "odinobl",           # 1obl.ru только важное
+        "tlinia",            # тюменская линия
       ]
 
   process:

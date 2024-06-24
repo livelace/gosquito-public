@@ -10,14 +10,14 @@ flow:
       template: "template.in.telegram.spool"
       device_model: "receiver-news-world-politics"
       input: [
-        "balkanossiper",
-        "baltnews",
-        "brussinf",
-        "india_tv2020",
-        "istanbul_wolf",
-        "lumandao",
-        "riafan_everywhere",
-        #"kremlinprachka",
+        "afric_ylbIbka",      # улыбаемся и машем
+        "awaken_dragon",      # проснувшийся дракон
+        "balkanossiper",      # балканская сплетница
+        "istanbul_wolf",      # стамбульский волк
+        "lumandao",           # lu man взгляд на восток
+        "riafan_everywhere",  # международный фан
+        "russica2",           # незыгарь
+        "turkeyabout",        # повестка дня турции
       ]
 
   process:

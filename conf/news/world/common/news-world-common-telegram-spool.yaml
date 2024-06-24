@@ -11,10 +11,12 @@ flow:
       device_model: "receiver-news-world-common"
       input: [
         "baltnews",           # baltnews
+        "bazabazon",          # baza
         "bbbreaking",         # раньше всех ну почти
         "india_tv2020",       # индия сегодня
         "interfaxonline",     # интерфакс
         "kazan_bass",         # asiatoday
+        "mash",               # mash
         "tass_agency",        # тасс
       ]
 

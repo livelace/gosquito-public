@@ -11,7 +11,10 @@ flow:
       device_model: "receiver-news-world-it"
       input: [
         "DataEconomyRU",      # цифровая экономика
+        "RU_Hardware_Soft",   # импортозамещение в ит
         "astragroup",         # группа астра
+        "digitalRosatom",     # digital rosatom
+        "globalcio1",         # global cio
         "icipr",              # ципр
         "open_source_friend", # open source
       ]

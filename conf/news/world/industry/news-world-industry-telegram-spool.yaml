@@ -10,14 +10,13 @@ flow:
       template: "template.in.telegram.spool"
       device_model: "receiver-news-world-industry"
       input: [
-        "RU_Hardware_Soft",
-        "energytodaygroup",
-        "geonrgru",
-        "globalcio1",
-        "pronedraru",
-        "ruselectronics_official",
-        #"eprussia",
-        #"fabrichka",
+        "energyplusmedia",          # энергия+ онлайн-журнал
+        "energytodaygroup",         # energy today
+        "eprussia",                 # энергетика и промышленость россии
+        "geonrgru",                 # геоэнергетика инфо
+        "pronedraru",               # пронедра
+        "ruselectronics_official",  # росэлектроника
+        "telecommunal",             # телекоммуналка
       ]
 
   process:

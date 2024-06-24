@@ -10,62 +10,36 @@ flow:
       template: "template.in.telegram.spool"
       device_model: "receiver-job-it"
       input: [
-        # -------------------
-        # common
-        "Relocats",
-        "Remoteit",
-        "fordev",
-        "geekjobs",
-        "it_vac",
-        "jobGeeks",
-        "jobforjunior",
-        "jobs_it",
-        "jobscode_infull",
-        "myjobit",
-        "profunctor_jobs",
-        "seohr",
-        # "Getitrussia", empty
-        # "logic", expired
-        
-        # -------------------
-        # data 
-        "analyst_job",
-        "datajob",
-        "foranalysts",
-        
-        # -------------------
-        # devops 
-        "JobsforDevsandOps",
-        "devops_jobs_feed",
-        "fordevops",
-        
-        # -------------------
-        # frontend
-        "forfrontend",
-        
-        # -------------------
-        # gamedev 
-        "Gamedevjobs",
-        "devjobs",
-        "forgamedev",
-        "gamedevjob",
-        
-        # -------------------
-        # mobile
-        "forallmobile",
-        "mobile_jobs",
-        
-        # -------------------
-        # qa 
-        "forallqa",
-        "qa_jobs",
-        "qajoboffer",
-        
-        # -------------------
-        # top 
-        "forchiefs",
-        "itarchitect_jobs",
-        "jobfortm",
+        "Gamedevjobs",          # gamedev jobs inflow
+        "Getitrussia",          # getit jobs
+        "Relocats",             # it relocation inflow
+        "Remoteit",             # remote it inflow
+        "datajob",              # data jobs
+        "devjobs",              # game development jobs
+        "devops_jobs_feed",     # devops jobs
+        "forallmobile",         # job for mobile ios android
+        "forallqa",             # job for qa
+        "foranalysts",          # job for analysts data scientists
+        "forchiefs",            # job for chiefs
+        "fordev",               # вакансии backend frontend
+        "fordevops",            # job for sysadmin devops
+        "fordevops",            # job for sysadmin devops
+        "forfrontend",          # job for frontend
+        "forgamedev",           # job for gamedev
+        "gamedevjob",           # работа в геймдеве
+        "geekjobs",             # job in it digital
+        "it_vac",               # it jobs вакансии фриланс
+        "itarchitect_jobs",     # работа для ит архитекторов
+        "jobGeeks",             # топ it вакансии
+        "jobforjunior",         # job for junior
+        "jobfortm",             # job for it-top
+        "jobs_it",              # jobs_it
+        "jobscode_infull",      # jobs code in full
+        "mobile_jobs",          # mobile dev jobs
+        "myjobit",              # telegram it job
+        "qa_jobs",              # qa вакансии
+        "qajoboffer",           # работа для тестировщиков
+        "seohr",                # seo hr digital вакансии
       ]
 
   process:

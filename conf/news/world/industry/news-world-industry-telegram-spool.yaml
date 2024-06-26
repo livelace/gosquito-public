@@ -17,6 +17,7 @@ flow:
         "pronedraru",               # пронедра
         "ruselectronics_official",  # росэлектроника
         "telecommunal",             # телекоммуналка
+        "zatelecom",                # зателеком
       ]
 
   process:

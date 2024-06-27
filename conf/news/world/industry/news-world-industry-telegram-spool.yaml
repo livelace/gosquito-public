@@ -15,6 +15,7 @@ flow:
         "eprussia",                 # энергетика и промышленость россии
         "geonrgru",                 # геоэнергетика инфо
         "pronedraru",               # пронедра
+        "rostecru",                 # ростех
         "ruselectronics_official",  # росэлектроника
         "telecommunal",             # телекоммуналка
         "zatelecom",                # зателеком

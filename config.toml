@@ -1,21 +1,23 @@
 [default]
 
-log_level     = "DEBUG"
-#log_level     = "INFO"
-loop_sleep    = 100
+log_level           = "DEBUG"
+#log_level           = "INFO"
+loop_sleep          = 100
 
-flow_conf     = "/etc/gosquito/conf"
-flow_data     = "/data/gosquito/data"
-flow_interval = "15m"
-flow_limit    = 10
-#flow_enable  = ["nlp-world-common-rss-spool-ner-spool", "news-world-common-ria-rss-spool"]
-#flow_disable  = ["job-hh-common-rss-spool", "job-hh-it-rss-spool"]
+flow_conf           = "/etc/gosquito/conf"
+flow_data           = "/data/gosquito/data"
+flow_interval       = "15m"
+flow_limit          = 10
+#flow_enable        = ["nlp-world-common-rss-spool-ner-spool", "news-world-common-ria-rss-spool"]
+#flow_disable        = ["job-hh-common-rss-spool", "job-hh-it-rss-spool"]
 
-time_format   = "2006-01-02T15:04:05-0700"
-time_zone     = "UTC"
+time_format         = "2006-01-02T15:04:05-0700"
+time_zone           = "UTC"
 
-#user_agent    = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
-user_agent    = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 YaBrowser/23.7.0.2483 Yowser/2.5 Safari/537.36"
+#user_agent          = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
+user_agent          = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 YaBrowser/23.7.0.2483 Yowser/2.5 Safari/537.36"
+
+expire_interval     = "30d"
 
 # ----------------------------------------------------------------------------
 # credentials: minio default

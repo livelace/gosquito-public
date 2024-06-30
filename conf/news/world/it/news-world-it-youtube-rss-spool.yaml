@@ -4,6 +4,7 @@ flow:
   input:
     plugin: "rss"
     params:
+      expire_interval: "365d"
       template: "template.in.world.it.rss.spool"
       input: [
         "https://www.youtube.com/feeds/videos.xml?channel_id=UC3BGlwmI-Vk6PWyMt15dKGw", # oreilly

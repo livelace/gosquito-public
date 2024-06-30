@@ -5,7 +5,7 @@ flow:
     plugin: "rss"
     params:
       template: "template.in.world.it.rss.spool"
-      input: ["https://www.wired.com/category/security/feed/"]
+      input: ["https://www.wired.com/feed/category/security/latest/rss"]
 
   output:
     plugin: "kafka"

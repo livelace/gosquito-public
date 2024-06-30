@@ -6,6 +6,7 @@ flow:
     params:
       template: "template.in.world.common.rss.spool"
       input: ["http://russian.news.cn/ewjkxml.xml"]
+      match_signature: ["rss.link"]
 
   output:
     plugin: "kafka"

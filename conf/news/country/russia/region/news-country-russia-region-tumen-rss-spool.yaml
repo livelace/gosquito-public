@@ -5,7 +5,7 @@ flow:
     plugin: "rss"
     params:
       template: "template.in.country.russia.region.rss.spool"
-      input: ["https://admtyumen.ru/ogv_ru/subscribe/informer.htm?content-type=xml&id=999@rssInformer&guid=fdc95106-ddab-4ba9-8951-06ddab1ba9a4"]
+      input: ["https://admtyumen.ru/ogv_ru/subscribe/news-rss.htm"]
       ssl_verify: false
 
   output:

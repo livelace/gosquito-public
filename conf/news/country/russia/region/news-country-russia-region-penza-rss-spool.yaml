@@ -1,5 +1,7 @@
 flow:
   name: "news-country-russia-region-penza-rss-spool"
+  params:
+    interval: "60m"
 
   input:
     plugin: "rss"

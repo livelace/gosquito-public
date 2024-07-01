@@ -10,7 +10,6 @@ flow:
       input: [
         "http://1prime.ru/export/rss2/state_regulation/index.xml",
         "http://1prime.ru/export/rss2/Financial_market/index.xml",
-        "http://1prime.ru/export/rss2/consumer_markets/index.xml",
       ]
 
   output:

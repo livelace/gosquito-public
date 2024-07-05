@@ -10,18 +10,19 @@ flow:
       template: "template.in.telegram.spool"
       device_model: "receiver-news-world-finance"
       input: [
-        "DataInsight",      # data insight, цифры e-commerce
-        "Econsonline",      # econs
-        "banksta",          # банкста
-        "business_ru",      # о бизнесе
-        "economika",        # экономика
-        "expert_mag",       # эксперт
-        "fatcat18",         # жирные коты
-        "finversiaru",      # finversia экономика с яном артом
-        "frank_media",      # frank media
-        "macroresearch",    # псб аналитика
-        "marketscreen",     # market screen
-        "spydell_finance",  # spydell finance
+        "DataInsight",              # data insight, цифры e-commerce
+        "Econsonline",              # econs
+        "banksta",                  # банкста
+        "business_ru",              # о бизнесе
+        "economika",                # экономика
+        "expert_mag",               # эксперт
+        "fatcat18",                 # жирные коты
+        "finversiaru",              # finversia экономика с яном артом
+        "frank_media",              # frank media
+        "macroresearch",            # псб аналитика
+        "marketscreen",             # market screen
+        "spydell_finance",          # spydell finance
+        "mediaresearchesanalytics", # media researches
       ]
 
   process:

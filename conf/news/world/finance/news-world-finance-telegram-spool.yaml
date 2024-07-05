@@ -23,6 +23,7 @@ flow:
         "marketscreen",             # market screen
         "spydell_finance",          # spydell finance
         "mediaresearchesanalytics", # media researches
+        "Rupec",                    # rupec
       ]
 
   process:

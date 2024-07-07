@@ -5,7 +5,7 @@ flow:
     plugin: "rss"
     params:
       template: "template.in.world.politics.rss.spool"
-      input: ["https://rss.politico.com/politics-news.xml"]
+      input: ["https://rss.politico.com/politics.xml"]
 
   output:
     plugin: "kafka"

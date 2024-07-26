@@ -18,7 +18,6 @@ flow:
         "rostecru",                 # ростех
         "ruselectronics_official",  # росэлектроника
         "telecommunal",             # телекоммуналка
-        "zatelecom",                # зателеком
       ]
 
   process:

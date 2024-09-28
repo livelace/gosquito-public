@@ -8,9 +8,11 @@ flow:
     params:
       template: "template.in.job.rss.spool"
       input: [
-        "https://spb.hh.ru/search/vacancy/rss?area=113&clusters=true&enable_snippets=true&search_period=1&specialization=1&order_by=publication_time&text=.",
-        "https://spb.hh.ru/search/vacancy/rss?area=16&clusters=true&enable_snippets=true&search_period=1&specialization=1&order_by=publication_time&text=.",
-        #"https://spb.hh.ru/search/vacancy/rss?area=5&clusters=true&enable_snippets=true&search_period=1&specialization=1&order_by=publication_time&text=."
+        "https://spb.hh.ru/search/vacancy/rss?search_field=name&search_field=company_name&search_field=description&enable_snippets=false&L_save_area=true&industry=7&area=113&text=.", # Россия
+        "https://spb.hh.ru/search/vacancy/rss?search_field=name&search_field=company_name&search_field=description&enable_snippets=false&L_save_area=true&industry=7&area=16&text=.",  # Беларусь
+        "https://spb.hh.ru/search/vacancy/rss?search_field=name&search_field=company_name&search_field=description&enable_snippets=false&L_save_area=true&industry=7&area=40&text=.",  # Казахстан
+        "https://spb.hh.ru/search/vacancy/rss?search_field=name&search_field=company_name&search_field=description&enable_snippets=false&L_save_area=true&industry=7&area=13&text=.",  # Армения
+        "https://spb.hh.ru/search/vacancy/rss?search_field=name&search_field=company_name&search_field=description&enable_snippets=false&L_save_area=true&industry=7&area=28&text=.",  # Грузия
       ]
 
   process:

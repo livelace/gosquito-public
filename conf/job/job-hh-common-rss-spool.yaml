@@ -8,9 +8,11 @@ flow:
     params:
       template: "template.in.job.rss.spool"
       input: [
-        "https://spb.hh.ru/search/vacancy/rss?area=113&clusters=true&enable_snippets=true&search_period=1&order_by=publication_time&text=.",
-        "https://spb.hh.ru/search/vacancy/rss?area=16&clusters=true&enable_snippets=true&search_period=1&order_by=publication_time&text=.",
-        #"https://spb.hh.ru/search/vacancy/rss?area=5&clusters=true&enable_snippets=true&search_period=1&order_by=publication_time&text=."
+        "https://spb.hh.ru/search/vacancy/rss?area=113&clusters=true&enable_snippets=true&search_period=1&order_by=publication_time&text=.", # Россия
+        "https://spb.hh.ru/search/vacancy/rss?area=16&clusters=true&enable_snippets=true&search_period=1&order_by=publication_time&text=.",  # Беларусь
+        "https://spb.hh.ru/search/vacancy/rss?area=40&clusters=true&enable_snippets=true&search_period=1&order_by=publication_time&text=.",  # Казахстан
+        "https://spb.hh.ru/search/vacancy/rss?area=13&clusters=true&enable_snippets=true&search_period=1&order_by=publication_time&text=.",  # Армения
+        "https://spb.hh.ru/search/vacancy/rss?area=28&clusters=true&enable_snippets=true&search_period=1&order_by=publication_time&text=.",  # Грузия
       ]
 
   process:

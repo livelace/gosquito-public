@@ -23,6 +23,7 @@ flow:
         "https://www.youtube.com/feeds/videos.xml?channel_id=UCvqbFHwN-nwalWPjPUKpvTA", # cncf
         "https://www.youtube.com/feeds/videos.xml?channel_id=UCwFpzG5MK5Shg_ncAhrgr9g", # AwesomeOpenSource
         "https://www.youtube.com/feeds/videos.xml?channel_id=UCwHL6WHUarjGfUM_586me8w", # HighLoadChannel
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCUMgmcine5M4aKNI8XA5vFw", # SNIAVideo
       ]
 
   output:

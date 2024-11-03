@@ -16,6 +16,7 @@ flow:
         "digitalRosatom",     # digital rosatom
         "globalcio1",         # global cio
         "icipr",              # ципр
+        "it_arch",            # архитектура ит-решений
         "open_source_friend", # open source
       ]
 

@@ -20,14 +20,6 @@ user_agent          = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (
 expire_interval     = "30d"
 
 # ----------------------------------------------------------------------------
-# credentials: minio default
-
-[cred.minio.default]
-access_key = "env://GOSQUITO_MINIO_USERNAME"
-secret_key = "env://GOSQUITO_MINIO_PASSWORD"
-server     = "minio.livelace.ru"
-
-# ----------------------------------------------------------------------------
 # credentials: mattermost default
 
 [cred.mattermost.default]

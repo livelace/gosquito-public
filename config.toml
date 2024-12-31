@@ -20,15 +20,6 @@ user_agent          = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (
 expire_interval     = "30d"
 
 # ----------------------------------------------------------------------------
-# credentials: mattermost default
-
-[cred.mattermost.default]
-url      = "https://mattermost.livelace.ru"
-username = "env://GOSQUITO_MATTERMOST_USERNAME"
-password = "env://GOSQUITO_MATTERMOST_PASSWORD"
-team     = "livelace"
-
-# ----------------------------------------------------------------------------
 # credentials: telegram private
 
 [cred.telegram.private]

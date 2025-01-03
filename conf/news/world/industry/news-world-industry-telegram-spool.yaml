@@ -13,7 +13,7 @@ flow:
         "energyplusmedia",          # энергия+ онлайн-журнал
         "energytodaygroup",         # energy today
         "eprussia",                 # энергетика и промышленость россии
-        "geonrgru",                 # геоэнергетика инфо
+        #"geonrgru",                 # геоэнергетика инфо
         "pronedraru",               # пронедра
         "rostecru",                 # ростех
         "ruselectronics_official",  # росэлектроника

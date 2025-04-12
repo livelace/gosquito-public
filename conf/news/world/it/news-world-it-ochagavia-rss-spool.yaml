@@ -1,0 +1,18 @@
+flow:
+  name: "news-world-it-ochagavia-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      template: "template.in.world.it.rss.spool"
+      input: [
+        "https://ochagavia.nl/blog/index.xml"
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.it.rss.spool"
+      schema:
+        lang: "en"
+        short_name: "ochagavia"

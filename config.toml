@@ -1,13 +1,13 @@
 [default]
 
-log_level           = "DEBUG"
-#log_level           = "INFO"
+#log_level           = "DEBUG"
+log_level           = "INFO"
 loop_sleep          = 100
 
 flow_conf           = "/etc/gosquito/conf"
 flow_data           = "/data/gosquito/data"
 flow_interval       = "15m"
-flow_limit          = 10
+flow_limit          = 7
 #flow_enable        = ["nlp-world-common-rss-spool-ner-spool", "news-world-common-ria-rss-spool"]
 #flow_disable        = ["job-hh-common-rss-spool", "job-hh-it-rss-spool"]
 

@@ -1,0 +1,19 @@
+flow:
+  name: "news-world-it-yokota-rss-spool"
+
+  input:
+    plugin: "rss"
+    params:
+      expire_interval: "365d"
+      template: "template.in.world.it.rss.spool"
+      input: [
+        "https://yokota.blog/feed/",
+      ]
+
+  output:
+    plugin: "kafka"
+    params:
+      template: "template.out.world.it.rss.spool"
+      schema:
+        lang: "en"
+        short_name: "yokota"
